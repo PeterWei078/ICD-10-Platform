@@ -123,6 +123,1429 @@
 
         const INITIAL_DATABASE = [
             {
+                "id": "E10.9",
+                "keywords": ["TYPE 1 DM", "T1DM", "第一型糖尿病", "IDDM"],
+                "standard": "Type 1 diabetes mellitus without complications",
+                "code": "E10.9",
+                "type": "broad",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "Z87.11",
+                "keywords": ["HISTORY OF PUD", "OLD PUD", "消化性潰瘍病史", "PUD"],
+                "standard": "Personal history of peptic ulcer disease",
+                "code": "Z87.11",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K29.70",
+                "keywords": ["GASTRITIS", "胃炎"],
+                "standard": "Gastritis, unspecified, without bleeding",
+                "code": "K29.70",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K22.0",
+                "keywords": ["ACHALASIA", "ESOPHAGEAL ACHALASIA", "食道遲緩不能"],
+                "standard": "Achalasia of cardia",
+                "code": "K22.0",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K21.9",
+                "keywords": ["GERD WITHOUT ESOPHAGITIS", "GERD", "胃食道逆流"],
+                "standard": "Gastro-esophageal reflux disease without esophagitis",
+                "code": "K21.9",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K25.9",
+                "keywords": ["GU", "GASTRIC ULCER", "胃潰瘍"],
+                "standard": "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation",
+                "code": "K25.9",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K26.0",
+                "keywords": ["DU WITH BLEEDING", "十二指腸潰瘍出血"],
+                "standard": "Acute duodenal ulcer with hemorrhage",
+                "code": "K26.0",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K26.9",
+                "keywords": ["DU", "DUODENAL ULCER", "十二指腸潰瘍"],
+                "standard": "Duodenal ulcer, unspecified as acute or chronic, without hemorrhage or perforation",
+                "code": "K26.9",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K43.9",
+                "keywords": ["VENTRAL HERNIA", "腹壁疝氣", "INCISIONAL HERNIA"],
+                "standard": "Ventral hernia without obstruction or gangrene",
+                "code": "K43.9",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K75.0",
+                "keywords": ["LIVER ABSCESS", "肝膿瘍"],
+                "standard": "Abscess of liver",
+                "code": "K75.0",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "A06.4",
+                "keywords": ["AMOEBIC LIVER ABSCESS", "阿米巴肝膿瘍"],
+                "standard": "Amebic liver abscess",
+                "code": "A06.4",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "K74.60",
+                "keywords": ["LIVER CIRRHOSIS", "LC", "肝硬化"],
+                "standard": "Unspecified cirrhosis of liver",
+                "code": "K74.60",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K70.30",
+                "keywords": ["ALCOHOLIC LIVER CIRRHOSIS WITHOUT ASCITES", "酒精性肝硬化"],
+                "standard": "Alcoholic cirrhosis of liver without ascites",
+                "code": "K70.30",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K70.31",
+                "keywords": ["ALCOHOLIC LIVER CIRRHOSIS WITH ASCITES", "酒精性肝硬化合併腹水"],
+                "standard": "Alcoholic cirrhosis of liver with ascites",
+                "code": "K70.31",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K70.9",
+                "keywords": ["ALCOHOLIC LIVER DISEASE", "ALD", "酒精性肝病"],
+                "standard": "Alcoholic liver disease, unspecified",
+                "code": "K70.9",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "I85.00",
+                "keywords": ["ESOPHAGEAL VARICES WITHOUT BLEEDING", "EV", "食道靜脈曲張"],
+                "standard": "Esophageal varices without bleeding",
+                "code": "I85.00",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "K72.01",
+                "keywords": ["HEPATIC ENCEPHALOPATHY", "HE", "肝昏迷"],
+                "standard": "Acute and subacute hepatic failure with coma",
+                "code": "K72.01",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "R18.8",
+                "keywords": ["ASCITES", "腹水"],
+                "standard": "Other ascites",
+                "code": "R18.8",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "R17",
+                "keywords": ["JAUNDICE", "黃疸"],
+                "standard": "Unspecified jaundice",
+                "code": "R17",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "B18.1",
+                "keywords": ["CHRONIC HEPATITIS B", "CHB", "B型肝炎"],
+                "standard": "Chronic viral hepatitis B without delta-agent",
+                "code": "B18.1",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "B18.2",
+                "keywords": ["CHRONIC HEPATITIS C", "CHC", "C型肝炎"],
+                "standard": "Chronic viral hepatitis C",
+                "code": "B18.2",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "B18.8",
+                "keywords": ["CHRONIC VIRAL HEPATITIS", "慢性肝炎"],
+                "standard": "Other chronic viral hepatitis",
+                "code": "B18.8",
+                "type": "broad",
+                "organ": "Infectious"
+            },
+            {
+                "id": "Z22.51",
+                "keywords": ["HEPATITIS B CARRIER", "HBSAG CARRIER", "B肝帶原"],
+                "standard": "Carrier of viral hepatitis B",
+                "code": "Z22.51",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "R94.5",
+                "keywords": ["ABNORMAL LIVER FUNCTION", "ABNORMAL LFT", "GOT GPT HIGH", "肝功能異常"],
+                "standard": "Abnormal results of liver function studies",
+                "code": "R94.5",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "N20.0",
+                "keywords": ["CALCULUS OF KIDNEY", "RENAL STONE", "腎結石"],
+                "standard": "Calculus of kidney",
+                "code": "N20.0",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N20.1",
+                "keywords": ["CALCULUS OF URETER", "URETERAL STONE", "輸尿管結石"],
+                "standard": "Calculus of ureter",
+                "code": "N20.1",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N13.1",
+                "keywords": ["HYDRONEPHROSIS", "腎水腫"],
+                "standard": "Hydronephrosis with ureteral stricture, not elsewhere classified",
+                "code": "N13.1",
+                "type": "broad",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.1",
+                "keywords": ["CKD STAGE 1"],
+                "standard": "Chronic kidney disease, stage 1",
+                "code": "N18.1",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.2",
+                "keywords": ["CKD STAGE 2"],
+                "standard": "Chronic kidney disease, stage 2 (mild)",
+                "code": "N18.2",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.30",
+                "keywords": ["CKD STAGE 3"],
+                "standard": "Chronic kidney disease, stage 3 unspecified",
+                "code": "N18.30",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.4",
+                "keywords": ["CKD STAGE 4"],
+                "standard": "Chronic kidney disease, stage 4 (severe)",
+                "code": "N18.4",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.5",
+                "keywords": ["CKD STAGE 5"],
+                "standard": "Chronic kidney disease, stage 5",
+                "code": "N18.5",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.6",
+                "keywords": ["ESRD", "END STAGE RENAL DISEASE", "末期腎病變"],
+                "standard": "End stage renal disease",
+                "code": "N18.6",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "N18.9",
+                "keywords": ["CKD", "CHRONIC KIDNEY DISEASE", "慢性腎病"],
+                "standard": "Chronic kidney disease, unspecified",
+                "code": "N18.9",
+                "type": "broad",
+                "organ": "Renal"
+            },
+            {
+                "id": "E87.2",
+                "keywords": ["ACIDOSIS", "酸中毒"],
+                "standard": "Acidosis",
+                "code": "E87.2",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E87.0",
+                "keywords": ["HYPERNATREMIA", "HIGH SODIUM", "高血鈉"],
+                "standard": "Hyperosmolality and hypernatremia",
+                "code": "E87.0",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "G45.9",
+                "keywords": ["TIA", "TRANSIENT ISCHEMIC ATTACK", "小中風", "暫時性缺血"],
+                "standard": "Transient cerebral ischemic attack, unspecified",
+                "code": "G45.9",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "I69.20",
+                "keywords": ["OLD ICH", "OLD HEMORRHAGE", "陳舊性腦出血"],
+                "standard": "Sequelae of other nontraumatic intracranial hemorrhage",
+                "code": "I69.20",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "I69.90",
+                "keywords": ["OLD CVA", "OLD STROKE", "陳舊性中風(未明示)"],
+                "standard": "Sequelae of unspecified cerebrovascular disease",
+                "code": "I69.90",
+                "type": "broad",
+                "organ": "Neurological",
+                "note": "若不確定是梗塞或出血時使用"
+            },
+            {
+                "id": "S06.359S",
+                "keywords": ["OLD TRAUMATIC ICH", "OLD TRAUMATIC BRAIN HEMORRHAGE", "陳舊性外傷性腦出血"],
+                "standard": "Traumatic hemorrhage of unspecified cerebrum w LOC of unsp duration, sequela",
+                "code": "S06.359S",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "S06.379S",
+                "keywords": ["OLD TRAUMATIC CEREBELLAR HEMORRHAGE", "陳舊性外傷性小腦出血"],
+                "standard": "Traum contus/lac of unsp cerebellum w LOC of unsp duration, sequela",
+                "code": "S06.379S",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "S06.4X9S",
+                "keywords": ["OLD EDH", "OLD EPIDURAL HEMORRHAGE", "陳舊性硬腦膜外出血"],
+                "standard": "Epidural hemorrhage w LOC of unsp duration, sequela",
+                "code": "S06.4X9S",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "S06.5X9S",
+                "keywords": ["OLD SDH", "OLD SUBDURAL HEMORRHAGE", "陳舊性硬腦膜下出血"],
+                "standard": "Traumatic subdural hemorrhage w LOC of unsp duration, sequela",
+                "code": "S06.5X9S",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "S06.6X9S",
+                "keywords": ["OLD SAH", "OLD SUBARACHNOID HEMORRHAGE", "陳舊性蜘蛛膜下腔出血"],
+                "standard": "Traumatic subarachnoid hemorrhage w LOC of unsp duration, sequela",
+                "code": "S06.6X9S",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G20",
+                "keywords": ["PARKINSON'S DISEASE", "PARKINSONISM", "帕金森氏症"],
+                "standard": "Parkinson's disease",
+                "code": "G20",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "F20.9",
+                "keywords": ["SCHIZOPHRENIA", "思覺失調症"],
+                "standard": "Schizophrenia, unspecified",
+                "code": "F20.9",
+                "type": "broad",
+                "organ": "Neurological",
+                "note": "F20.1 為混亂型，F20.9 為未明示型(通用)"
+            },
+            {
+                "id": "F03.91",
+                "keywords": ["DEMENTIA WITH BEHAVIOR", "失智症合併行為問題", "DEMENTIA"],
+                "standard": "Unspecified dementia, unspecified severity, with behavioral disturbance",
+                "code": "F03.91",
+                "type": "broad",
+                "organ": "Neurological",
+                "note": "若無行為問題可用 F03.90"
+            },
+            {
+                "id": "F02.80",
+                "keywords": ["DEMENTIA RELATED OTHER DISEASE", "血管性失智症", "VASCULAR DEMENTIA"],
+                "standard": "Dementia in other diseases classified elsewhere without behavioral disturbance",
+                "code": "F02.80",
+                "type": "broad",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G30.9",
+                "keywords": ["ALZHEIMER'S DISEASE", "ALZHEIMER", "阿茲海默症"],
+                "standard": "Alzheimer's disease, unspecified",
+                "code": "G30.9",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G30.8",
+                "keywords": ["OTHER ALZHEIMER'S DISEASE", "其他阿茲海默症"],
+                "standard": "Other Alzheimer's disease",
+                "code": "G30.8",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "F05",
+                "keywords": ["DELIRIUM", "譫妄"],
+                "standard": "Delirium due to known physiological condition",
+                "code": "F05",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "F41.9",
+                "keywords": ["ANXIETY", "焦慮症"],
+                "standard": "Anxiety disorder, unspecified",
+                "code": "F41.9",
+                "type": "broad",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G40.909",
+                "keywords": ["EPILEPSY", "SEIZURE", "癲癇", "INTERMITTENT EPILEPSY"],
+                "standard": "Epilepsy, unsp, not intractable, without status epilepticus",
+                "code": "G40.909",
+                "type": "broad",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G40.919",
+                "keywords": ["PERSISTENT EPILEPSY", "INTRACTABLE EPILEPSY", "頑固型癲癇"],
+                "standard": "Epilepsy, unsp, intractable, without status epilepticus",
+                "code": "G40.919",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "G93.40",
+                "keywords": ["ENCEPHALOPATHY", "腦病變"],
+                "standard": "Encephalopathy, unspecified",
+                "code": "G93.40",
+                "type": "broad",
+                "organ": "Neurological",
+                "note": "G93.41 代謝性腦病變 (Metabolic)"
+            },
+            {
+                "id": "R54",
+                "keywords": ["PHYSICAL DEBILITY", "FRAILTY", "OLD AGE", "衰弱", "年老"],
+                "standard": "Age-related physical debility",
+                "code": "R54",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "I51.7",
+                "keywords": ["CARDIOMEGALY", "ENLARGED HEART", "心臟擴大"],
+                "standard": "Cardiomegaly",
+                "code": "I51.7",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I21.9",
+                "keywords": ["AMI", "ACUTE MYOCARDIAL INFARCTION", "HEART ATTACK", "急性心肌梗塞"],
+                "standard": "Acute myocardial infarction, unspecified",
+                "code": "I21.9",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I24.9",
+                "keywords": ["ACS", "ACUTE CORONARY SYNDROME", "急性冠心症"],
+                "standard": "Acute ischemic heart disease, unspecified",
+                "code": "I24.9",
+                "type": "broad",
+                "organ": "Cardiovascular",
+                "note": "ACS 臨床常暫用此碼，確診後應改為 I21.x (AMI) 或 I20.0 (UA)"
+            },
+            {
+                "id": "I25.10",
+                "keywords": ["CAD", "CORONARY ARTERY DISEASE", "冠狀動脈疾病", "ASHD"],
+                "standard": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+                "code": "I25.10",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I27.81",
+                "keywords": ["COR PULMONALE", "肺源性心臟病"],
+                "standard": "Cor pulmonale (chronic)",
+                "code": "I27.81",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I27.0",
+                "keywords": ["PRIMARY PULMONARY HYPERTENSION", "PPH", "原發性肺高壓"],
+                "standard": "Primary pulmonary hypertension",
+                "code": "I27.0",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I27.21",
+                "keywords": ["SECONDARY PULMONARY HYPERTENSION", "SECONDARY PUL HTN", "繼發性肺高壓"],
+                "standard": "Secondary pulmonary arterial hypertension",
+                "code": "I27.21",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I47.1",
+                "keywords": ["SVT", "SUPRAVENTRICULAR TACHYCARDIA", "PSVT", "心室上頻脈"],
+                "standard": "Supraventricular tachycardia",
+                "code": "I47.1",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I49.9",
+                "keywords": ["ARRHYTHMIA", "CARDIAC ARRHYTHMIA", "心律不整"],
+                "standard": "Cardiac arrhythmia, unspecified",
+                "code": "I49.9",
+                "type": "broad",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I82.40",
+                "keywords": ["DVT", "DEEP VEIN THROMBOSIS", "深層靜脈栓塞"],
+                "standard": "Acute embolism and thrombosis of unspecified deep veins of lower extremity",
+                "code": "I82.409",
+                "type": "broad",
+                "organ": "Cardiovascular",
+                "note": "需確認左右側 (Right: I82.401, Left: I82.402)"
+            },
+            {
+                "id": "I71.9",
+                "keywords": ["AORTIC ANEURYSM", "主動脈瘤"],
+                "standard": "Aortic aneurysm of unspecified site, without rupture",
+                "code": "I71.9",
+                "type": "broad",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I71.4",
+                "keywords": ["AAA", "ABDOMINAL AORTIC ANEURYSM", "腹主動脈瘤"],
+                "standard": "Abdominal aortic aneurysm, without rupture",
+                "code": "I71.4",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "Z95.0",
+                "keywords": ["PACEMAKER", "ON PACEMAKER", "使用心律調節器"],
+                "standard": "Presence of cardiac pacemaker",
+                "code": "Z95.0",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I31.3",
+                "keywords": ["PERICARDIAL EFFUSION", "心包膜積水"],
+                "standard": "Pericardial effusion (noninflammatory)",
+                "code": "I31.3",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I73.9",
+                "keywords": ["PAOD", "PERIPHERAL VASCULAR DISEASE", "PVD", "周邊動脈阻塞"],
+                "standard": "Peripheral vascular disease, unspecified",
+                "code": "I73.9",
+                "type": "broad",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "I96",
+                "keywords": ["GANGRENE", "壞疽"],
+                "standard": "Gangrene, not elsewhere classified",
+                "code": "I96",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "J44.0",
+                "keywords": ["COPD WITH 2ND INFECTION", "COPD WITH PNEUMONIA", "慢阻肺合併感染"],
+                "standard": "Chronic obstructive pulmonary disease with (acute) lower respiratory infection",
+                "code": "J44.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J45.901",
+                "keywords": ["ASTHMA WITH AE", "ASTHMA ATTACK", "氣喘急性發作", "ASTHMA EXACERBATION"],
+                "standard": "Unspecified asthma with (acute) exacerbation",
+                "code": "J45.901",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J45.909",
+                "keywords": ["ASTHMA", "氣喘"],
+                "standard": "Unspecified asthma, uncomplicated",
+                "code": "J45.909",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J47.9",
+                "keywords": ["BRONCHIECTASIS", "支氣管擴張症"],
+                "standard": "Bronchiectasis, uncomplicated",
+                "code": "J47.9",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J85.2",
+                "keywords": ["LUNG ABSCESS WITHOUT PNEUMONIA", "肺膿瘍"],
+                "standard": "Abscess of lung without pneumonia",
+                "code": "J85.2",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J34.2",
+                "keywords": ["NASAL SEPTUM DEVIATION", "NSD", "鼻中膈彎曲"],
+                "standard": "Deviated nasal septum",
+                "code": "J34.2",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J93.0",
+                "keywords": ["PNEUMOTHORAX", "SPONTANEOUS PNEUMOTHORAX", "氣胸"],
+                "standard": "Spontaneous tension pneumothorax",
+                "code": "J93.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R09.1",
+                "keywords": ["PLEURISY", "PLEURITIC PAIN", "肋膜炎"],
+                "standard": "Pleurisy",
+                "code": "R09.1",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J94.2",
+                "keywords": ["HEMOTHORAX", "血胸"],
+                "standard": "Hemothorax",
+                "code": "J94.2",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J84.10",
+                "keywords": ["PULMONARY FIBROSIS", "肺纖維化"],
+                "standard": "Pulmonary fibrosis, unspecified",
+                "code": "J84.10",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J84.112",
+                "keywords": ["IPF", "IDIOPATHIC PULMONARY FIBROSIS", "特發性肺纖維化"],
+                "standard": "Idiopathic pulmonary fibrosis",
+                "code": "J84.112",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J98.2",
+                "keywords": ["PNEUMOMEDIASTINUM", "SUBCUTANEOUS EMPHYSEMA", "縱膈腔氣腫", "皮下氣腫"],
+                "standard": "Interstitial emphysema",
+                "code": "J98.2",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R04.0",
+                "keywords": ["EPISTAXIS", "NOSE BLEEDING", "流鼻血"],
+                "standard": "Epistaxis",
+                "code": "R04.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J60",
+                "keywords": ["COALWORKER PNEUMOCONIOSIS", "CWP", "煤礦工人塵肺症"],
+                "standard": "Coalworker's pneumoconiosis",
+                "code": "J60",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J64",
+                "keywords": ["PNEUMOCONIOSIS", "塵肺症"],
+                "standard": "Unspecified pneumoconiosis",
+                "code": "J64",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "K12.30",
+                "keywords": ["ORAL ULCER", "ORAL MUCOSITIS", "口腔潰瘍"],
+                "standard": "Oral mucositis (ulcerative), unspecified",
+                "code": "K12.30",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "R91",
+                "keywords": ["ABNORMAL CXR", "LUNG OPACITY"],
+                "standard": "Abnormal findings on diagnostic imaging of lung",
+                "code": "R91",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "Z00.00",
+                "keywords": ["HEALTH EXAM NORMAL", "PHYSICAL EXAM", "健檢正常", "CHECK UP NORMAL", "Z00.0"],
+                "standard": "Encounter for general adult medical examination without abnormal findings",
+                "code": "Z00.00",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "Z00.01",
+                "keywords": ["HEALTH EXAM ABNORMAL", "健檢異常", "CHECK UP ABNORMAL", "Z00.1"],
+                "standard": "Encounter for general adult medical examination with abnormal findings",
+                "code": "Z00.01",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "Z20.89",
+                "keywords": ["CHECK UP", "CONTACT EXPOSURE", "就醫檢查", "接觸傳染病"],
+                "standard": "Contact with and (suspected) exposure to other communicable diseases",
+                "code": "Z20.89",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "G47.00",
+                "keywords": ["INSOMNIA", "SLEEP DISORDER", "失眠"],
+                "standard": "Insomnia, unspecified",
+                "code": "G47.00",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "R00.2",
+                "keywords": ["PALPITATION", "心悸"],
+                "standard": "Palpitations",
+                "code": "R00.2",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "R03.0",
+                "keywords": ["ELEVATED BP", "HIGH BLOOD PRESSURE READING", "血壓高"],
+                "standard": "Elevated blood-pressure reading, without diagnosis of hypertension",
+                "code": "R03.0",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "R73.9",
+                "keywords": ["HYPERGLYCEMIA", "HIGH SUGAR", "高血糖"],
+                "standard": "Hyperglycemia, unspecified",
+                "code": "R73.9",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "Z11.1",
+                "keywords": ["TB SCREEN", "TUBERCULOSIS SCREENING", "結核病篩檢"],
+                "standard": "Encounter for screening for respiratory tuberculosis",
+                "code": "Z11.1",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "A18.89",
+                "keywords": ["OTHER TB", "EXTRA-PULMONARY TB", "肺外結核"],
+                "standard": "Other specified tuberculosis",
+                "code": "A18.89",
+                "type": "broad",
+                "organ": "Infectious"
+            },
+            {
+                "id": "Z86.11",
+                "keywords": ["OLD TB", "HISTORY OF TB", "陳舊性肺結核", "結核病史"],
+                "standard": "Personal history of tuberculosis",
+                "code": "Z86.11",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R76.11",
+                "keywords": ["LTBI", "LATENT TB", "潛伏結核"],
+                "standard": "Nonspecific reaction to tuberculin skin test",
+                "code": "R76.11",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "M79.1",
+                "keywords": ["MYALGIA", "MUSCLE PAIN", "肌肉痛"],
+                "standard": "Myalgia",
+                "code": "M79.1",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "M94.0",
+                "keywords": ["COSTOCHONDRITIS", "TIETZE", "肋軟骨炎"],
+                "standard": "Chondrocostal junction syndrome [Tietze]",
+                "code": "M94.0",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "M54.30",
+                "keywords": ["LBP", "SCIATICA", "坐骨神經痛", "下背痛"],
+                "standard": "Sciatica, unspecified side",
+                "code": "M54.30",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "R51.9",
+                "keywords": ["HEADACHE", "頭痛"],
+                "standard": "Headache, unspecified",
+                "code": "R51.9",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "J30.9",
+                "keywords": ["ALLERGIC RHINITIS", "過敏性鼻炎"],
+                "standard": "Allergic rhinitis, unspecified",
+                "code": "J30.9",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J01.90",
+                "keywords": ["SINUSITIS", "ACUTE SINUSITIS", "鼻竇炎"],
+                "standard": "Acute sinusitis, unspecified",
+                "code": "J01.90",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R09.82",
+                "keywords": ["POST-NASAL DRIP", "PND", "鼻涕倒流"],
+                "standard": "Postnasal drip",
+                "code": "R09.82",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J06.9",
+                "keywords": ["URI", "UPPER RESPIRATORY INFECTION", "上呼吸道感染", "感冒"],
+                "standard": "Acute upper respiratory infection, unspecified",
+                "code": "J06.9",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J04.0",
+                "keywords": ["ACUTE LARYNGITIS", "喉炎"],
+                "standard": "Acute laryngitis",
+                "code": "J04.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J03.9",
+                "keywords": ["ACUTE TONSILLITIS", "TONSILITIS", "扁桃腺炎"],
+                "standard": "Acute tonsillitis, unspecified",
+                "code": "J03.9",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R07.9",
+                "keywords": ["CHEST PAIN", "胸痛"],
+                "standard": "Chest pain, unspecified",
+                "code": "R07.9",
+                "type": "broad",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "R06.0",
+                "keywords": ["DYSPNEA", "SHORTNESS OF BREATH", "呼吸困難", "SOB"],
+                "standard": "Dyspnea",
+                "code": "R06.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J36",
+                "keywords": ["PERITONSILLAR ABSCESS", "扁桃腺周圍膿瘍"],
+                "standard": "Peritonsillar abscess",
+                "code": "J36",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J39.3",
+                "keywords": ["HYPERSENSITIVE AIRWAY", "呼吸道過敏"],
+                "standard": "Upper respiratory tract hypersensitivity reaction, site unspecified",
+                "code": "J39.3",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J20.9",
+                "keywords": ["ACUTE BRONCHITIS", "急性支氣管炎"],
+                "standard": "Acute bronchitis, unspecified",
+                "code": "J20.9",
+                "type": "exact",
+                "organ": "Respiratory",
+                "note": "J20.0 為黴漿菌支氣管炎"
+            },
+            {
+                "id": "J21.9",
+                "keywords": ["ACUTE BRONCHIOLITIS", "急性細支氣管炎"],
+                "standard": "Acute bronchiolitis, unspecified",
+                "code": "J21.9",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R93.89",
+                "keywords": ["ABNORMAL CXR", "ABNORMAL FINDING ON CXR", "胸部X光異常"],
+                "standard": "Abnormal findings on diagnostic imaging of other specified body structures",
+                "code": "R93.89",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "H10.3",
+                "keywords": ["ACUTE CONJUNCTIVITIS", "PINK EYE", "急性結膜炎"],
+                "standard": "Unspecified acute conjunctivitis",
+                "code": "H10.3",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "L50.9",
+                "keywords": ["URTICARIA", "HIVES", "蕁麻疹"],
+                "standard": "Urticaria, unspecified",
+                "code": "L50.9",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "L30.9",
+                "keywords": ["DERMATITIS", "ECZEMA", "皮膚炎", "濕疹"],
+                "standard": "Dermatitis, unspecified",
+                "code": "L30.9",
+                "type": "broad",
+                "organ": "Other"
+            },
+            {
+                "id": "L03.90",
+                "keywords": ["CELLULITIS", "蜂窩性組織炎", "蜂窩組織炎"],
+                "standard": "Cellulitis, unspecified",
+                "code": "L03.90",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "L02.93",
+                "keywords": ["CARBUNCLE", "癰"],
+                "standard": "Cutaneous carbuncle, unspecified",
+                "code": "L02.93",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "L02.92",
+                "keywords": ["FURUNCLE", "BOIL", "癤"],
+                "standard": "Furuncle, unspecified",
+                "code": "L02.92",
+                "type": "exact",
+                "organ": "Infectious",
+                "note": "原輸入 F02.92 為失智症代碼，已修正為 Furuncle 對應的 L02.92"
+            },
+            {
+                "id": "B02.9",
+                "keywords": ["ZOSTER", "SHINGLES", "HERPES ZOSTER", "帶狀皰疹", "皮蛇"],
+                "standard": "Zoster without complications",
+                "code": "B02.9",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "M47.9",
+                "keywords": ["SPONDYLOSIS", "脊椎退化", "骨刺"],
+                "standard": "Spondylosis, unspecified",
+                "code": "M47.9",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "M48.0",
+                "keywords": ["SPINAL STENOSIS", "HIVD", "脊椎狹窄"],
+                "standard": "Spinal stenosis, unspecified region",
+                "code": "M48.0",
+                "type": "broad",
+                "organ": "Other",
+                "note": "建議細分部位：如 M48.02 (C-spine), M48.06 (L-spine)"
+            },
+            {
+                "id": "M54.5",
+                "keywords": ["LOWER BACK PAIN", "LBP", "LUMBAGO", "下背痛", "腰痛"],
+                "standard": "Low back pain",
+                "code": "M54.5",
+                "type": "broad",
+                "organ": "Other",
+                "note": "2022年後部分系統細分為 M54.50 (Unspecified), M54.51 (Vertebrogenic), M54.59 (Other)"
+            },
+            {
+                "id": "Z89.511",
+                "keywords": ["RIGHT BK AMPUTATION", "RIGHT BKA", "右膝下截肢", "RBKA"],
+                "standard": "Acquired absence of right leg below knee",
+                "code": "Z89.511",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "Z89.611",
+                "keywords": ["RIGHT AK AMPUTATION", "RIGHT AKA", "右膝上截肢", "RAKA"],
+                "standard": "Acquired absence of right leg above knee",
+                "code": "Z89.611",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "Z89.512",
+                "keywords": ["LEFT BK AMPUTATION", "LEFT BKA", "左膝下截肢", "LBKA"],
+                "standard": "Acquired absence of left leg below knee",
+                "code": "Z89.512",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "Z89.612",
+                "keywords": ["LEFT AK AMPUTATION", "LEFT AKA", "左膝上截肢", "LAKA"],
+                "standard": "Acquired absence of left leg above knee",
+                "code": "Z89.612",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "C34.91",
+                "keywords": ["RIGHT LUNG CANCER", "RT LUNG CA", "右肺癌", "RUL CANCER", "RLL CANCER", "RML CANCER"],
+                "standard": "Malignant neoplasm of unspecified part of right bronchus or lung",
+                "code": "C34.91",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "C34.92",
+                "keywords": ["LEFT LUNG CANCER", "LT LUNG CA", "左肺癌", "LUL CANCER", "LLL CANCER"],
+                "standard": "Malignant neoplasm of unspecified part of left bronchus or lung",
+                "code": "C34.92",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J91.0",
+                "keywords": ["MALIGNANT PLEURAL EFFUSION", "MPE", "惡性肋膜積水"],
+                "standard": "Malignant pleural effusion",
+                "code": "J91.0",
+                "type": "exact",
+                "organ": "Respiratory",
+                "note": "需搭配原發腫瘤代碼 (如 C34.9x)"
+            },
+            {
+                "id": "C96.9",
+                "keywords": ["LYMPHOMA", "LEUKEMIA", "淋巴瘤", "白血病", "BLOOD CANCER"],
+                "standard": "Malignant neoplasm of lymphoid, hematopoietic and related tissue, unspecified",
+                "code": "C96.9",
+                "type": "broad",
+                "organ": "Other"
+            },
+            {
+                "id": "C37",
+                "keywords": ["MALIGNANT THYMOMA", "THYMOMA", "胸腺瘤"],
+                "standard": "Malignant neoplasm of thymus",
+                "code": "C37",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "D50.9",
+                "keywords": ["IDA", "IRON DEFICIENCY ANEMIA", "缺鐵性貧血"],
+                "standard": "Iron deficiency anemia, unspecified",
+                "code": "D50.9",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "D69.6",
+                "keywords": ["THROMBOCYTOPENIA", "LOW PLATELET", "血小板低下"],
+                "standard": "Thrombocytopenia, unspecified",
+                "code": "D69.6",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "D75.839",
+                "keywords": ["THROMBOCYTOSIS", "HIGH PLATELET", "血小板增多"],
+                "standard": "Thrombocytosis, unspecified",
+                "code": "D75.839",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "D72.819",
+                "keywords": ["LEUKOPENIA", "LOW WBC", "白血球低下"],
+                "standard": "Decreased white blood cell count, unspecified",
+                "code": "D72.819",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "R97.0",
+                "keywords": ["ELEVATED CEA", "CEA HIGH", "CEA"],
+                "standard": "Elevated carcinoembryonic antigen [CEA]",
+                "code": "R97.0",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "R97.1",
+                "keywords": ["ELEVATED CA-125", "CA-125 HIGH", "CA125"],
+                "standard": "Elevated cancer antigen 125 [CA 125]",
+                "code": "R97.1",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "R97.2",
+                "keywords": ["ELEVATED PSA", "PSA HIGH", "PSA"],
+                "standard": "Elevated prostate specific antigen [PSA]",
+                "code": "R97.2",
+                "type": "exact",
+                "organ": "Renal"
+            },
+            {
+                "id": "R97.8",
+                "keywords": ["ABNORMAL TUMOR MARKER", "ELEVATED TUMOR MARKER", "CA199", "AFP"],
+                "standard": "Other abnormal tumor markers",
+                "code": "R97.8",
+                "type": "broad",
+                "organ": "Other"
+            },
+            {
+                "id": "R91.1",
+                "keywords": ["SOLITARY LUNG NODULE", "SPN", "單一肺結節", "肺結節"],
+                "standard": "Solitary pulmonary nodule",
+                "code": "R91.1",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R91.8",
+                "keywords": ["ABNORMAL CHEST IMAGE", "LUNG NODULE MULTIPLE", "ABNORMAL CXR", "胸部影像異常", "MULTIPLE LUNG NODULES"],
+                "standard": "Other nonspecific abnormal finding of lung field",
+                "code": "R91.8",
+                "type": "broad",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "D14.30",
+                "keywords": ["BENIGN LUNG TUMOR", "BENIGN LUNG NEOPLASM", "良性肺腫瘤"],
+                "standard": "Benign neoplasm of unspecified bronchus and lung",
+                "code": "D14.30",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "I46.9",
+                "keywords": ["CARDIAC ARREST", "CPA", "心跳停止"],
+                "standard": "Cardiac arrest, cause unspecified",
+                "code": "I46.9",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
+                "id": "J80",
+                "keywords": ["ARDS", "ACUTE RESPIRATORY DISTRESS SYNDROME", "急性呼吸窘迫症候群"],
+                "standard": "Acute respiratory distress syndrome",
+                "code": "J80",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "J81.0",
+                "keywords": ["LUNG EDEMA", "PULMONARY EDEMA", "肺水腫", "ACUTE PULMONARY EDEMA"],
+                "standard": "Acute pulmonary edema",
+                "code": "J81.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "R57.9",
+                "keywords": ["SHOCK", "UNSPECIFIED SHOCK", "休克"],
+                "standard": "Shock, unspecified",
+                "code": "R57.9",
+                "type": "broad",
+                "organ": "Other",
+                "note": "R57.1: Hypovolemic shock, R57.0: Cardiogenic shock"
+            },
+            {
+                "id": "R78.81",
+                "keywords": ["BACTEREMIA", "BACTERIEMIA", "菌血症"],
+                "standard": "Bacteremia",
+                "code": "R78.81",
+                "type": "exact",
+                "organ": "Infectious"
+            },
+            {
+                "id": "R50.81",
+                "keywords": ["FEVER", "FEVER UNKNOWN ORIGIN", "發燒"],
+                "standard": "Fever presenting with conditions classified elsewhere",
+                "code": "R50.81",
+                "type": "exact",
+                "organ": "Infectious",
+                "note": "若為不明原因發燒常使用 R50.9 (Fever, unspecified)"
+            },
+            {
+                "id": "Z93.0",
+                "keywords": ["TRACHEOSTOMY", "TRACHEOSTOMY TUBE", "氣切", "氣切管", "ON TRACHO"],
+                "standard": "Tracheostomy status",
+                "code": "Z93.0",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "E11.21",
+                "keywords": ["TYPE 2 DM WITH CKD", "DM NEPHROPATHY", "糖尿病腎病變", "CKD DUE TO DM"],
+                "standard": "Type 2 diabetes mellitus with diabetic nephropathy",
+                "code": "E11.21",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E11.69",
+                "keywords": ["DM WITH DKA", "DKA", "DIABETIC KETOACIDOSIS"],
+                "standard": "Type 2 diabetes mellitus with other specified complication",
+                "code": "E11.69",
+                "type": "exact",
+                "organ": "Endocrine",
+                "note": "DKA 常用代碼為 E11.10，此處依需求設定"
+            },
+            {
+                "id": "E11.42",
+                "keywords": ["DM POLYNEUROPATHY", "DIABETIC NEUROPATHY", "糖尿病神經病變"],
+                "standard": "Type 2 diabetes mellitus with diabetic polyneuropathy",
+                "code": "E11.42",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E11.621",
+                "keywords": ["DM FOOT", "DIABETIC FOOT ULCER", "糖尿病足", "FOOT ULCER"],
+                "standard": "Type 2 diabetes mellitus with foot ulcer",
+                "code": "E11.621",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E13.9",
+                "keywords": ["OTHER DM", "OTHER DIABETES"],
+                "standard": "Other specified diabetes mellitus without complications",
+                "code": "E13.9",
+                "type": "broad",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E07.9",
+                "keywords": ["THYROID DISORDER", "THYROID DISEASE", "甲狀腺疾病"],
+                "standard": "Disorder of thyroid, unspecified",
+                "code": "E07.9",
+                "type": "broad",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E24.9",
+                "keywords": ["CUSHING'S SYNDROME", "CUSHING SYNDROME", "庫欣氏症候群"],
+                "standard": "Cushing's syndrome, unspecified",
+                "code": "E24.9",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E27.40",
+                "keywords": ["ADRENAL INSUFFICIENCY", "AI", "腎上腺功能不全"],
+                "standard": "Unspecified adrenocortical insufficiency",
+                "code": "E27.40",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E78.5",
+                "keywords": ["HYPERLIPIDEMIA", "HLP", "高脂血症"],
+                "standard": "Hyperlipidemia, unspecified",
+                "code": "E78.5",
+                "type": "broad",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "E79.0",
+                "keywords": ["HYPERURICEMIA", "HIGH URIC ACID", "高尿酸"],
+                "standard": "Hyperuricemia without signs of inflammatory arthritis and tophaceous disease",
+                "code": "E79.0",
+                "type": "exact",
+                "organ": "Endocrine"
+            },
+            {
+                "id": "M10.9",
+                "keywords": ["GOUT", "痛風"],
+                "standard": "Gout, unspecified",
+                "code": "M10.9",
+                "type": "broad",
+                "organ": "Other"
+            },
+            {
+                "id": "M1A.9XX1",
+                "keywords": ["GOUT WITH TOPHI", "TOPHACEOUS GOUT", "痛風石"],
+                "standard": "Chronic gout, unspecified, with tophus (tophi)",
+                "code": "M1A.9XX1",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "R77.0",
+                "keywords": ["HYPOALBUMINEMIA", "LOW ALBUMIN", "低白蛋白"],
+                "standard": "Abnormality of albumin",
+                "code": "R77.0",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "C50.919",
+                "keywords": ["BREAST CANCER", "BREAST CA", "乳癌"],
+                "standard": "Malignant neoplasm of unspecified site of unspecified female breast",
+                "code": "C50.919",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "C18.9",
+                "keywords": ["COLON CANCER", "COLON CA", "結腸癌"],
+                "standard": "Malignant neoplasm of colon, unspecified",
+                "code": "C18.9",
+                "type": "broad",
+                "organ": "Digestive"
+            },
+            {
+                "id": "C22.0",
+                "keywords": ["HCC", "HEPATOMA", "LIVER CANCER", "肝癌", "肝細胞癌"],
+                "standard": "Liver cell carcinoma",
+                "code": "C22.0",
+                "type": "exact",
+                "organ": "Digestive"
+            },
+            {
+                "id": "C67.9",
+                "keywords": ["BLADDER CANCER", "BLADDER CA", "膀胱癌"],
+                "standard": "Malignant neoplasm of bladder, unspecified",
+                "code": "C67.9",
+                "type": "broad",
+                "organ": "Renal"
+            },
+            {
+                "id": "C78.00",
+                "keywords": ["LUNG META", "LUNG METASTASIS", "肺轉移"],
+                "standard": "Secondary malignant neoplasm of unspecified lung",
+                "code": "C78.00",
+                "type": "exact",
+                "organ": "Respiratory"
+            },
+            {
+                "id": "C79.51",
+                "keywords": ["BONE META", "BONE METASTASIS", "骨轉移"],
+                "standard": "Secondary malignant neoplasm of bone",
+                "code": "C79.51",
+                "type": "exact",
+                "organ": "Other"
+            },
+            {
+                "id": "C79.31",
+                "keywords": ["BRAIN META", "BRAIN METASTASIS", "腦轉移"],
+                "standard": "Secondary malignant neoplasm of brain",
+                "code": "C79.31",
+                "type": "exact",
+                "organ": "Neurological"
+            },
+            {
+                "id": "R59.0",
+                "keywords": ["ENLARGED LN", "LAP", "LYMPHADENOPATHY", "淋巴結腫大"],
+                "standard": "Localized enlarged lymph nodes",
+                "code": "R59.0",
+                "type": "broad",
+                "organ": "Other",
+                "note": "R59.1: Generalized enlarged lymph nodes"
+            },
+            {
+                "id": "I28.8",
+                "keywords": ["HILAR VASCULAR ENGORGEMENT", "肺門血管充血"],
+                "standard": "Other diseases of pulmonary vessels",
+                "code": "I28.8",
+                "type": "exact",
+                "organ": "Cardiovascular"
+            },
+            {
                 "id": "urosepsis",
                 "keywords": ["UROSEPSIS", "尿路敗血症"],
                 "standard": "Sepsis due to urinary tract infection",
