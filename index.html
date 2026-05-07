@@ -858,6 +858,9 @@
                 if (!liveSearchTerm) return [];
 
                 const query = liveSearchTerm.toUpperCase();
+                const isShortEnglishQuery = /^[A-Z0-9]{2,3}$/.test(query);
+                const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const shortEnglishRegex = new RegExp(`\\b${escapedQuery}`);
 
                 return database
                     .map(entry => {
@@ -878,7 +881,9 @@
                                 score = 120;
                             } else if (normalized.startsWith(query)) {
                                 score = 90;
-                            } else if (normalized.includes(query)) {
+                            } else if (isShortEnglishQuery && shortEnglishRegex.test(normalized)) {
+                                score = 75;
+                            } else if (!isShortEnglishQuery && normalized.includes(query)) {
                                 score = 55;
                             }
 
