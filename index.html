@@ -198,9 +198,9 @@
             { "id": "S06.4X9S", "keywords": ["OLD EDH", "OLD EPIDURAL HEMORRHAGE", "陳舊性硬腦膜外出血"], "standard": "Epidural hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.4X9S", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "S06.5X9S", "keywords": ["OLD SDH", "OLD SUBDURAL HEMORRHAGE", "陳舊性硬腦膜下出血"], "standard": "Traumatic subdural hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.5X9S", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "S06.6X9S", "keywords": ["OLD SAH", "OLD SUBARACHNOID HEMORRHAGE", "陳舊性蜘蛛膜下腔出血"], "standard": "Traumatic subarachnoid hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.6X9S", "type": "exact", "organ": "Neurological", "note": "" },
-            { "id": "G20", "keywords": ["PARKINSON'S DISEASE", "PD", "巴金森氏症", "帕金森氏症"], "standard": "Parkinson's disease", "code": "G20", "type": "broad", "organ": "Neurological", "note": "" },
+            { "id": "G20.A1", "keywords": ["PARKINSON'S DISEASE", "PD", "巴金森氏症", "帕金森氏症"], "standard": "Parkinson's disease without dyskinesia, without mention of fluctuations", "code": "G20.A1", "type": "broad", "organ": "Neurological", "note": "若有 dyskinesia 或 motor fluctuations，請改用 G20.A2/G20.B1/G20.B2；不明 Parkinsonism 可用 G20.C" },
             { "id": "F20.1", "keywords": ["SCHIZOPHRENIA", "思覺失調症", "精神分裂症"], "standard": "Disorganized schizophrenia", "code": "F20.1", "type": "exact", "organ": "Neurological", "note": "F20.9 為 Schizophrenia, unspecified" },
-            { "id": "F03.91", "keywords": ["DEMENTIA", "失智症", "癡呆症"], "standard": "Unspecified dementia with behavioral disturbance", "code": "F03.91", "type": "broad", "organ": "Neurological", "note": "F03.90: Without behavioral disturbance" },
+            { "id": "F03.90", "keywords": ["DEMENTIA", "失智症", "癡呆症"], "standard": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety", "code": "F03.90", "type": "broad", "organ": "Neurological", "note": "若有 agitation/behavioral/psychotic/mood/anxiety disturbance，請改用 F03.911/F03.918/F03.92/F03.93/F03.94" },
             { "id": "F02.80", "keywords": ["DEMENTIA RELATED OTHER DISEASE", "SECONDARY DEMENTIA", "其他疾病引起之失智症"], "standard": "Dementia in other diseases classified elsewhere without behavioral disturbance", "code": "F02.80", "type": "context", "organ": "Neurological", "note": "需先編碼潛在疾病 (如 G20 Parkinson's)" },
             { "id": "G30.9", "keywords": ["ALZHEIMER'S DISEASE", "ALZHEIMER", "阿茲海默症"], "standard": "Alzheimer's disease, unspecified", "code": "G30.9", "type": "exact", "organ": "Neurological", "note": "通常需搭配 F02.80 或 F02.81 (Dementia in Alzheimer's)" },
             { "id": "G30.8", "keywords": ["OTHER ALZHEIMER'S DISEASE", "其他阿茲海默症"], "standard": "Other Alzheimer's disease", "code": "G30.8", "type": "exact", "organ": "Neurological", "note": "" },
@@ -231,7 +231,7 @@
             { "id": "B18.1", "keywords": ["CHRONIC HEPATITIS B", "CHB", "慢性B型肝炎", "HBV"], "standard": "Chronic viral hepatitis B without delta-agent", "code": "B18.1", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "B18.2", "keywords": ["CHRONIC HEPATITIS C", "CHC", "慢性C型肝炎", "HCV"], "standard": "Chronic viral hepatitis C", "code": "B18.2", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "B18.8", "keywords": ["CHRONIC VIRAL HEPATITIS", "其他慢性病毒性肝炎"], "standard": "Other chronic viral hepatitis", "code": "B18.8", "type": "broad", "organ": "Digestive", "note": "" },
-            { "id": "Z22.51", "keywords": ["HEPATITIS B CARRIER", "HBSAG CARRIER", "B肝帶原"], "standard": "Carrier of viral hepatitis B", "code": "Z22.51", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "Z22.8", "keywords": ["HEPATITIS B CARRIER", "HBSAG CARRIER", "B肝帶原"], "standard": "Carrier of other infectious diseases", "code": "Z22.8", "type": "broad", "organ": "Digestive", "note": "若為慢性 B 型肝炎診斷，請優先使用 B18.1" },
             { "id": "R94.5", "keywords": ["ABNORMAL LIVER FUNCTION", "GOT/GPT ELEVATION", "LIVER FUNCTION ABNORMALITY", "肝功能異常"], "standard": "Abnormal results of liver function studies", "code": "R94.5", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "N20.0", "keywords": ["CALCULUS OF KIDNEY", "RENAL STONE", "NEPHROLITHIASIS", "腎結石"], "standard": "Calculus of kidney", "code": "N20.0", "type": "exact", "organ": "Renal", "note": "" },
             { "id": "N20.1", "keywords": ["CALCULUS OF URETER", "URETERAL STONE", "輸尿管結石"], "standard": "Calculus of ureter", "code": "N20.1", "type": "exact", "organ": "Renal", "note": "" },
@@ -243,7 +243,7 @@
             { "id": "N18.5", "keywords": ["CKD STAGE 5", "CHRONIC KIDNEY DISEASE STAGE 5"], "standard": "Chronic kidney disease, stage 5", "code": "N18.5", "type": "exact", "organ": "Renal", "note": "" },
             { "id": "N18.6", "keywords": ["ESRD", "END STAGE RENAL DISEASE", "末期腎病"], "standard": "End stage renal disease", "code": "N18.6", "type": "exact", "organ": "Renal", "note": "Z99.2 為洗腎狀態" },
             { "id": "N18.9", "keywords": ["CKD", "CHRONIC KIDNEY DISEASE", "慢性腎臟病"], "standard": "Chronic kidney disease, unspecified", "code": "N18.9", "type": "broad", "organ": "Renal", "note": "" },
-            { "id": "E87.2", "keywords": ["ACIDOSIS", "METABOLIC ACIDOSIS", "酸中毒"], "standard": "Acidosis", "code": "E87.2", "type": "exact", "organ": "Endocrine", "note": "" },
+            { "id": "E87.20", "keywords": ["ACIDOSIS", "METABOLIC ACIDOSIS", "酸中毒"], "standard": "Acidosis, unspecified", "code": "E87.20", "type": "broad", "organ": "Endocrine", "note": "急性代謝性酸中毒 E87.21；慢性代謝性酸中毒 E87.22" },
             { "id": "E87.0", "keywords": ["HYPERNATREMIA", "HYPER-NA", "高血鈉"], "standard": "Hyperosmolality and hypernatremia", "code": "E87.0", "type": "exact", "organ": "Endocrine", "note": "" },
             { "id": "I51.7", "keywords": ["CARDIOMEGALY", "ENLARGED HEART", "心臟擴大"], "standard": "Cardiomegaly", "code": "I51.7", "type": "exact", "organ": "Cardiovascular", "note": "" },
             { "id": "I21.9", "keywords": ["AMI", "ACUTE MYOCARDIAL INFARCTION", "急性心肌梗塞", "HEART ATTACK"], "standard": "Acute myocardial infarction, unspecified", "code": "I21.9", "type": "broad", "organ": "Cardiovascular", "note": "建議細分 STEMI (I21.0-I21.3) 或 NSTEMI (I21.4)" },
@@ -251,14 +251,14 @@
             { "id": "I25.10", "keywords": ["CAD", "CORONARY ARTERY DISEASE", "冠狀動脈疾病", "ASCVD"], "standard": "Atherosclerotic heart disease of native coronary artery without angina pectoris", "code": "I25.10", "type": "exact", "organ": "Cardiovascular", "note": "" },
             { "id": "I27.81", "keywords": ["COR PULMONALE", "肺源性心臟病"], "standard": "Cor pulmonale (chronic)", "code": "I27.81", "type": "exact", "organ": "Cardiovascular", "note": "急性肺心症請用 I26.0-" },
             { "id": "I27.0", "keywords": ["PRIMARY PULMONARY HYPERTENSION", "PRIMARY PUL HTN", "PPH", "原發性肺高壓"], "standard": "Primary pulmonary hypertension", "code": "I27.0", "type": "exact", "organ": "Cardiovascular", "note": "" },
-            { "id": "I27.2", "keywords": ["SECONDARY PULMONARY HYPERTENSION", "SECONDARY PUL HTN", "繼發性肺高壓"], "standard": "Other secondary pulmonary hypertension", "code": "I27.2", "type": "broad", "organ": "Cardiovascular", "note": "通常需加註潛在病因 (如 I27.21, I27.22)" },
-            { "id": "I47.1", "keywords": ["SVT", "SUPRAVENTRICULAR TACHYCARDIA", "心室上頻脈"], "standard": "Supraventricular tachycardia", "code": "I47.1", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "I27.29", "keywords": ["SECONDARY PULMONARY HYPERTENSION", "SECONDARY PUL HTN", "繼發性肺高壓"], "standard": "Other secondary pulmonary hypertension", "code": "I27.29", "type": "broad", "organ": "Cardiovascular", "note": "通常需加註潛在病因 (如 I27.21, I27.22, I27.23, I27.24)" },
+            { "id": "I47.10", "keywords": ["SVT", "SUPRAVENTRICULAR TACHYCARDIA", "心室上頻脈"], "standard": "Supraventricular tachycardia, unspecified", "code": "I47.10", "type": "broad", "organ": "Cardiovascular", "note": "其他 SVT 可用 I47.19；inappropriate sinus tachycardia 可用 I47.11" },
             { "id": "I49.9", "keywords": ["CARDIAC ARRHYTHMIA", "ARRHYTHMIA", "心律不整"], "standard": "Cardiac arrhythmia, unspecified", "code": "I49.9", "type": "broad", "organ": "Cardiovascular", "note": "" },
-            { "id": "I82.40", "keywords": ["DVT", "DEEP VEIN THROMBOSIS", "深部靜脈栓塞"], "standard": "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity", "code": "I82.40", "type": "broad", "organ": "Cardiovascular", "note": "建議指定左/右側及靜脈部位" },
+            { "id": "I82.409", "keywords": ["DVT", "DEEP VEIN THROMBOSIS", "深部靜脈栓塞"], "standard": "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity", "code": "I82.409", "type": "broad", "organ": "Cardiovascular", "note": "建議指定左/右側及靜脈部位，如 I82.401/I82.402/I82.403" },
             { "id": "I71.9", "keywords": ["AORTIC ANEURYSM", "主動脈瘤"], "standard": "Aortic aneurysm of unspecified site, without rupture", "code": "I71.9", "type": "broad", "organ": "Cardiovascular", "note": "" },
-            { "id": "I71.4", "keywords": ["AAA", "ABDOMINAL AORTIC ANEURYSM", "ABDOMINAL ANEURYSM", "腹主動脈瘤"], "standard": "Abdominal aortic aneurysm, without rupture", "code": "I71.4", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "I71.40", "keywords": ["AAA", "ABDOMINAL AORTIC ANEURYSM", "ABDOMINAL ANEURYSM", "腹主動脈瘤"], "standard": "Abdominal aortic aneurysm, without rupture, unspecified", "code": "I71.40", "type": "broad", "organ": "Cardiovascular", "note": "若部位明確，可用 I71.41 pararenal、I71.42 juxtarenal、I71.43 infrarenal" },
             { "id": "Z95.0", "keywords": ["ON PACEMAKER", "PACEMAKER STATUS", "裝有心律調節器"], "standard": "Presence of cardiac pacemaker", "code": "Z95.0", "type": "exact", "organ": "Cardiovascular", "note": "" },
-            { "id": "I31.3", "keywords": ["PERICARDIAL EFFUSION", "心包膜積水"], "standard": "Pericardial effusion (noninflammatory)", "code": "I31.3", "type": "exact", "organ": "Cardiovascular", "note": "I30.9 為急性心包膜積水" },
+            { "id": "I31.39", "keywords": ["PERICARDIAL EFFUSION", "心包膜積水"], "standard": "Other pericardial effusion (noninflammatory)", "code": "I31.39", "type": "exact", "organ": "Cardiovascular", "note": "惡性心包膜積水請用 I31.31；急性心包膜炎請參考 I30.-" },
             { "id": "I73.9", "keywords": ["PAOD", "PERIPHERAL ARTERIAL OCCLUSIVE DISEASE", "周邊動脈阻塞疾病", "PVD"], "standard": "Peripheral vascular disease, unspecified", "code": "I73.9", "type": "broad", "organ": "Cardiovascular", "note": "若有間歇性跛行可考慮 I73.9 或更特定代碼" },
             { "id": "I96", "keywords": ["GANGRENE", "壞疽"], "standard": "Gangrene, not elsewhere classified", "code": "I96", "type": "exact", "organ": "Cardiovascular", "note": "若為糖尿病足壞疽請優先使用 E11.52 (Type 2 DM with diabetic peripheral angiopathy with gangrene)" },
             { "id": "J44.0", "keywords": ["COPD WITH 2ND INFECTION", "COPD WITH PNEUMONIA", "慢阻肺合併感染"], "standard": "Chronic obstructive pulmonary disease with (acute) lower respiratory infection", "code": "J44.0", "type": "exact", "organ": "Respiratory", "note": "" },
@@ -303,7 +303,7 @@
             { "id": "J20.9", "keywords": ["ACUTE BRONCHITIS", "急性支氣管炎"], "standard": "Acute bronchitis, unspecified", "code": "J20.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J21.9", "keywords": ["ACUTE BRONCHIOLITIS", "細支氣管炎"], "standard": "Acute bronchiolitis, unspecified", "code": "J21.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "R93.89", "keywords": ["ABNORMAL FINDING ON CXR", "CXR ABNORMAL", "影像異常"], "standard": "Abnormal findings on diagnostic imaging of other specified body structures", "code": "R93.89", "type": "exact", "organ": "Other", "note": "R91.8 為肺部特異性影像異常" },
-            { "id": "H10.3", "keywords": ["ACUTE CONJUNCTIVITIS", "PINK EYE", "急性結膜炎"], "standard": "Unspecified acute conjunctivitis", "code": "H10.3", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "H10.30", "keywords": ["ACUTE CONJUNCTIVITIS", "PINK EYE", "急性結膜炎"], "standard": "Unspecified acute conjunctivitis, unspecified eye", "code": "H10.30", "type": "broad", "organ": "Other", "note": "若側別明確，可用 H10.31/H10.32/H10.33" },
             { "id": "L50.9", "keywords": ["URTICARIA", "HIVES", "蕁麻疹"], "standard": "Urticaria, unspecified", "code": "L50.9", "type": "exact", "organ": "Other", "note": "" },
             { "id": "L30.9", "keywords": ["DERMATITIS", "ECZEMA", "皮膚炎", "濕疹"], "standard": "Dermatitis, unspecified", "code": "L30.9", "type": "broad", "organ": "Other", "note": "若為接觸性皮膚炎請用 L23-L25" },
             { "id": "L03.90", "keywords": ["CELLULITIS", "蜂窩性組織炎"], "standard": "Cellulitis, unspecified", "code": "L03.90", "type": "broad", "organ": "Infectious", "note": "建議指定感染部位以獲得更精確代碼 (如 L03.11 下肢)" },
@@ -311,7 +311,7 @@
             { "id": "L02.92", "keywords": ["FURUNCLE", "BOIL", "癤"], "standard": "Furuncle, unspecified", "code": "L02.92", "type": "exact", "organ": "Infectious", "note": "" },
             { "id": "B02.9", "keywords": ["ZOSTER", "HERPES ZOSTER", "SHINGLES", "帶狀疱疹", "皮蛇"], "standard": "Zoster without complications", "code": "B02.9", "type": "exact", "organ": "Infectious", "note": "" },
             { "id": "M47.9", "keywords": ["SPONDYLOSIS", "脊椎退化", "脊椎病"], "standard": "Spondylosis, unspecified", "code": "M47.9", "type": "broad", "organ": "Other", "note": "建議指定部位 (Cervical M47.812, Lumbar M47.816)" },
-            { "id": "M48.0", "keywords": ["SPINAL STENOSIS", "HIVD", "脊椎狹窄"], "standard": "Spinal stenosis, site unspecified", "code": "M48.0", "type": "broad", "organ": "Other", "note": "M48.06: Lumbar region, M48.02: Cervical region" },
+            { "id": "M48.00", "keywords": ["SPINAL STENOSIS", "HIVD", "脊椎狹窄"], "standard": "Spinal stenosis, site unspecified", "code": "M48.00", "type": "broad", "organ": "Other", "note": "頸椎 M48.02；腰椎無神經性跛行 M48.061，有神經性跛行 M48.062" },
             { "id": "M54.50", "keywords": ["LOWER BACK PAIN", "LBP", "LUMBAGO", "下背痛", "腰痛"], "standard": "Low back pain, unspecified", "code": "M54.50", "type": "exact", "organ": "Other", "note": "M54.5 已停用，請使用 M54.50 (Unspecified) 或 M54.51 (Vertebrogenic)" },
             { "id": "Z89.511", "keywords": ["RIGHT BK AMPUTATION", "RIGHT BKA", "右膝下截肢"], "standard": "Acquired absence of right leg below knee", "code": "Z89.511", "type": "exact", "organ": "Other", "note": "" },
             { "id": "Z89.611", "keywords": ["RIGHT AK AMPUTATION", "RIGHT AKA", "右膝上截肢"], "standard": "Acquired absence of right leg above knee", "code": "Z89.611", "type": "exact", "organ": "Other", "note": "" },
@@ -393,17 +393,17 @@
             { "id": "A15.0", "organ": "Respiratory", "keywords": ["A15.0", "TB", "TUBERCULOSIS", "肺結核", "PULMONARY TB"], "standard": "Tuberculosis of lung", "code": "A15.0", "type": "exact" },
             { "id": "A15.6", "organ": "Respiratory", "keywords": ["A15.6", "TB PLEURISY", "結核性肋膜炎"], "standard": "Tuberculous pleurisy", "code": "A15.6", "type": "exact" },
             { "id": "Z20.1", "organ": "Respiratory", "keywords": ["Z20.1", "TB CONTACT", "TB EXPOSURE", "接觸結核病"], "standard": "Contact with and (suspected) exposure to tuberculosis", "code": "Z20.1", "type": "exact" },
-            { "id": "C34.1", "organ": "Respiratory", "keywords": ["肺癌", "肺惡性腫瘤", "lung cancer", "Adenocarcinoma", "SCLC", "NSCLC"], "standard": "Malignant neoplasm of Bronchus or lung, unspecified ", "code": "C34.9", "type": "exact", "note": "C34.0: Main bronchus、 C34.1: Upper lobe, bronchus or lung 、C34.2: Middle lobe, bronchus or lung、C34.3: Lower lobe, bronchus or lung (e.g., C34.31 for right, C34.32 for left)" },
+            { "id": "C34.90", "organ": "Respiratory", "keywords": ["肺癌", "肺惡性腫瘤", "LUNG CANCER", "ADENOCARCINOMA", "SCLC", "NSCLC"], "standard": "Malignant neoplasm of unspecified part of unspecified bronchus or lung", "code": "C34.90", "type": "broad", "note": "若部位明確，請改用 C34.0-/C34.1-/C34.2-/C34.3- 等更精確代碼" },
             { "id": "R04.2", "organ": "Respiratory", "keywords": ["R04.2", "HEMOPTYSIS", "咳血"], "standard": "Hemoptysis", "code": "R04.2", "type": "exact" },
             { "id": "I10", "organ": "Cardiovascular", "keywords": ["I10", "HTN", "HYPERTENSION", "高血壓", "H/T"], "standard": "Essential (primary) hypertension", "code": "I10", "type": "exact" },
             { "id": "I11.9", "organ": "Cardiovascular", "keywords": ["I11.9", "HCVD", "高血壓性心臟病", "hypertensive cardiovascular disease"], "standard": "Hypertensive heart disease without heart failure", "code": "I11.9", "type": "broad", "note": "" },
             { "id": "I11.0", "organ": "Cardiovascular", "keywords": ["I11.0", "HCVD WITH CHF", "高血壓心臟病合併心衰竭", "hypertensive cardiovascular disease"], "standard": "Hypertensive heart disease with heart failure", "code": "I11.0", "type": "exact", "note": "" },
             { "id": "I25.9", "organ": "Cardiovascular", "keywords": ["I25.9", "IHD", "CAD", "ISCHEMIC HEART DISEASE", "冠心病", "缺血性心臟病"], "standard": "Chronic ischemic heart disease, unspecified", "code": "I25.9", "type": "broad" },
             { "id": "I48.0", "organ": "Cardiovascular", "keywords": ["I48.0", "PAF", "PAROXYSMAL AF", "陣發性心房顫動", "Afib", "fibrillation"], "standard": "Paroxysmal atrial fibrillation", "code": "I48.0", "type": "exact", "note": "" },
-            { "id": "I48.2", "organ": "Cardiovascular", "keywords": ["I48.2", "CHRONIC AF", "PERMANENT AF", "慢性心房顫動", "Afib", "fibrillation"], "standard": "Chronic atrial fibrillation", "code": "I48.2", "type": "exact", "note": "" },
+            { "id": "I48.20", "organ": "Cardiovascular", "keywords": ["I48.20", "CHRONIC AF", "PERMANENT AF", "慢性心房顫動", "AFIB", "FIBRILLATION"], "standard": "Chronic atrial fibrillation, unspecified", "code": "I48.20", "type": "broad", "note": "Permanent atrial fibrillation 請用 I48.21" },
             { "id": "I48.91", "organ": "Cardiovascular", "keywords": ["I48.91", "AF", "AFIB", "ATRIAL FIBRILLATION", "心房顫動"], "standard": "Unspecified atrial fibrillation", "code": "I48.91", "type": "broad" },
-            { "id": "I50.2", "organ": "Cardiovascular", "keywords": ["I50.2", "SYSTOLIC CHF", "HFrEF", "收縮性心衰竭", "systolic heart failure"], "standard": "Systolic (congestive) heart failure", "code": "I50.2", "type": "broad", "note": "需細分 Acute (I50.21), Chronic (I50.22) 或 Acute on Chronic (I50.23)" },
-            { "id": "I50.3", "organ": "Cardiovascular", "keywords": ["I50.3", "DIASTOLIC CHF", "HFpEF", "舒張性心衰竭", "diastolic heart failure"], "standard": "Diastolic (congestive) heart failure", "code": "I50.3", "type": "broad", "note": "" },
+            { "id": "I50.20", "organ": "Cardiovascular", "keywords": ["I50.20", "SYSTOLIC CHF", "HFrEF", "收縮性心衰竭", "SYSTOLIC HEART FAILURE"], "standard": "Unspecified systolic (congestive) heart failure", "code": "I50.20", "type": "broad", "note": "需細分 Acute (I50.21), Chronic (I50.22) 或 Acute on Chronic (I50.23)" },
+            { "id": "I50.30", "organ": "Cardiovascular", "keywords": ["I50.30", "DIASTOLIC CHF", "HFpEF", "舒張性心衰竭", "DIASTOLIC HEART FAILURE"], "standard": "Unspecified diastolic (congestive) heart failure", "code": "I50.30", "type": "broad", "note": "需細分 Acute (I50.31), Chronic (I50.32) 或 Acute on Chronic (I50.33)" },
             { "id": "I50.43", "organ": "Cardiovascular", "keywords": ["I50.43", "ACUTE ON CHRONIC CHF", "心衰竭急性發作", "acute on chronic heart failure"], "standard": "Acute on chronic combined systolic and diastolic heart failure", "code": "I50.43", "type": "exact", "note": "" },
             { "id": "I50.9", "organ": "Cardiovascular", "keywords": ["I50.9", "CHF", "HEART FAILURE", "心臟衰竭"], "standard": "Heart failure, unspecified", "code": "I50.9", "type": "broad" },
             { "id": "I63.9", "organ": "Neurological", "keywords": ["I63", "CVA", "STROKE", "ACUTE STROKE", "腦中風", "急性腦中風", "INFARCTION"], "standard": "Cerebral infarction, unspecified", "code": "I63.9", "type": "broad", "note": "I63 為急性梗塞，請儘量確認血管位置：I63.3: Cerebral infarction due to thrombosis of cerebral arteries (e.g., middle cerebral artery)." },
@@ -424,11 +424,11 @@
             { "id": "Z99.2", "organ": "Renal", "keywords": ["Z99.2", "ESRD", "DIALYSIS", "洗腎", "血液透析"], "standard": "Dependence on renal dialysis", "code": "Z99.2", "type": "exact" },
             { "id": "N40.0", "organ": "Renal", "keywords": ["N40.0", "BPH", "攝護腺肥大"], "standard": "Benign prostatic hyperplasia without lower urinary tract symptoms", "code": "N40.0", "type": "exact" },
             { "id": "N40.1", "organ": "Renal", "keywords": ["N40.1", "SYMPTOMATIC BPH", "攝護腺肥大合併症狀", "BPH"], "standard": "Benign prostatic hyperplasia with lower urinary tract symptoms", "code": "N40.1", "type": "exact", "note": "" },
-            { "id": "K21.0", "organ": "Digestive", "keywords": ["K21.0", "GERD", "REFLUX ESOPHAGITIS", "逆流性食道炎", "胃食道逆流合併食道炎"], "standard": "Gastro-esophageal reflux disease with esophagitis", "code": "K21.0", "type": "exact" },
+            { "id": "K21.00", "organ": "Digestive", "keywords": ["K21.00", "GERD WITH ESOPHAGITIS", "REFLUX ESOPHAGITIS", "逆流性食道炎", "胃食道逆流合併食道炎"], "standard": "Gastro-esophageal reflux disease with esophagitis, without bleeding", "code": "K21.00", "type": "broad", "note": "若合併出血請用 K21.01" },
             { "id": "L89", "keywords": ["L89", "PRESSURE SORE", "BED SORE", "褥瘡", "壓瘡"], "standard": "Pressure ulcer", "code": "L89.90", "type": "broad", "organ": "Other", "note": "請指定部位與分級 (Stage 1-4)" },
             { "id": "R42", "keywords": ["R42", "DIZZINESS", "VERTIGO", "GIDDINESS", "LIGHTHEADEDNESS", "頭暈", "眩暈", "暈眩", "頭昏"], "standard": "Dizziness and giddiness", "code": "R42", "type": "exact", "organ": "Neurological", "note": "" },
-            { "id": "T88.6", "keywords": ["ANAPHYLACTIC SHOCK DUE TO DRUG", "DRUG ANAPHYLAXIS", "藥物過敏休克"], "standard": "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered", "code": "T88.6", "type": "exact", "organ": "Other", "note": "" },
-            { "id": "T88.7", "keywords": ["UNSPECIFIED ADVERSE EFFECT OF DRUG", "DRUG SIDE EFFECT", "藥物副作用"], "standard": "Unspecified adverse effect of drug or medicament", "code": "T88.7", "type": "broad", "organ": "Other", "note": "" },
+            { "id": "T88.6XXA", "keywords": ["ANAPHYLACTIC SHOCK DUE TO DRUG", "DRUG ANAPHYLAXIS", "藥物過敏休克"], "standard": "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered, initial encounter", "code": "T88.6XXA", "type": "exact", "organ": "Other", "note": "後續照護 T88.6XXD；後遺症 T88.6XXS" },
+            { "id": "T88.7XXA", "keywords": ["UNSPECIFIED ADVERSE EFFECT OF DRUG", "DRUG SIDE EFFECT", "藥物副作用"], "standard": "Unspecified adverse effect of drug or medicament, initial encounter", "code": "T88.7XXA", "type": "broad", "organ": "Other", "note": "後續照護 T88.7XXD；後遺症 T88.7XXS" },
             { "id": "M32.10", "keywords": ["SLE", "SYSTEMIC LUPUS ERYTHEMATOSUS", "全身性紅斑性狼瘡"], "standard": "Systemic lupus erythematosus, organ or system involvement unspecified", "code": "M32.10", "type": "broad", "organ": "Other", "note": "" },
             { "id": "M06.9", "keywords": ["RA", "RHEUMATOID ARTHRITIS", "類風濕性關節炎"], "standard": "Rheumatoid arthritis, unspecified", "code": "M06.9", "type": "broad", "organ": "Other", "note": "" },
             { "id": "K52.9", "keywords": ["NON-INFECTIVE GASTROENTERITIS", "AGE", "ACUTE GASTROENTERITIS", "腸胃炎"], "standard": "Noninfective gastroenteritis and colitis, unspecified", "code": "K52.9", "type": "exact", "organ": "Digestive", "note": "臨床上常混用 AGE，若確診為感染性請改用 A09" },
@@ -511,8 +511,7 @@
             { "id": "H53.8", "keywords": ["H53.8", "BLURRED VISION", "VISUAL DISTURBANCE", "視力模糊", "視覺異常"], "standard": "Other visual disturbances", "code": "H53.8", "type": "broad", "organ": "Other", "note": "" },
             { "id": "R43.0", "keywords": ["R43.0", "ANOSMIA", "LOSS OF SMELL", "嗅覺喪失", "聞不到味道"], "standard": "Anosmia", "code": "R43.0", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "R43.2", "keywords": ["R43.2", "PARAGEUSIA", "TASTE DISTURBANCE", "味覺異常", "味覺改變"], "standard": "Parageusia", "code": "R43.2", "type": "exact", "organ": "Neurological", "note": "" },
-            { "id": "K80", "keywords": ["GALL STONE", "CHOLELITHIASIS", "膽結石"], "standard": "Cholelithiasis", "code": "K80", "type": "broad", "organ": "Digestive", "note": "建議使用更精確代碼 (如 K80.20)" },
-            { "id": "K80.20", "keywords": ["GALL STONE NO CHOLECYSTITIS", "GALL STONE NO OBSTRUCTION"], "standard": "Calculus of gallbladder without cholecystitis without obstruction", "code": "K80.20", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "K80.20", "keywords": ["GALL STONE", "CHOLELITHIASIS", "膽結石", "GALL STONE NO CHOLECYSTITIS", "GALL STONE NO OBSTRUCTION"], "standard": "Calculus of gallbladder without cholecystitis without obstruction", "code": "K80.20", "type": "broad", "organ": "Digestive", "note": "若有膽囊炎、膽管炎或阻塞，請改用 K80.0-/K80.3-/K80.4-/K80.5- 等更精確代碼" },
             { "id": "I12.9", "organ": "Cardiovascular", "keywords": ["I12.9", "HTN WITH CKD", "HYPERTENSIVE CKD", "高血壓性慢性腎臟病", "高血壓合併慢性腎臟病"], "standard": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I12.9", "type": "context", "note": "需加編 CKD stage (N18.-)" },
             { "id": "I13.0", "organ": "Cardiovascular", "keywords": ["I13.0", "HTN HEART CKD WITH HF", "HYPERTENSIVE HEART AND CKD WITH HEART FAILURE", "高血壓性心腎病合併心衰竭"], "standard": "Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I13.0", "type": "context", "note": "需加編 heart failure type (I50.-) 與 CKD stage (N18.-)" },
             { "id": "I13.10", "organ": "Cardiovascular", "keywords": ["I13.10", "HTN HEART CKD WITHOUT HF", "HYPERTENSIVE HEART AND CKD WITHOUT HEART FAILURE", "高血壓性心腎病無心衰竭"], "standard": "Hypertensive heart and chronic kidney disease without heart failure, with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I13.10", "type": "context", "note": "需加編 CKD stage (N18.-)" },
@@ -627,6 +626,12 @@
             'CURRENT MEDICATIONS', 'ALLERGIES', 'PLAN', 'SOAP'
         ];
 
+        const DEPRECATED_BUILT_IN_IDS = new Set([
+            'G20', 'F03.91', 'Z22.51', 'E87.2', 'I27.2', 'I47.1', 'I82.40', 'I71.4',
+            'I31.3', 'H10.3', 'M48.0', 'C34.1', 'I48.2', 'I50.2', 'I50.3', 'K21.0',
+            'T88.6', 'T88.7', 'K80'
+        ]);
+
         const App = () => {
             // 隱藏的文件上傳 ref
             const fileInputRef = useRef(null);
@@ -648,7 +653,8 @@
                 if (savedDb) {
                     const parsed = JSON.parse(savedDb);
                     if (Array.isArray(parsed)) {
-                        initialData = [...parsed, ...INITIAL_DATABASE];
+                        const savedCustomAndCurrent = parsed.filter(item => item.isCustom || !DEPRECATED_BUILT_IN_IDS.has(item.id));
+                        initialData = [...savedCustomAndCurrent, ...INITIAL_DATABASE];
                     }
                 }
                 } catch (e) {
@@ -711,7 +717,7 @@
                 confirmColor: 'bg-red-600 hover:bg-red-700',
                 onConfirm: () => {
                     const initialIds = new Set(INITIAL_DATABASE.map(item => item.id));
-                    const customRules = database.filter(item => !initialIds.has(item.id));
+                    const customRules = database.filter(item => !initialIds.has(item.id) && (item.isCustom || !DEPRECATED_BUILT_IN_IDS.has(item.id)));
                     
                     // 合併時也要注意去重複
                     const mergedDb = [...customRules, ...INITIAL_DATABASE];
