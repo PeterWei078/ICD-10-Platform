@@ -180,6 +180,7 @@
             { value: 'Digestive', label: '消化系統 (Digestive)', color: 'bg-orange-100 text-orange-800' },
             { value: 'Endocrine', label: '內分泌代謝 (Endocrine)', color: 'bg-yellow-100 text-yellow-800' },
             { value: 'Neurological', label: '神經系統 (Neurological)', color: 'bg-purple-100 text-purple-800' },
+            { value: 'Surgical', label: '骨科/外科 (Surgical/Orthopedic)', color: 'bg-cyan-100 text-cyan-800' },
             { value: 'Infectious', label: '感染/敗血症 (Infectious)', color: 'bg-red-100 text-red-800' },
             { value: 'Other', label: '其他 (Other)', color: 'bg-slate-100 text-slate-800' }
         ];
@@ -190,16 +191,16 @@
             { "id": "E10.9", "keywords": ["TYPE 1 DM", "T1DM", "INSULIN DEPENDENT DIABETES", "第一型糖尿病"], "standard": "Type 1 diabetes mellitus without complications", "code": "E10.9", "type": "broad", "organ": "Endocrine", "note": "" },
             { "id": "G45.9", "keywords": ["TIA", "TRANSIENT ISCHEMIC ATTACK", "暫時性腦缺血", "MINI STROKE"], "standard": "Transient cerebral ischemic attack, unspecified", "code": "G45.9", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "I69.20", "keywords": ["OLD ICH", "OLD HEMORRHAGIC STROKE", "陳舊性腦出血"], "standard": "Unspecified sequelae of other nontraumatic intracranial hemorrhage", "code": "I69.20", "type": "exact", "organ": "Neurological", "note": "" },
-            { "id": "I69.30", "keywords": ["OLD CEREBRAL INFARCTION", "OLD INFARCTION", "OLD ISCHEMIC STROKE", "陳舊性腦梗塞", "I69", "OLD CVA", "PRIOR STROKE", "陳舊性中風", "中風後遺症"], "standard": "Unspecified sequelae of cerebral infarction", "code": "I69.30", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "I69.30", "keywords": ["I69.30", "I69", "OLD CEREBRAL INFARCTION", "OLD INFARCTION", "OLD ISCHEMIC STROKE", "OLD CVA", "PRIOR STROKE", "CVA SEQUELA", "陳舊性腦梗塞", "陳舊性中風", "中風後遺症"], "standard": "Unspecified sequelae of cerebral infarction", "code": "I69.30", "type": "context", "organ": "Neurological", "note": "" },
             { "id": "I69.90", "keywords": ["OLD CVA", "OLD STROKE", "中風後遺症", "CVA SEQUELA"], "standard": "Unspecified sequelae of unspecified cerebrovascular disease", "code": "I69.90", "type": "broad", "organ": "Neurological", "note": "若已知是梗塞或出血，請用 I69.30 或 I69.20" },
             { "id": "S06.359S", "keywords": ["OLD TRAUMATIC ICH", "OLD TRAUMATIC BRAIN HEMORRHAGE", "陳舊性創傷性腦出血"], "standard": "Traumatic hemorrhage of left cerebrum with loss of consciousness of unspecified duration, sequela", "code": "S06.359S", "type": "exact", "organ": "Neurological", "note": "S06.3x9S: Traumatic ICH sequela (unspecified side)" },
             { "id": "S06.379S", "keywords": ["OLD TRAUMATIC CEREBELLAR HEMORRHAGE", "陳舊性創傷性小腦出血"], "standard": "Contusion, laceration, and hemorrhage of cerebellum with loss of consciousness of unspecified duration, sequela", "code": "S06.379S", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "S06.4X9S", "keywords": ["OLD EDH", "OLD EPIDURAL HEMORRHAGE", "陳舊性硬腦膜外出血"], "standard": "Epidural hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.4X9S", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "S06.5X9S", "keywords": ["OLD SDH", "OLD SUBDURAL HEMORRHAGE", "陳舊性硬腦膜下出血"], "standard": "Traumatic subdural hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.5X9S", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "S06.6X9S", "keywords": ["OLD SAH", "OLD SUBARACHNOID HEMORRHAGE", "陳舊性蜘蛛膜下腔出血"], "standard": "Traumatic subarachnoid hemorrhage with loss of consciousness of unspecified duration, sequela", "code": "S06.6X9S", "type": "exact", "organ": "Neurological", "note": "" },
-            { "id": "G20", "keywords": ["PARKINSON'S DISEASE", "PD", "巴金森氏症", "帕金森氏症"], "standard": "Parkinson's disease", "code": "G20", "type": "broad", "organ": "Neurological", "note": "" },
+            { "id": "G20.A1", "keywords": ["PARKINSON'S DISEASE", "PD", "巴金森氏症", "帕金森氏症"], "standard": "Parkinson's disease without dyskinesia, without mention of fluctuations", "code": "G20.A1", "type": "broad", "organ": "Neurological", "note": "若有 dyskinesia 或 motor fluctuations，請改用 G20.A2/G20.B1/G20.B2；不明 Parkinsonism 可用 G20.C" },
             { "id": "F20.1", "keywords": ["SCHIZOPHRENIA", "思覺失調症", "精神分裂症"], "standard": "Disorganized schizophrenia", "code": "F20.1", "type": "exact", "organ": "Neurological", "note": "F20.9 為 Schizophrenia, unspecified" },
-            { "id": "F03.91", "keywords": ["DEMENTIA", "失智症", "癡呆症"], "standard": "Unspecified dementia with behavioral disturbance", "code": "F03.91", "type": "broad", "organ": "Neurological", "note": "F03.90: Without behavioral disturbance" },
+            { "id": "F03.90", "keywords": ["DEMENTIA", "失智症", "癡呆症"], "standard": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety", "code": "F03.90", "type": "broad", "organ": "Neurological", "note": "若有 agitation/behavioral/psychotic/mood/anxiety disturbance，請改用 F03.911/F03.918/F03.92/F03.93/F03.94" },
             { "id": "F02.80", "keywords": ["DEMENTIA RELATED OTHER DISEASE", "SECONDARY DEMENTIA", "其他疾病引起之失智症"], "standard": "Dementia in other diseases classified elsewhere without behavioral disturbance", "code": "F02.80", "type": "context", "organ": "Neurological", "note": "需先編碼潛在疾病 (如 G20 Parkinson's)" },
             { "id": "G30.9", "keywords": ["ALZHEIMER'S DISEASE", "ALZHEIMER", "阿茲海默症"], "standard": "Alzheimer's disease, unspecified", "code": "G30.9", "type": "exact", "organ": "Neurological", "note": "通常需搭配 F02.80 或 F02.81 (Dementia in Alzheimer's)" },
             { "id": "G30.8", "keywords": ["OTHER ALZHEIMER'S DISEASE", "其他阿茲海默症"], "standard": "Other Alzheimer's disease", "code": "G30.8", "type": "exact", "organ": "Neurological", "note": "" },
@@ -230,7 +231,7 @@
             { "id": "B18.1", "keywords": ["CHRONIC HEPATITIS B", "CHB", "慢性B型肝炎", "HBV"], "standard": "Chronic viral hepatitis B without delta-agent", "code": "B18.1", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "B18.2", "keywords": ["CHRONIC HEPATITIS C", "CHC", "慢性C型肝炎", "HCV"], "standard": "Chronic viral hepatitis C", "code": "B18.2", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "B18.8", "keywords": ["CHRONIC VIRAL HEPATITIS", "其他慢性病毒性肝炎"], "standard": "Other chronic viral hepatitis", "code": "B18.8", "type": "broad", "organ": "Digestive", "note": "" },
-            { "id": "Z22.51", "keywords": ["HEPATITIS B CARRIER", "HBSAG CARRIER", "B肝帶原"], "standard": "Carrier of viral hepatitis B", "code": "Z22.51", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "Z22.8", "keywords": ["HEPATITIS B CARRIER", "HBSAG CARRIER", "B肝帶原"], "standard": "Carrier of other infectious diseases", "code": "Z22.8", "type": "broad", "organ": "Digestive", "note": "若為慢性 B 型肝炎診斷，請優先使用 B18.1" },
             { "id": "R94.5", "keywords": ["ABNORMAL LIVER FUNCTION", "GOT/GPT ELEVATION", "LIVER FUNCTION ABNORMALITY", "肝功能異常"], "standard": "Abnormal results of liver function studies", "code": "R94.5", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "N20.0", "keywords": ["CALCULUS OF KIDNEY", "RENAL STONE", "NEPHROLITHIASIS", "腎結石"], "standard": "Calculus of kidney", "code": "N20.0", "type": "exact", "organ": "Renal", "note": "" },
             { "id": "N20.1", "keywords": ["CALCULUS OF URETER", "URETERAL STONE", "輸尿管結石"], "standard": "Calculus of ureter", "code": "N20.1", "type": "exact", "organ": "Renal", "note": "" },
@@ -242,7 +243,7 @@
             { "id": "N18.5", "keywords": ["CKD STAGE 5", "CHRONIC KIDNEY DISEASE STAGE 5"], "standard": "Chronic kidney disease, stage 5", "code": "N18.5", "type": "exact", "organ": "Renal", "note": "" },
             { "id": "N18.6", "keywords": ["ESRD", "END STAGE RENAL DISEASE", "末期腎病"], "standard": "End stage renal disease", "code": "N18.6", "type": "exact", "organ": "Renal", "note": "Z99.2 為洗腎狀態" },
             { "id": "N18.9", "keywords": ["CKD", "CHRONIC KIDNEY DISEASE", "慢性腎臟病"], "standard": "Chronic kidney disease, unspecified", "code": "N18.9", "type": "broad", "organ": "Renal", "note": "" },
-            { "id": "E87.2", "keywords": ["ACIDOSIS", "METABOLIC ACIDOSIS", "酸中毒"], "standard": "Acidosis", "code": "E87.2", "type": "exact", "organ": "Endocrine", "note": "" },
+            { "id": "E87.20", "keywords": ["ACIDOSIS", "METABOLIC ACIDOSIS", "酸中毒"], "standard": "Acidosis, unspecified", "code": "E87.20", "type": "broad", "organ": "Endocrine", "note": "急性代謝性酸中毒 E87.21；慢性代謝性酸中毒 E87.22" },
             { "id": "E87.0", "keywords": ["HYPERNATREMIA", "HYPER-NA", "高血鈉"], "standard": "Hyperosmolality and hypernatremia", "code": "E87.0", "type": "exact", "organ": "Endocrine", "note": "" },
             { "id": "I51.7", "keywords": ["CARDIOMEGALY", "ENLARGED HEART", "心臟擴大"], "standard": "Cardiomegaly", "code": "I51.7", "type": "exact", "organ": "Cardiovascular", "note": "" },
             { "id": "I21.9", "keywords": ["AMI", "ACUTE MYOCARDIAL INFARCTION", "急性心肌梗塞", "HEART ATTACK"], "standard": "Acute myocardial infarction, unspecified", "code": "I21.9", "type": "broad", "organ": "Cardiovascular", "note": "建議細分 STEMI (I21.0-I21.3) 或 NSTEMI (I21.4)" },
@@ -250,14 +251,14 @@
             { "id": "I25.10", "keywords": ["CAD", "CORONARY ARTERY DISEASE", "冠狀動脈疾病", "ASCVD"], "standard": "Atherosclerotic heart disease of native coronary artery without angina pectoris", "code": "I25.10", "type": "exact", "organ": "Cardiovascular", "note": "" },
             { "id": "I27.81", "keywords": ["COR PULMONALE", "肺源性心臟病"], "standard": "Cor pulmonale (chronic)", "code": "I27.81", "type": "exact", "organ": "Cardiovascular", "note": "急性肺心症請用 I26.0-" },
             { "id": "I27.0", "keywords": ["PRIMARY PULMONARY HYPERTENSION", "PRIMARY PUL HTN", "PPH", "原發性肺高壓"], "standard": "Primary pulmonary hypertension", "code": "I27.0", "type": "exact", "organ": "Cardiovascular", "note": "" },
-            { "id": "I27.2", "keywords": ["SECONDARY PULMONARY HYPERTENSION", "SECONDARY PUL HTN", "繼發性肺高壓"], "standard": "Other secondary pulmonary hypertension", "code": "I27.2", "type": "broad", "organ": "Cardiovascular", "note": "通常需加註潛在病因 (如 I27.21, I27.22)" },
-            { "id": "I47.1", "keywords": ["SVT", "SUPRAVENTRICULAR TACHYCARDIA", "心室上頻脈"], "standard": "Supraventricular tachycardia", "code": "I47.1", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "I27.29", "keywords": ["SECONDARY PULMONARY HYPERTENSION", "SECONDARY PUL HTN", "繼發性肺高壓"], "standard": "Other secondary pulmonary hypertension", "code": "I27.29", "type": "broad", "organ": "Cardiovascular", "note": "通常需加註潛在病因 (如 I27.21, I27.22, I27.23, I27.24)" },
+            { "id": "I47.10", "keywords": ["SVT", "SUPRAVENTRICULAR TACHYCARDIA", "心室上頻脈"], "standard": "Supraventricular tachycardia, unspecified", "code": "I47.10", "type": "broad", "organ": "Cardiovascular", "note": "其他 SVT 可用 I47.19；inappropriate sinus tachycardia 可用 I47.11" },
             { "id": "I49.9", "keywords": ["CARDIAC ARRHYTHMIA", "ARRHYTHMIA", "心律不整"], "standard": "Cardiac arrhythmia, unspecified", "code": "I49.9", "type": "broad", "organ": "Cardiovascular", "note": "" },
-            { "id": "I82.40", "keywords": ["DVT", "DEEP VEIN THROMBOSIS", "深部靜脈栓塞"], "standard": "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity", "code": "I82.40", "type": "broad", "organ": "Cardiovascular", "note": "建議指定左/右側及靜脈部位" },
+            { "id": "I82.409", "keywords": ["DVT", "DEEP VEIN THROMBOSIS", "深部靜脈栓塞"], "standard": "Acute embolism and thrombosis of unspecified deep veins of unspecified lower extremity", "code": "I82.409", "type": "broad", "organ": "Cardiovascular", "note": "建議指定左/右側及靜脈部位，如 I82.401/I82.402/I82.403" },
             { "id": "I71.9", "keywords": ["AORTIC ANEURYSM", "主動脈瘤"], "standard": "Aortic aneurysm of unspecified site, without rupture", "code": "I71.9", "type": "broad", "organ": "Cardiovascular", "note": "" },
-            { "id": "I71.4", "keywords": ["AAA", "ABDOMINAL AORTIC ANEURYSM", "ABDOMINAL ANEURYSM", "腹主動脈瘤"], "standard": "Abdominal aortic aneurysm, without rupture", "code": "I71.4", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "I71.40", "keywords": ["AAA", "ABDOMINAL AORTIC ANEURYSM", "ABDOMINAL ANEURYSM", "腹主動脈瘤"], "standard": "Abdominal aortic aneurysm, without rupture, unspecified", "code": "I71.40", "type": "broad", "organ": "Cardiovascular", "note": "若部位明確，可用 I71.41 pararenal、I71.42 juxtarenal、I71.43 infrarenal" },
             { "id": "Z95.0", "keywords": ["ON PACEMAKER", "PACEMAKER STATUS", "裝有心律調節器"], "standard": "Presence of cardiac pacemaker", "code": "Z95.0", "type": "exact", "organ": "Cardiovascular", "note": "" },
-            { "id": "I31.3", "keywords": ["PERICARDIAL EFFUSION", "心包膜積水"], "standard": "Pericardial effusion (noninflammatory)", "code": "I31.3", "type": "exact", "organ": "Cardiovascular", "note": "I30.9 為急性心包膜積水" },
+            { "id": "I31.39", "keywords": ["PERICARDIAL EFFUSION", "心包膜積水"], "standard": "Other pericardial effusion (noninflammatory)", "code": "I31.39", "type": "exact", "organ": "Cardiovascular", "note": "惡性心包膜積水請用 I31.31；急性心包膜炎請參考 I30.-" },
             { "id": "I73.9", "keywords": ["PAOD", "PERIPHERAL ARTERIAL OCCLUSIVE DISEASE", "周邊動脈阻塞疾病", "PVD"], "standard": "Peripheral vascular disease, unspecified", "code": "I73.9", "type": "broad", "organ": "Cardiovascular", "note": "若有間歇性跛行可考慮 I73.9 或更特定代碼" },
             { "id": "I96", "keywords": ["GANGRENE", "壞疽"], "standard": "Gangrene, not elsewhere classified", "code": "I96", "type": "exact", "organ": "Cardiovascular", "note": "若為糖尿病足壞疽請優先使用 E11.52 (Type 2 DM with diabetic peripheral angiopathy with gangrene)" },
             { "id": "J44.0", "keywords": ["COPD WITH 2ND INFECTION", "COPD WITH PNEUMONIA", "慢阻肺合併感染"], "standard": "Chronic obstructive pulmonary disease with (acute) lower respiratory infection", "code": "J44.0", "type": "exact", "organ": "Respiratory", "note": "" },
@@ -267,6 +268,7 @@
             { "id": "R09.1", "keywords": ["PLEURISY", "PLEURITIS", "肋膜炎"], "standard": "Pleurisy", "code": "R09.1", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J94.2", "keywords": ["HEMOTHORAX", "血胸"], "standard": "Hemothorax", "code": "J94.2", "type": "exact", "organ": "Respiratory", "note": "創傷性血胸請用 S27.1" },
             { "id": "J84.10", "keywords": ["PULMONARY FIBROSIS", "LUNG FIBROSIS", "肺纖維化"], "standard": "Pulmonary fibrosis, unspecified", "code": "J84.10", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "J84.170", "keywords": ["J84.170", "PF-ILD", "PPF", "PROGRESSIVE FIBROTIC ILD", "PROGRESSIVE PULMONARY FIBROSIS", "慢性漸進性纖維化間質性肺病"], "standard": "Interstitial lung disease with progressive fibrotic phenotype in diseases classified elsewhere", "code": "J84.170", "type": "context", "organ": "Respiratory", "note": "需先編碼相關 underlying disease 或造成 ILD 的疾病" },
             { "id": "J84.112", "keywords": ["IPF", "IDIOPATHIC PULMONARY FIBROSIS", "特發性肺纖維化"], "standard": "Idiopathic pulmonary fibrosis", "code": "J84.112", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J98.2", "keywords": ["PNEUMOMEDIASTINUM", "SUBCUTANEOUS EMPHYSEMA", "縱膈腔氣腫", "皮下氣腫"], "standard": "Interstitial emphysema", "code": "J98.2", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "R04.0", "keywords": ["EPISTAXIS", "NOSE BLEEDING", "流鼻血"], "standard": "Epistaxis", "code": "R04.0", "type": "exact", "organ": "Respiratory", "note": "" },
@@ -287,21 +289,21 @@
             { "id": "M79.10", "keywords": ["MYALGIA", "MUSCLE PAIN", "肌肉痛"], "standard": "Myalgia, unspecified site", "code": "M79.10", "type": "exact", "organ": "Other", "note": "" },
             { "id": "M94.0", "keywords": ["COSTOCHONDRITIS", "TIETZE SYNDROME", "肋軟骨炎", "CHEST WALL PAIN"], "standard": "Chondrocostal junction syndrome [Tietze]", "code": "M94.0", "type": "exact", "organ": "Other", "note": "" },
             { "id": "M54.30", "keywords": ["LBP", "SCIATICA", "坐骨神經痛", "LUMBAGO"], "standard": "Sciatica, unspecified side", "code": "M54.30", "type": "exact", "organ": "Neurological", "note": "M54.5 (LBP) 已停用，若為坐骨神經痛請用 M54.3-" },
-            { "id": "R51.9", "keywords": ["HEADACHE", "頭痛", "CEPHALALGIA"], "standard": "Headache, unspecified", "code": "R51.9", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R51.9", "keywords": ["R51.9", "HEADACHE", "CEPHALALGIA", "HEAD PAIN", "頭痛", "頭部疼痛"], "standard": "Headache, unspecified", "code": "R51.9", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "J30.9", "keywords": ["ALLERGIC RHINITIS", "過敏性鼻炎", "HAY FEVER"], "standard": "Allergic rhinitis, unspecified", "code": "J30.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J01.90", "keywords": ["SINUSITIS", "ACUTE SINUSITIS", "鼻竇炎"], "standard": "Acute sinusitis, unspecified", "code": "J01.90", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "R09.82", "keywords": ["POST-NASAL DRIP", "PND", "鼻涕倒流"], "standard": "Postnasal drip", "code": "R09.82", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J06.9", "keywords": ["URI", "UPPER RESPIRATORY INFECTION", "上呼吸道感染", "COMMON COLD"], "standard": "Acute upper respiratory infection, unspecified", "code": "J06.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J04.0", "keywords": ["ACUTE LARYNGITIS", "LARYNGITIS", "喉炎", "HOARSENESS"], "standard": "Acute laryngitis", "code": "J04.0", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J03.90", "keywords": ["ACUTE TONSILITIS", "TONSILLITIS", "扁桃腺炎"], "standard": "Acute tonsillitis, unspecified", "code": "J03.90", "type": "exact", "organ": "Respiratory", "note": "" },
-            { "id": "R07.9", "keywords": ["CHEST PAIN", "胸痛", "CHEST TIGHTNESS"], "standard": "Chest pain, unspecified", "code": "R07.9", "type": "exact", "organ": "Cardiovascular", "note": "" },
-            { "id": "R06.00", "keywords": ["DYSPNEA", "SHORTNESS OF BREATH", "SOB", "呼吸困難"], "standard": "Dyspnea, unspecified", "code": "R06.00", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R07.9", "keywords": ["R07.9", "CHEST PAIN", "CHEST TIGHTNESS", "CHEST DISCOMFORT", "CHEST PRESSURE", "胸痛", "胸悶", "胸部不適", "胸口痛"], "standard": "Chest pain, unspecified", "code": "R07.9", "type": "broad", "organ": "Cardiovascular", "note": "若為吸氣或呼吸時胸痛，可考慮 R07.1；其他胸痛可考慮 R07.89" },
+            { "id": "R06.00", "keywords": ["R06.00", "DYSPNEA", "SHORTNESS OF BREATH", "SOB", "BREATHING DIFFICULTY", "呼吸困難", "喘", "喘不過氣"], "standard": "Dyspnea, unspecified", "code": "R06.00", "type": "broad", "organ": "Respiratory", "note": "較明確 shortness of breath 可用 R06.02；orthopnea 可用 R06.01" },
             { "id": "J36", "keywords": ["PERITONSILLAR ABSCESS", "QUINSY", "扁桃腺周圍膿瘍"], "standard": "Peritonsillar abscess", "code": "J36", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J39.3", "keywords": ["HYPERSENSITIVE AIRWAY", "AIRWAY HYPERSENSITIVITY", "氣道敏感"], "standard": "Upper respiratory tract hypersensitivity reaction, site unspecified", "code": "J39.3", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J20.9", "keywords": ["ACUTE BRONCHITIS", "急性支氣管炎"], "standard": "Acute bronchitis, unspecified", "code": "J20.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J21.9", "keywords": ["ACUTE BRONCHIOLITIS", "細支氣管炎"], "standard": "Acute bronchiolitis, unspecified", "code": "J21.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "R93.89", "keywords": ["ABNORMAL FINDING ON CXR", "CXR ABNORMAL", "影像異常"], "standard": "Abnormal findings on diagnostic imaging of other specified body structures", "code": "R93.89", "type": "exact", "organ": "Other", "note": "R91.8 為肺部特異性影像異常" },
-            { "id": "H10.3", "keywords": ["ACUTE CONJUNCTIVITIS", "PINK EYE", "急性結膜炎"], "standard": "Unspecified acute conjunctivitis", "code": "H10.3", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "H10.30", "keywords": ["ACUTE CONJUNCTIVITIS", "PINK EYE", "急性結膜炎"], "standard": "Unspecified acute conjunctivitis, unspecified eye", "code": "H10.30", "type": "broad", "organ": "Other", "note": "若側別明確，可用 H10.31/H10.32/H10.33" },
             { "id": "L50.9", "keywords": ["URTICARIA", "HIVES", "蕁麻疹"], "standard": "Urticaria, unspecified", "code": "L50.9", "type": "exact", "organ": "Other", "note": "" },
             { "id": "L30.9", "keywords": ["DERMATITIS", "ECZEMA", "皮膚炎", "濕疹"], "standard": "Dermatitis, unspecified", "code": "L30.9", "type": "broad", "organ": "Other", "note": "若為接觸性皮膚炎請用 L23-L25" },
             { "id": "L03.90", "keywords": ["CELLULITIS", "蜂窩性組織炎"], "standard": "Cellulitis, unspecified", "code": "L03.90", "type": "broad", "organ": "Infectious", "note": "建議指定感染部位以獲得更精確代碼 (如 L03.11 下肢)" },
@@ -309,7 +311,7 @@
             { "id": "L02.92", "keywords": ["FURUNCLE", "BOIL", "癤"], "standard": "Furuncle, unspecified", "code": "L02.92", "type": "exact", "organ": "Infectious", "note": "" },
             { "id": "B02.9", "keywords": ["ZOSTER", "HERPES ZOSTER", "SHINGLES", "帶狀疱疹", "皮蛇"], "standard": "Zoster without complications", "code": "B02.9", "type": "exact", "organ": "Infectious", "note": "" },
             { "id": "M47.9", "keywords": ["SPONDYLOSIS", "脊椎退化", "脊椎病"], "standard": "Spondylosis, unspecified", "code": "M47.9", "type": "broad", "organ": "Other", "note": "建議指定部位 (Cervical M47.812, Lumbar M47.816)" },
-            { "id": "M48.0", "keywords": ["SPINAL STENOSIS", "HIVD", "脊椎狹窄"], "standard": "Spinal stenosis, site unspecified", "code": "M48.0", "type": "broad", "organ": "Other", "note": "M48.06: Lumbar region, M48.02: Cervical region" },
+            { "id": "M48.00", "keywords": ["SPINAL STENOSIS", "HIVD", "脊椎狹窄"], "standard": "Spinal stenosis, site unspecified", "code": "M48.00", "type": "broad", "organ": "Other", "note": "頸椎 M48.02；腰椎無神經性跛行 M48.061，有神經性跛行 M48.062" },
             { "id": "M54.50", "keywords": ["LOWER BACK PAIN", "LBP", "LUMBAGO", "下背痛", "腰痛"], "standard": "Low back pain, unspecified", "code": "M54.50", "type": "exact", "organ": "Other", "note": "M54.5 已停用，請使用 M54.50 (Unspecified) 或 M54.51 (Vertebrogenic)" },
             { "id": "Z89.511", "keywords": ["RIGHT BK AMPUTATION", "RIGHT BKA", "右膝下截肢"], "standard": "Acquired absence of right leg below knee", "code": "Z89.511", "type": "exact", "organ": "Other", "note": "" },
             { "id": "Z89.611", "keywords": ["RIGHT AK AMPUTATION", "RIGHT AKA", "右膝上截肢"], "standard": "Acquired absence of right leg above knee", "code": "Z89.611", "type": "exact", "organ": "Other", "note": "" },
@@ -335,7 +337,7 @@
             { "id": "J81.0", "keywords": ["LUNG EDEMA", "PULMONARY EDEMA", "急性肺水腫"], "standard": "Acute pulmonary edema", "code": "J81.0", "type": "exact", "organ": "Respiratory", "note": "J81.1: Chronic pulmonary edema" },
             { "id": "R57.9", "keywords": ["SHOCK", "休克"], "standard": "Shock, unspecified", "code": "R57.9", "type": "broad", "organ": "Other", "note": "若已知原因請使用特定代碼 (如 R57.1 低血容, R57.0 心因性)" },
             { "id": "R78.81", "keywords": ["BACTERIEMIA", "BACTEREMIA", "菌血症"], "standard": "Bacteremia", "code": "R78.81", "type": "exact", "organ": "Infectious", "note": "若已進展為 Sepsis 應優先考慮 A41.9" },
-            { "id": "R50.81", "keywords": ["FEVER", "PYREXIA", "發燒"], "standard": "Fever presenting with conditions classified elsewhere", "code": "R50.81", "type": "exact", "organ": "Infectious", "note": "R50.9: Fever, unspecified" },
+            { "id": "R50.81", "keywords": ["R50.81", "FEVER WITH OTHER CONDITION", "PYREXIA WITH OTHER CONDITION", "伴隨其他疾病之發燒"], "standard": "Fever presenting with conditions classified elsewhere", "code": "R50.81", "type": "context", "organ": "Infectious", "note": "單純未明示發燒請優先使用 R50.9" },
             { "id": "Z93.0", "keywords": ["TRACHEOSTOMY", "ON TRACHEOSTOMY TUBE", "TRACHEOSTOMY STATUS", "氣切"], "standard": "Tracheostomy status", "code": "Z93.0", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "E11.21", "keywords": ["TYPE 2 DM WITH CKD", "DM NEPHROPATHY", "DIABETIC NEPHROPATHY", "糖尿病腎病變"], "standard": "Type 2 diabetes mellitus with diabetic nephropathy", "code": "E11.21", "type": "exact", "organ": "Endocrine", "note": "" },
             { "id": "E11.69", "keywords": ["DM WITH DKA", "DKA", "DIABETIC KETOACIDOSIS"], "standard": "Type 2 diabetes mellitus with other specified complication", "code": "E11.69", "type": "broad", "organ": "Endocrine", "note": "注意：DKA 標準碼通常為 E11.10 (w/o coma) 或 E11.11 (w/ coma)，E11.69 為其他併發症。" },
@@ -391,21 +393,20 @@
             { "id": "A15.0", "organ": "Respiratory", "keywords": ["A15.0", "TB", "TUBERCULOSIS", "肺結核", "PULMONARY TB"], "standard": "Tuberculosis of lung", "code": "A15.0", "type": "exact" },
             { "id": "A15.6", "organ": "Respiratory", "keywords": ["A15.6", "TB PLEURISY", "結核性肋膜炎"], "standard": "Tuberculous pleurisy", "code": "A15.6", "type": "exact" },
             { "id": "Z20.1", "organ": "Respiratory", "keywords": ["Z20.1", "TB CONTACT", "TB EXPOSURE", "接觸結核病"], "standard": "Contact with and (suspected) exposure to tuberculosis", "code": "Z20.1", "type": "exact" },
-            { "id": "C34.1", "organ": "Respiratory", "keywords": ["肺癌", "肺惡性腫瘤", "lung cancer", "Adenocarcinoma", "SCLC", "NSCLC"], "standard": "Malignant neoplasm of Bronchus or lung, unspecified ", "code": "C34.9", "type": "exact", "note": "C34.0: Main bronchus、 C34.1: Upper lobe, bronchus or lung 、C34.2: Middle lobe, bronchus or lung、C34.3: Lower lobe, bronchus or lung (e.g., C34.31 for right, C34.32 for left)" },
+            { "id": "C34.90", "organ": "Respiratory", "keywords": ["肺癌", "肺惡性腫瘤", "LUNG CANCER", "ADENOCARCINOMA", "SCLC", "NSCLC"], "standard": "Malignant neoplasm of unspecified part of unspecified bronchus or lung", "code": "C34.90", "type": "broad", "note": "若部位明確，請改用 C34.0-/C34.1-/C34.2-/C34.3- 等更精確代碼" },
             { "id": "R04.2", "organ": "Respiratory", "keywords": ["R04.2", "HEMOPTYSIS", "咳血"], "standard": "Hemoptysis", "code": "R04.2", "type": "exact" },
             { "id": "I10", "organ": "Cardiovascular", "keywords": ["I10", "HTN", "HYPERTENSION", "高血壓", "H/T"], "standard": "Essential (primary) hypertension", "code": "I10", "type": "exact" },
             { "id": "I11.9", "organ": "Cardiovascular", "keywords": ["I11.9", "HCVD", "高血壓性心臟病", "hypertensive cardiovascular disease"], "standard": "Hypertensive heart disease without heart failure", "code": "I11.9", "type": "broad", "note": "" },
             { "id": "I11.0", "organ": "Cardiovascular", "keywords": ["I11.0", "HCVD WITH CHF", "高血壓心臟病合併心衰竭", "hypertensive cardiovascular disease"], "standard": "Hypertensive heart disease with heart failure", "code": "I11.0", "type": "exact", "note": "" },
             { "id": "I25.9", "organ": "Cardiovascular", "keywords": ["I25.9", "IHD", "CAD", "ISCHEMIC HEART DISEASE", "冠心病", "缺血性心臟病"], "standard": "Chronic ischemic heart disease, unspecified", "code": "I25.9", "type": "broad" },
             { "id": "I48.0", "organ": "Cardiovascular", "keywords": ["I48.0", "PAF", "PAROXYSMAL AF", "陣發性心房顫動", "Afib", "fibrillation"], "standard": "Paroxysmal atrial fibrillation", "code": "I48.0", "type": "exact", "note": "" },
-            { "id": "I48.2", "organ": "Cardiovascular", "keywords": ["I48.2", "CHRONIC AF", "PERMANENT AF", "慢性心房顫動", "Afib", "fibrillation"], "standard": "Chronic atrial fibrillation", "code": "I48.2", "type": "exact", "note": "" },
+            { "id": "I48.20", "organ": "Cardiovascular", "keywords": ["I48.20", "CHRONIC AF", "PERMANENT AF", "慢性心房顫動", "AFIB", "FIBRILLATION"], "standard": "Chronic atrial fibrillation, unspecified", "code": "I48.20", "type": "broad", "note": "Permanent atrial fibrillation 請用 I48.21" },
             { "id": "I48.91", "organ": "Cardiovascular", "keywords": ["I48.91", "AF", "AFIB", "ATRIAL FIBRILLATION", "心房顫動"], "standard": "Unspecified atrial fibrillation", "code": "I48.91", "type": "broad" },
-            { "id": "I50.2", "organ": "Cardiovascular", "keywords": ["I50.2", "SYSTOLIC CHF", "HFrEF", "收縮性心衰竭", "systolic heart failure"], "standard": "Systolic (congestive) heart failure", "code": "I50.2", "type": "broad", "note": "需細分 Acute (I50.21), Chronic (I50.22) 或 Acute on Chronic (I50.23)" },
-            { "id": "I50.3", "organ": "Cardiovascular", "keywords": ["I50.3", "DIASTOLIC CHF", "HFpEF", "舒張性心衰竭", "diastolic heart failure"], "standard": "Diastolic (congestive) heart failure", "code": "I50.3", "type": "broad", "note": "" },
+            { "id": "I50.20", "organ": "Cardiovascular", "keywords": ["I50.20", "SYSTOLIC CHF", "HFrEF", "收縮性心衰竭", "SYSTOLIC HEART FAILURE"], "standard": "Unspecified systolic (congestive) heart failure", "code": "I50.20", "type": "broad", "note": "需細分 Acute (I50.21), Chronic (I50.22) 或 Acute on Chronic (I50.23)" },
+            { "id": "I50.30", "organ": "Cardiovascular", "keywords": ["I50.30", "DIASTOLIC CHF", "HFpEF", "舒張性心衰竭", "DIASTOLIC HEART FAILURE"], "standard": "Unspecified diastolic (congestive) heart failure", "code": "I50.30", "type": "broad", "note": "需細分 Acute (I50.31), Chronic (I50.32) 或 Acute on Chronic (I50.33)" },
             { "id": "I50.43", "organ": "Cardiovascular", "keywords": ["I50.43", "ACUTE ON CHRONIC CHF", "心衰竭急性發作", "acute on chronic heart failure"], "standard": "Acute on chronic combined systolic and diastolic heart failure", "code": "I50.43", "type": "exact", "note": "" },
             { "id": "I50.9", "organ": "Cardiovascular", "keywords": ["I50.9", "CHF", "HEART FAILURE", "心臟衰竭"], "standard": "Heart failure, unspecified", "code": "I50.9", "type": "broad" },
             { "id": "I63.9", "organ": "Neurological", "keywords": ["I63", "CVA", "STROKE", "ACUTE STROKE", "腦中風", "急性腦中風", "INFARCTION"], "standard": "Cerebral infarction, unspecified", "code": "I63.9", "type": "broad", "note": "I63 為急性梗塞，請儘量確認血管位置：I63.3: Cerebral infarction due to thrombosis of cerebral arteries (e.g., middle cerebral artery)." },
-            { "id": "I69.30", "organ": "Neurological", "keywords": ["I69", "OLD CVA", "PRIOR STROKE", "陳舊性中風", "中風後遺症"], "standard": "Sequelae of cerebral infarction", "code": "I69.30", "type": "context" },
             { "id": "I69.959", "organ": "Neurological", "keywords": ["I69.959", "HEMIPLEGIA", "偏癱", "半身不遂"], "standard": "Hemiplegia following unspecified cerebrovascular disease", "code": "I69.959", "type": "exact" },
             { "id": "A41.9", "organ": "Infectious", "keywords": ["A41.9", "SEPSIS", "敗血症"], "standard": "Sepsis, unspecified organism", "code": "A41.9", "type": "broad", "note": "若有 organ dysfunction 請考慮 Severe Sepsis" },
             { "id": "R65.20", "organ": "Infectious", "keywords": ["R65.20", "SEVERE SEPSIS", "嚴重敗血症"], "standard": "Severe sepsis without septic shock", "code": "R65.20", "type": "exact" },
@@ -423,18 +424,309 @@
             { "id": "Z99.2", "organ": "Renal", "keywords": ["Z99.2", "ESRD", "DIALYSIS", "洗腎", "血液透析"], "standard": "Dependence on renal dialysis", "code": "Z99.2", "type": "exact" },
             { "id": "N40.0", "organ": "Renal", "keywords": ["N40.0", "BPH", "攝護腺肥大"], "standard": "Benign prostatic hyperplasia without lower urinary tract symptoms", "code": "N40.0", "type": "exact" },
             { "id": "N40.1", "organ": "Renal", "keywords": ["N40.1", "SYMPTOMATIC BPH", "攝護腺肥大合併症狀", "BPH"], "standard": "Benign prostatic hyperplasia with lower urinary tract symptoms", "code": "N40.1", "type": "exact", "note": "" },
-            { "id": "K21.0", "organ": "Digestive", "keywords": ["K21.0", "GERD", "REFLUX ESOPHAGITIS", "逆流性食道炎", "胃食道逆流合併食道炎"], "standard": "Gastro-esophageal reflux disease with esophagitis", "code": "K21.0", "type": "exact" },
+            { "id": "K21.00", "organ": "Digestive", "keywords": ["K21.00", "GERD WITH ESOPHAGITIS", "REFLUX ESOPHAGITIS", "逆流性食道炎", "胃食道逆流合併食道炎"], "standard": "Gastro-esophageal reflux disease with esophagitis, without bleeding", "code": "K21.00", "type": "broad", "note": "若合併出血請用 K21.01" },
             { "id": "L89", "keywords": ["L89", "PRESSURE SORE", "BED SORE", "褥瘡", "壓瘡"], "standard": "Pressure ulcer", "code": "L89.90", "type": "broad", "organ": "Other", "note": "請指定部位與分級 (Stage 1-4)" },
-            { "id": "R42", "keywords": ["R42", "DIZZINESS", "VERTIGO", "頭暈", "眩暈"], "standard": "Dizziness and giddiness", "code": "R42", "type": "exact", "organ": "Neurological" },
-            { "id": "T88.6", "keywords": ["ANAPHYLACTIC SHOCK DUE TO DRUG", "DRUG ANAPHYLAXIS", "藥物過敏休克"], "standard": "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered", "code": "T88.6", "type": "exact", "organ": "Other", "note": "" },
-            { "id": "T88.7", "keywords": ["UNSPECIFIED ADVERSE EFFECT OF DRUG", "DRUG SIDE EFFECT", "藥物副作用"], "standard": "Unspecified adverse effect of drug or medicament", "code": "T88.7", "type": "broad", "organ": "Other", "note": "" },
+            { "id": "R42", "keywords": ["R42", "DIZZINESS", "VERTIGO", "GIDDINESS", "LIGHTHEADEDNESS", "頭暈", "眩暈", "暈眩", "頭昏"], "standard": "Dizziness and giddiness", "code": "R42", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "T88.6XXA", "keywords": ["ANAPHYLACTIC SHOCK DUE TO DRUG", "DRUG ANAPHYLAXIS", "藥物過敏休克"], "standard": "Anaphylactic reaction due to adverse effect of correct drug or medicament properly administered, initial encounter", "code": "T88.6XXA", "type": "exact", "organ": "Other", "note": "後續照護 T88.6XXD；後遺症 T88.6XXS" },
+            { "id": "T88.7XXA", "keywords": ["UNSPECIFIED ADVERSE EFFECT OF DRUG", "DRUG SIDE EFFECT", "藥物副作用"], "standard": "Unspecified adverse effect of drug or medicament, initial encounter", "code": "T88.7XXA", "type": "broad", "organ": "Other", "note": "後續照護 T88.7XXD；後遺症 T88.7XXS" },
             { "id": "M32.10", "keywords": ["SLE", "SYSTEMIC LUPUS ERYTHEMATOSUS", "全身性紅斑性狼瘡"], "standard": "Systemic lupus erythematosus, organ or system involvement unspecified", "code": "M32.10", "type": "broad", "organ": "Other", "note": "" },
             { "id": "M06.9", "keywords": ["RA", "RHEUMATOID ARTHRITIS", "類風濕性關節炎"], "standard": "Rheumatoid arthritis, unspecified", "code": "M06.9", "type": "broad", "organ": "Other", "note": "" },
             { "id": "K52.9", "keywords": ["NON-INFECTIVE GASTROENTERITIS", "AGE", "ACUTE GASTROENTERITIS", "腸胃炎"], "standard": "Noninfective gastroenteritis and colitis, unspecified", "code": "K52.9", "type": "exact", "organ": "Digestive", "note": "臨床上常混用 AGE，若確診為感染性請改用 A09" },
             { "id": "A09", "keywords": ["INFECTIOUS GASTROENTERITIS", "INFECTIOUS COLITIS", "感染性腸胃炎"], "standard": "Infectious gastroenteritis and colitis, unspecified", "code": "A09", "type": "exact", "organ": "Digestive", "note": "" },
             { "id": "R10.9", "keywords": ["ABDOMINAL PAIN", "STOMACH ACHE", "腹痛"], "standard": "Unspecified abdominal pain", "code": "R10.9", "type": "broad", "organ": "Digestive", "note": "" },
-            { "id": "K80", "keywords": ["GALL STONE", "CHOLELITHIASIS", "膽結石"], "standard": "Cholelithiasis", "code": "K80", "type": "broad", "organ": "Digestive", "note": "建議使用更精確代碼 (如 K80.20)" },
-            { "id": "K80.20", "keywords": ["GALL STONE NO CHOLECYSTITIS", "GALL STONE NO OBSTRUCTION"], "standard": "Calculus of gallbladder without cholecystitis without obstruction", "code": "K80.20", "type": "exact", "organ": "Digestive", "note": "" }
+            { "id": "R10.10", "keywords": ["R10.10", "UPPER ABDOMINAL PAIN", "UPPER ABD PAIN", "上腹痛"], "standard": "Upper abdominal pain, unspecified", "code": "R10.10", "type": "broad", "organ": "Digestive", "note": "若可定位，RUQ R10.11、LUQ R10.12、epigastric R10.13" },
+            { "id": "R10.11", "keywords": ["R10.11", "RUQ PAIN", "RIGHT UPPER QUADRANT PAIN", "右上腹痛"], "standard": "Right upper quadrant pain", "code": "R10.11", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.12", "keywords": ["R10.12", "LUQ PAIN", "LEFT UPPER QUADRANT PAIN", "左上腹痛"], "standard": "Left upper quadrant pain", "code": "R10.12", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.13", "keywords": ["R10.13", "EPIGASTRIC PAIN", "EPIGASTRALGIA", "EPIGASTRIC DISCOMFORT", "上腹痛", "心窩痛", "胃痛"], "standard": "Epigastric pain", "code": "R10.13", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.30", "keywords": ["R10.30", "LOWER ABDOMINAL PAIN", "LOWER ABD PAIN", "下腹痛"], "standard": "Lower abdominal pain, unspecified", "code": "R10.30", "type": "broad", "organ": "Digestive", "note": "若可定位，RLQ R10.31、LLQ R10.32" },
+            { "id": "R10.31", "keywords": ["R10.31", "RLQ PAIN", "RIGHT LOWER QUADRANT PAIN", "右下腹痛"], "standard": "Right lower quadrant pain", "code": "R10.31", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.32", "keywords": ["R10.32", "LLQ PAIN", "LEFT LOWER QUADRANT PAIN", "左下腹痛"], "standard": "Left lower quadrant pain", "code": "R10.32", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.33", "keywords": ["R10.33", "PERIUMBILICAL PAIN", "UMBILICAL PAIN", "肚臍周圍痛", "臍周痛"], "standard": "Periumbilical pain", "code": "R10.33", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R10.84", "keywords": ["R10.84", "GENERALIZED ABDOMINAL PAIN", "DIFFUSE ABDOMINAL PAIN", "全腹痛", "瀰漫性腹痛"], "standard": "Generalized abdominal pain", "code": "R10.84", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R11.0", "keywords": ["R11.0", "NAUSEA", "噁心", "反胃"], "standard": "Nausea", "code": "R11.0", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R11.10", "keywords": ["R11.10", "VOMITING", "VOMIT", "EMESIS", "嘔吐", "吐"], "standard": "Vomiting, unspecified", "code": "R11.10", "type": "broad", "organ": "Digestive", "note": "若合併 nausea 可用 R11.2" },
+            { "id": "R11.2", "keywords": ["R11.2", "NAUSEA VOMITING", "NAUSEA WITH VOMITING", "N/V", "N AND V", "噁心嘔吐", "又吐又噁心"], "standard": "Nausea with vomiting, unspecified", "code": "R11.2", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R12", "keywords": ["R12", "HEARTBURN", "PYROSIS", "胃灼熱", "火燒心"], "standard": "Heartburn", "code": "R12", "type": "exact", "organ": "Digestive", "note": "若已診斷 GERD，請使用 K21.-" },
+            { "id": "R13.10", "keywords": ["R13.10", "DYSPHAGIA", "SWALLOWING DIFFICULTY", "吞嚥困難"], "standard": "Dysphagia, unspecified", "code": "R13.10", "type": "broad", "organ": "Digestive", "note": "若已知口咽/食道期，可使用更特定 R13.1- 代碼" },
+            { "id": "R14.0", "keywords": ["R14.0", "ABDOMINAL DISTENSION", "BLOATING", "ABDOMINAL BLOATING", "腹脹", "脹氣"], "standard": "Abdominal distension (gaseous)", "code": "R14.0", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R14.1", "keywords": ["R14.1", "GAS PAIN", "GASEOUS PAIN", "脹氣痛"], "standard": "Gas pain", "code": "R14.1", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R14.2", "keywords": ["R14.2", "ERUCTATION", "BELCHING", "BURPING", "打嗝", "噯氣"], "standard": "Eructation", "code": "R14.2", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R14.3", "keywords": ["R14.3", "FLATULENCE", "PASSING GAS", "放屁", "排氣多"], "standard": "Flatulence", "code": "R14.3", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R19.4", "keywords": ["R19.4", "CHANGE IN BOWEL HABIT", "BOWEL HABIT CHANGE", "排便習慣改變", "大便習慣改變"], "standard": "Change in bowel habit", "code": "R19.4", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R19.7", "keywords": ["R19.7", "DIARRHEA", "DIARRHOEA", "LOOSE STOOL", "WATERY DIARRHEA", "腹瀉", "拉肚子", "水瀉", "稀便"], "standard": "Diarrhea, unspecified", "code": "R19.7", "type": "exact", "organ": "Digestive", "note": "若確診感染性腸胃炎，請使用 A09 或特定病原代碼" },
+            { "id": "R05.1", "keywords": ["R05.1", "ACUTE COUGH", "急性咳嗽"], "standard": "Acute cough", "code": "R05.1", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R05.2", "keywords": ["R05.2", "SUBACUTE COUGH", "亞急性咳嗽"], "standard": "Subacute cough", "code": "R05.2", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R05.3", "keywords": ["R05.3", "CHRONIC COUGH", "久咳", "慢性咳嗽"], "standard": "Chronic cough", "code": "R05.3", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R05.9", "keywords": ["R05.9", "COUGH", "COUGHING", "咳嗽"], "standard": "Cough, unspecified", "code": "R05.9", "type": "broad", "organ": "Respiratory", "note": "若病程明確，請用 acute/subacute/chronic cough" },
+            { "id": "R06.01", "keywords": ["R06.01", "ORTHOPNEA", "端坐呼吸", "平躺喘"], "standard": "Orthopnea", "code": "R06.01", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R06.02", "keywords": ["R06.02", "SHORTNESS OF BREATH", "SOB", "BREATHLESSNESS", "喘", "呼吸短促"], "standard": "Shortness of breath", "code": "R06.02", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R06.09", "keywords": ["R06.09", "DOE", "DYSPNEA ON EXERTION", "EXERTIONAL DYSPNEA", "活動喘", "運動性呼吸困難"], "standard": "Other forms of dyspnea", "code": "R06.09", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R06.2", "keywords": ["R06.2", "WHEEZING", "WHEEZE", "喘鳴", "哮鳴音"], "standard": "Wheezing", "code": "R06.2", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R06.6", "keywords": ["R06.6", "HICCOUGH", "HICCUP", "HICCUPS", "打嗝", "呃逆"], "standard": "Hiccough", "code": "R06.6", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R07.0", "keywords": ["R07.0", "THROAT PAIN", "SORE THROAT", "喉嚨痛", "咽喉痛"], "standard": "Pain in throat", "code": "R07.0", "type": "exact", "organ": "Respiratory", "note": "若明確 acute pharyngitis，請使用 J02.9 或特定病原碼" },
+            { "id": "R07.1", "keywords": ["R07.1", "CHEST PAIN ON BREATHING", "PLEURITIC CHEST PAIN", "BREATHING CHEST PAIN", "呼吸時胸痛", "吸氣胸痛"], "standard": "Chest pain on breathing", "code": "R07.1", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "R07.81", "keywords": ["R07.81", "PLEURODYNIA", "RIB PAIN", "肋骨痛", "肋間痛"], "standard": "Pleurodynia", "code": "R07.81", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "R07.89", "keywords": ["R07.89", "OTHER CHEST PAIN", "ATYPICAL CHEST PAIN", "NONCARDIAC CHEST PAIN", "非典型胸痛", "其他胸痛"], "standard": "Other chest pain", "code": "R07.89", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "R09.02", "keywords": ["R09.02", "HYPOXEMIA", "LOW O2", "LOW SPO2", "DESATURATION", "低血氧", "血氧低"], "standard": "Hypoxemia", "code": "R09.02", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R09.81", "keywords": ["R09.81", "NASAL CONGESTION", "STUFFY NOSE", "鼻塞"], "standard": "Nasal congestion", "code": "R09.81", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R00.0", "keywords": ["R00.0", "TACHYCARDIA", "FAST HEARTBEAT", "心跳快", "心搏過速"], "standard": "Tachycardia, unspecified", "code": "R00.0", "type": "broad", "organ": "Cardiovascular", "note": "若已知 arrhythmia 類型，請使用 I47-I49 系列" },
+            { "id": "R00.1", "keywords": ["R00.1", "BRADYCARDIA", "SLOW HEARTBEAT", "心跳慢", "心搏過緩"], "standard": "Bradycardia, unspecified", "code": "R00.1", "type": "broad", "organ": "Cardiovascular", "note": "" },
+            { "id": "R50.9", "keywords": ["R50.9", "FEVER", "PYREXIA", "FEBRILE", "發燒", "發熱"], "standard": "Fever, unspecified", "code": "R50.9", "type": "exact", "organ": "Infectious", "note": "" },
+            { "id": "R53.1", "keywords": ["R53.1", "WEAKNESS", "GENERAL WEAKNESS", "GENERALIZED WEAKNESS", "無力", "全身無力"], "standard": "Weakness", "code": "R53.1", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R53.81", "keywords": ["R53.81", "MALAISE", "不適", "身體不適"], "standard": "Other malaise", "code": "R53.81", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R53.83", "keywords": ["R53.83", "FATIGUE", "TIREDNESS", "疲倦", "疲勞", "累"], "standard": "Other fatigue", "code": "R53.83", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R55", "keywords": ["R55", "SYNCOPE", "FAINTING", "COLLAPSE", "昏厥", "暈倒"], "standard": "Syncope and collapse", "code": "R55", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R56.9", "keywords": ["R56.9", "CONVULSION", "SEIZURE LIKE ACTIVITY", "抽搐", "痙攣"], "standard": "Unspecified convulsions", "code": "R56.9", "type": "broad", "organ": "Neurological", "note": "若診斷為 epilepsy，請使用 G40.- 系列" },
+            { "id": "R40.0", "keywords": ["R40.0", "SOMNOLENCE", "DROWSINESS", "嗜睡", "昏昏欲睡"], "standard": "Somnolence", "code": "R40.0", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R41.0", "keywords": ["R41.0", "DISORIENTATION", "CONFUSION", "意識混亂", "定向感障礙"], "standard": "Disorientation, unspecified", "code": "R41.0", "type": "broad", "organ": "Neurological", "note": "" },
+            { "id": "R41.3", "keywords": ["R41.3", "AMNESIA", "MEMORY LOSS", "記憶喪失", "記憶力下降"], "standard": "Other amnesia", "code": "R41.3", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R41.82", "keywords": ["R41.82", "ALTERED MENTAL STATUS", "AMS", "CONSCIOUSNESS CHANGE", "意識狀態改變", "意識改變"], "standard": "Altered mental status, unspecified", "code": "R41.82", "type": "broad", "organ": "Neurological", "note": "若可診斷 delirium/encephalopathy，請使用更特定代碼" },
+            { "id": "R47.81", "keywords": ["R47.81", "SLURRED SPEECH", "DYSARTHRIA LIKE SPEECH", "口齒不清", "構音不清"], "standard": "Slurred speech", "code": "R47.81", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R20.0", "keywords": ["R20.0", "NUMBNESS", "ANESTHESIA OF SKIN", "麻木", "感覺麻木"], "standard": "Anesthesia of skin", "code": "R20.0", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R20.2", "keywords": ["R20.2", "PARESTHESIA", "TINGLING", "NUMBNESS TINGLING", "刺麻", "麻刺感", "感覺異常"], "standard": "Paresthesia of skin", "code": "R20.2", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R49.0", "keywords": ["R49.0", "DYSPHONIA", "HOARSENESS", "VOICE CHANGE", "聲音沙啞", "聲音改變"], "standard": "Dysphonia", "code": "R49.0", "type": "exact", "organ": "Respiratory", "note": "" },
+            { "id": "R60.0", "keywords": ["R60.0", "LOCALIZED EDEMA", "LEG EDEMA", "ANKLE EDEMA", "局部水腫", "腳水腫", "下肢水腫"], "standard": "Localized edema", "code": "R60.0", "type": "exact", "organ": "Cardiovascular", "note": "" },
+            { "id": "R60.9", "keywords": ["R60.9", "EDEMA", "SWELLING", "水腫", "腫脹"], "standard": "Edema, unspecified", "code": "R60.9", "type": "broad", "organ": "Cardiovascular", "note": "局部水腫可用 R60.0" },
+            { "id": "R61", "keywords": ["R61", "HYPERHIDROSIS", "EXCESSIVE SWEATING", "NIGHT SWEAT", "盜汗", "多汗"], "standard": "Generalized hyperhidrosis", "code": "R61", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R63.0", "keywords": ["R63.0", "ANOREXIA", "LOSS OF APPETITE", "POOR APPETITE", "食慾不振", "食慾差"], "standard": "Anorexia", "code": "R63.0", "type": "exact", "organ": "Digestive", "note": "" },
+            { "id": "R63.4", "keywords": ["R63.4", "WEIGHT LOSS", "BW LOSS", "ABNORMAL WEIGHT LOSS", "體重減輕", "體重下降"], "standard": "Abnormal weight loss", "code": "R63.4", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R63.5", "keywords": ["R63.5", "WEIGHT GAIN", "ABNORMAL WEIGHT GAIN", "體重增加", "體重上升"], "standard": "Abnormal weight gain", "code": "R63.5", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R68.83", "keywords": ["R68.83", "CHILLS", "CHILL", "寒顫", "畏寒", "發冷"], "standard": "Chills (without fever)", "code": "R68.83", "type": "exact", "organ": "Infectious", "note": "" },
+            { "id": "R30.0", "keywords": ["R30.0", "DYSURIA", "PAINFUL URINATION", "尿痛", "解尿疼痛"], "standard": "Dysuria", "code": "R30.0", "type": "exact", "organ": "Renal", "note": "" },
+            { "id": "R30.9", "keywords": ["R30.9", "PAINFUL MICTURITION", "PAINFUL VOIDING", "解尿疼痛", "排尿疼痛"], "standard": "Painful micturition, unspecified", "code": "R30.9", "type": "broad", "organ": "Renal", "note": "Dysuria 可用 R30.0" },
+            { "id": "R32", "keywords": ["R32", "URINARY INCONTINENCE", "INCONTINENCE", "尿失禁"], "standard": "Unspecified urinary incontinence", "code": "R32", "type": "broad", "organ": "Renal", "note": "" },
+            { "id": "R35.0", "keywords": ["R35.0", "URINARY FREQUENCY", "FREQUENCY OF URINATION", "頻尿"], "standard": "Frequency of micturition", "code": "R35.0", "type": "exact", "organ": "Renal", "note": "" },
+            { "id": "R39.11", "keywords": ["R39.11", "URINARY HESITANCY", "HESITANCY OF MICTURITION", "解尿遲疑", "尿不出來"], "standard": "Hesitancy of micturition", "code": "R39.11", "type": "exact", "organ": "Renal", "note": "" },
+            { "id": "R39.12", "keywords": ["R39.12", "POOR URINARY STREAM", "WEAK URINE STREAM", "尿流弱", "尿流變細"], "standard": "Poor urinary stream", "code": "R39.12", "type": "exact", "organ": "Renal", "note": "" },
+            { "id": "R39.15", "keywords": ["R39.15", "URINARY URGENCY", "URGENCY OF URINATION", "尿急"], "standard": "Urgency of urination", "code": "R39.15", "type": "exact", "organ": "Renal", "note": "" },
+            { "id": "R21", "keywords": ["R21", "RASH", "SKIN RASH", "皮疹", "疹子"], "standard": "Rash and other nonspecific skin eruption", "code": "R21", "type": "broad", "organ": "Other", "note": "若已診斷 dermatitis/urticaria/cellulitis，請使用更特定代碼" },
+            { "id": "L29.9", "keywords": ["L29.9", "PRURITUS", "ITCHING", "ITCHY SKIN", "搔癢", "皮膚癢"], "standard": "Pruritus, unspecified", "code": "L29.9", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "R23.3", "keywords": ["R23.3", "ECCHYMOSIS", "EASY BRUISING", "BRUISE", "瘀青", "容易瘀青"], "standard": "Spontaneous ecchymoses", "code": "R23.3", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "M25.50", "keywords": ["M25.50", "JOINT PAIN", "ARTHRALGIA", "關節痛"], "standard": "Pain in unspecified joint", "code": "M25.50", "type": "broad", "organ": "Other", "note": "若已知部位，請使用更特定 M25.5- 代碼" },
+            { "id": "M25.519", "keywords": ["M25.519", "SHOULDER PAIN", "肩痛", "肩膀痛"], "standard": "Pain in unspecified shoulder", "code": "M25.519", "type": "broad", "organ": "Other", "note": "若已知左右側，請使用更特定代碼" },
+            { "id": "M25.569", "keywords": ["M25.569", "KNEE PAIN", "膝痛", "膝蓋痛"], "standard": "Pain in unspecified knee", "code": "M25.569", "type": "broad", "organ": "Other", "note": "若已知左右側，請使用更特定代碼" },
+            { "id": "M54.2", "keywords": ["M54.2", "NECK PAIN", "CERVICALGIA", "頸痛", "脖子痛"], "standard": "Cervicalgia", "code": "M54.2", "type": "exact", "organ": "Other", "note": "" },
+            { "id": "H92.09", "keywords": ["H92.09", "OTALGIA", "EAR PAIN", "耳痛"], "standard": "Otalgia, unspecified ear", "code": "H92.09", "type": "broad", "organ": "Other", "note": "若已知左右耳，請使用更特定 H92.0- 代碼" },
+            { "id": "H93.19", "keywords": ["H93.19", "TINNITUS", "RINGING IN EAR", "耳鳴"], "standard": "Tinnitus, unspecified ear", "code": "H93.19", "type": "broad", "organ": "Other", "note": "若已知左右耳，請使用更特定 H93.1- 代碼" },
+            { "id": "H53.8", "keywords": ["H53.8", "BLURRED VISION", "VISUAL DISTURBANCE", "視力模糊", "視覺異常"], "standard": "Other visual disturbances", "code": "H53.8", "type": "broad", "organ": "Other", "note": "" },
+            { "id": "R43.0", "keywords": ["R43.0", "ANOSMIA", "LOSS OF SMELL", "嗅覺喪失", "聞不到味道"], "standard": "Anosmia", "code": "R43.0", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "R43.2", "keywords": ["R43.2", "PARAGEUSIA", "TASTE DISTURBANCE", "味覺異常", "味覺改變"], "standard": "Parageusia", "code": "R43.2", "type": "exact", "organ": "Neurological", "note": "" },
+            { "id": "K80.20", "keywords": ["GALL STONE", "CHOLELITHIASIS", "膽結石", "GALL STONE NO CHOLECYSTITIS", "GALL STONE NO OBSTRUCTION"], "standard": "Calculus of gallbladder without cholecystitis without obstruction", "code": "K80.20", "type": "broad", "organ": "Digestive", "note": "若有膽囊炎、膽管炎或阻塞，請改用 K80.0-/K80.3-/K80.4-/K80.5- 等更精確代碼" },
+            { "id": "I12.9", "organ": "Cardiovascular", "keywords": ["I12.9", "HTN WITH CKD", "HYPERTENSIVE CKD", "高血壓性慢性腎臟病", "高血壓合併慢性腎臟病"], "standard": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I12.9", "type": "context", "note": "需加編 CKD stage (N18.-)" },
+            { "id": "I13.0", "organ": "Cardiovascular", "keywords": ["I13.0", "HTN HEART CKD WITH HF", "HYPERTENSIVE HEART AND CKD WITH HEART FAILURE", "高血壓性心腎病合併心衰竭"], "standard": "Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I13.0", "type": "context", "note": "需加編 heart failure type (I50.-) 與 CKD stage (N18.-)" },
+            { "id": "I13.10", "organ": "Cardiovascular", "keywords": ["I13.10", "HTN HEART CKD WITHOUT HF", "HYPERTENSIVE HEART AND CKD WITHOUT HEART FAILURE", "高血壓性心腎病無心衰竭"], "standard": "Hypertensive heart and chronic kidney disease without heart failure, with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease", "code": "I13.10", "type": "context", "note": "需加編 CKD stage (N18.-)" },
+            { "id": "I13.2", "organ": "Cardiovascular", "keywords": ["I13.2", "HTN HEART CKD ESRD WITH HF", "HYPERTENSIVE HEART AND CKD WITH ESRD", "高血壓性心腎病合併末期腎病與心衰竭"], "standard": "Hypertensive heart and chronic kidney disease with heart failure and with stage 5 chronic kidney disease, or end stage renal disease", "code": "I13.2", "type": "context", "note": "需加編 heart failure type (I50.-) 與 N18.5/N18.6" },
+            { "id": "I20.9", "organ": "Cardiovascular", "keywords": ["I20.9", "ANGINA", "ANGINA PECTORIS", "心絞痛"], "standard": "Angina pectoris, unspecified", "code": "I20.9", "type": "broad", "note": "若已知 unstable angina 請考慮 I20.0" },
+            { "id": "I21.4", "organ": "Cardiovascular", "keywords": ["I21.4", "NSTEMI", "NON-STEMI", "NON ST ELEVATION MI", "非ST段上升心肌梗塞"], "standard": "Non-ST elevation (NSTEMI) myocardial infarction", "code": "I21.4", "type": "exact", "note": "" },
+            { "id": "I26.99", "organ": "Cardiovascular", "keywords": ["I26.99", "PE", "PULMONARY EMBOLISM", "肺栓塞"], "standard": "Other pulmonary embolism without acute cor pulmonale", "code": "I26.99", "type": "broad", "note": "若有 acute cor pulmonale 請用 I26.09" },
+            { "id": "I50.21", "organ": "Cardiovascular", "keywords": ["I50.21", "ACUTE SYSTOLIC HEART FAILURE", "ACUTE HFrEF", "急性收縮性心衰竭"], "standard": "Acute systolic (congestive) heart failure", "code": "I50.21", "type": "exact", "note": "" },
+            { "id": "I50.22", "organ": "Cardiovascular", "keywords": ["I50.22", "CHRONIC SYSTOLIC HEART FAILURE", "CHRONIC HFrEF", "慢性收縮性心衰竭"], "standard": "Chronic systolic (congestive) heart failure", "code": "I50.22", "type": "exact", "note": "" },
+            { "id": "I50.23", "organ": "Cardiovascular", "keywords": ["I50.23", "ACUTE ON CHRONIC SYSTOLIC HEART FAILURE", "ACUTE ON CHRONIC HFrEF", "慢性收縮性心衰竭急性惡化"], "standard": "Acute on chronic systolic (congestive) heart failure", "code": "I50.23", "type": "exact", "note": "" },
+            { "id": "I50.31", "organ": "Cardiovascular", "keywords": ["I50.31", "ACUTE DIASTOLIC HEART FAILURE", "ACUTE HFpEF", "急性舒張性心衰竭"], "standard": "Acute diastolic (congestive) heart failure", "code": "I50.31", "type": "exact", "note": "" },
+            { "id": "I50.32", "organ": "Cardiovascular", "keywords": ["I50.32", "CHRONIC DIASTOLIC HEART FAILURE", "CHRONIC HFpEF", "慢性舒張性心衰竭"], "standard": "Chronic diastolic (congestive) heart failure", "code": "I50.32", "type": "exact", "note": "" },
+            { "id": "I50.33", "organ": "Cardiovascular", "keywords": ["I50.33", "ACUTE ON CHRONIC DIASTOLIC HEART FAILURE", "ACUTE ON CHRONIC HFpEF", "慢性舒張性心衰竭急性惡化"], "standard": "Acute on chronic diastolic (congestive) heart failure", "code": "I50.33", "type": "exact", "note": "" },
+            { "id": "I95.9", "organ": "Cardiovascular", "keywords": ["I95.9", "HYPOTENSION", "LOW BLOOD PRESSURE", "低血壓"], "standard": "Hypotension, unspecified", "code": "I95.9", "type": "broad", "note": "若為休克請依病因選 R57.- 或其他特定代碼" },
+            { "id": "N18.31", "organ": "Renal", "keywords": ["N18.31", "CKD STAGE 3A", "CHRONIC KIDNEY DISEASE STAGE 3A", "慢性腎臟病第三期A", "CKD 3A"], "standard": "Chronic kidney disease, stage 3a", "code": "N18.31", "type": "exact", "note": "" },
+            { "id": "N18.32", "organ": "Renal", "keywords": ["N18.32", "CKD STAGE 3B", "CHRONIC KIDNEY DISEASE STAGE 3B", "慢性腎臟病第三期B", "CKD 3B"], "standard": "Chronic kidney disease, stage 3b", "code": "N18.32", "type": "exact", "note": "" },
+            { "id": "N10", "organ": "Renal", "keywords": ["N10", "ACUTE PYELONEPHRITIS", "APN", "急性腎盂腎炎"], "standard": "Acute pyelonephritis", "code": "N10", "type": "exact", "note": "" },
+            { "id": "N12", "organ": "Renal", "keywords": ["N12", "PYELONEPHRITIS", "TUBULOINTERSTITIAL NEPHRITIS", "腎盂腎炎", "間質性腎炎"], "standard": "Tubulo-interstitial nephritis, not specified as acute or chronic", "code": "N12", "type": "broad", "note": "急性腎盂腎炎請優先用 N10" },
+            { "id": "N13.30", "organ": "Renal", "keywords": ["N13.30", "UNSPECIFIED HYDRONEPHROSIS", "HYDRONEPHROSIS UNSPECIFIED", "腎水腫原因未明"], "standard": "Unspecified hydronephrosis", "code": "N13.30", "type": "broad", "note": "" },
+            { "id": "N30.00", "organ": "Renal", "keywords": ["N30.00", "ACUTE CYSTITIS", "急性膀胱炎"], "standard": "Acute cystitis without hematuria", "code": "N30.00", "type": "exact", "note": "若合併血尿請用 N30.01" },
+            { "id": "R31.9", "organ": "Renal", "keywords": ["R31.9", "HEMATURIA", "血尿"], "standard": "Hematuria, unspecified", "code": "R31.9", "type": "broad", "note": "" },
+            { "id": "R33.9", "organ": "Renal", "keywords": ["R33.9", "URINARY RETENTION", "ACUTE URINARY RETENTION", "尿滯留", "解尿困難尿滯留"], "standard": "Retention of urine, unspecified", "code": "R33.9", "type": "broad", "note": "" },
+            { "id": "E03.9", "organ": "Endocrine", "keywords": ["E03.9", "HYPOTHYROIDISM", "甲狀腺功能低下", "甲低"], "standard": "Hypothyroidism, unspecified", "code": "E03.9", "type": "exact", "note": "" },
+            { "id": "E04.1", "organ": "Endocrine", "keywords": ["E04.1", "THYROID NODULE", "NONTOXIC THYROID NODULE", "甲狀腺結節"], "standard": "Nontoxic single thyroid nodule", "code": "E04.1", "type": "exact", "note": "" },
+            { "id": "E05.90", "organ": "Endocrine", "keywords": ["E05.90", "HYPERTHYROIDISM", "THYROTOXICOSIS", "甲狀腺功能亢進", "甲亢"], "standard": "Thyrotoxicosis, unspecified without thyrotoxic crisis or storm", "code": "E05.90", "type": "broad", "note": "若有 thyroid storm 請用 E05.91" },
+            { "id": "E16.2", "organ": "Endocrine", "keywords": ["E16.2", "HYPOGLYCEMIA", "LOW SUGAR", "低血糖"], "standard": "Hypoglycemia, unspecified", "code": "E16.2", "type": "exact", "note": "" },
+            { "id": "E43", "organ": "Endocrine", "keywords": ["E43", "SEVERE MALNUTRITION", "SEVERE PROTEIN CALORIE MALNUTRITION", "重度營養不良"], "standard": "Unspecified severe protein-calorie malnutrition", "code": "E43", "type": "exact", "note": "" },
+            { "id": "E44.0", "organ": "Endocrine", "keywords": ["E44.0", "MODERATE MALNUTRITION", "MODERATE PROTEIN CALORIE MALNUTRITION", "中度營養不良"], "standard": "Moderate protein-calorie malnutrition", "code": "E44.0", "type": "exact", "note": "" },
+            { "id": "E66.01", "organ": "Endocrine", "keywords": ["E66.01", "MORBID OBESITY", "SEVERE OBESITY", "病態性肥胖", "重度肥胖"], "standard": "Morbid (severe) obesity due to excess calories", "code": "E66.01", "type": "exact", "note": "可視情況加編 BMI (Z68.-)" },
+            { "id": "E66.9", "organ": "Endocrine", "keywords": ["E66.9", "OBESITY", "肥胖"], "standard": "Obesity, unspecified", "code": "E66.9", "type": "broad", "note": "可視情況加編 BMI (Z68.-)" },
+            { "id": "E83.42", "organ": "Endocrine", "keywords": ["E83.42", "HYPOMAGNESEMIA", "LOW MG", "低血鎂"], "standard": "Hypomagnesemia", "code": "E83.42", "type": "exact", "note": "" },
+            { "id": "E83.51", "organ": "Endocrine", "keywords": ["E83.51", "HYPOCALCEMIA", "LOW CALCIUM", "低血鈣"], "standard": "Hypocalcemia", "code": "E83.51", "type": "exact", "note": "" },
+            { "id": "E83.52", "organ": "Endocrine", "keywords": ["E83.52", "HYPERCALCEMIA", "HIGH CALCIUM", "高血鈣"], "standard": "Hypercalcemia", "code": "E83.52", "type": "exact", "note": "" },
+            { "id": "E87.70", "organ": "Endocrine", "keywords": ["E87.70", "FLUID OVERLOAD", "VOLUME OVERLOAD", "體液過多", "容量過多"], "standard": "Fluid overload, unspecified", "code": "E87.70", "type": "broad", "note": "若是心衰竭或腎衰竭造成，請優先編碼病因" },
+            { "id": "K59.00", "organ": "Digestive", "keywords": ["K59.00", "CONSTIPATION", "DIFFICULT STOOL", "HARD STOOL", "便秘", "排便困難", "大便硬"], "standard": "Constipation, unspecified", "code": "K59.00", "type": "exact", "note": "" },
+            { "id": "K76.0", "organ": "Digestive", "keywords": ["K76.0", "FATTY LIVER", "HEPATIC STEATOSIS", "脂肪肝"], "standard": "Fatty (change of) liver, not elsewhere classified", "code": "K76.0", "type": "exact", "note": "" },
+            { "id": "K76.6", "organ": "Digestive", "keywords": ["K76.6", "PORTAL HYPERTENSION", "門脈高壓"], "standard": "Portal hypertension", "code": "K76.6", "type": "exact", "note": "" },
+            { "id": "K76.82", "organ": "Digestive", "keywords": ["K76.82", "HEPATIC ENCEPHALOPATHY", "肝性腦病變", "肝腦病變"], "standard": "Hepatic encephalopathy", "code": "K76.82", "type": "exact", "note": "比 K72.01 更適合單純 hepatic encephalopathy" },
+            { "id": "K81.0", "organ": "Digestive", "keywords": ["K81.0", "ACUTE CHOLECYSTITIS", "急性膽囊炎"], "standard": "Acute cholecystitis", "code": "K81.0", "type": "exact", "note": "" },
+            { "id": "K83.09", "organ": "Digestive", "keywords": ["K83.09", "CHOLANGITIS", "ACUTE CHOLANGITIS", "膽管炎", "急性膽管炎"], "standard": "Other cholangitis", "code": "K83.09", "type": "broad", "note": "" },
+            { "id": "K85.90", "organ": "Digestive", "keywords": ["K85.90", "ACUTE PANCREATITIS", "急性胰臟炎"], "standard": "Acute pancreatitis without necrosis or infection, unspecified", "code": "K85.90", "type": "broad", "note": "若知道膽石性、酒精性或壞死/感染，請使用更特定代碼" },
+            { "id": "K92.0", "organ": "Digestive", "keywords": ["K92.0", "HEMATEMESIS", "VOMITING BLOOD", "吐血"], "standard": "Hematemesis", "code": "K92.0", "type": "exact", "note": "" },
+            { "id": "K92.1", "organ": "Digestive", "keywords": ["K92.1", "MELENA", "BLACK STOOL", "TARRY STOOL", "黑便", "柏油便"], "standard": "Melena", "code": "K92.1", "type": "exact", "note": "" },
+            { "id": "K92.2", "organ": "Digestive", "keywords": ["K92.2", "GI BLEEDING", "GIB", "GASTROINTESTINAL BLEEDING", "消化道出血", "腸胃道出血"], "standard": "Gastrointestinal hemorrhage, unspecified", "code": "K92.2", "type": "broad", "note": "若已知潰瘍、食道靜脈曲張等出血來源，請使用更特定代碼" },
+            { "id": "A04.72", "organ": "Infectious", "keywords": ["A04.72", "C DIFFICILE", "C DIFF", "CLOSTRIDIOIDES DIFFICILE", "CLOSTRIDIUM DIFFICILE", "困難梭狀桿菌", "偽膜性腸炎"], "standard": "Enterocolitis due to Clostridium difficile, not specified as recurrent", "code": "A04.72", "type": "exact", "note": "復發性 C. difficile enterocolitis 請用 A04.71" },
+            { "id": "A49.02", "organ": "Infectious", "keywords": ["A49.02", "MRSA INFECTION", "METHICILLIN RESISTANT STAPH AUREUS", "抗藥性金黃色葡萄球菌感染"], "standard": "Methicillin resistant Staphylococcus aureus infection, unspecified site", "code": "A49.02", "type": "broad", "note": "若感染部位明確，請先編碼感染部位，再加病原/抗藥性代碼" },
+            { "id": "B37.9", "organ": "Infectious", "keywords": ["B37.9", "CANDIDIASIS", "CANDIDA INFECTION", "念珠菌感染"], "standard": "Candidiasis, unspecified", "code": "B37.9", "type": "broad", "note": "若部位明確，請使用口腔、食道、泌尿等更特定代碼" },
+            { "id": "B95.61", "organ": "Infectious", "keywords": ["B95.61", "MSSA", "METHICILLIN SUSCEPTIBLE STAPH AUREUS", "金黃色葡萄球菌"], "standard": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere", "code": "B95.61", "type": "context", "note": "需先編碼感染部位或疾病" },
+            { "id": "B96.1", "organ": "Infectious", "keywords": ["B96.1", "KLEBSIELLA PNEUMONIAE", "KLEBSIELLA", "克雷白氏菌", "克雷白肺炎桿菌"], "standard": "Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere", "code": "B96.1", "type": "context", "note": "需先編碼感染部位或疾病" },
+            { "id": "B96.20", "organ": "Infectious", "keywords": ["B96.20", "E COLI", "ESCHERICHIA COLI", "大腸桿菌"], "standard": "Unspecified Escherichia coli [E. coli] as the cause of diseases classified elsewhere", "code": "B96.20", "type": "context", "note": "需先編碼感染部位或疾病" },
+            { "id": "Z16.12", "organ": "Infectious", "keywords": ["Z16.12", "ESBL", "EXTENDED SPECTRUM BETA LACTAMASE", "超廣效乙內醯胺酶"], "standard": "Extended spectrum beta lactamase (ESBL) resistance", "code": "Z16.12", "type": "context", "note": "需搭配感染病原與感染部位代碼" },
+            { "id": "Z16.24", "organ": "Infectious", "keywords": ["Z16.24", "MULTIDRUG RESISTANT", "MDR", "MULTIPLE ANTIBIOTIC RESISTANCE", "多重抗藥性"], "standard": "Resistance to multiple antibiotics", "code": "Z16.24", "type": "context", "note": "需搭配感染病原與感染部位代碼" },
+            { "id": "D63.1", "organ": "Other", "keywords": ["D63.1", "ANEMIA IN CKD", "CKD ANEMIA", "RENAL ANEMIA", "慢性腎臟病貧血", "腎性貧血"], "standard": "Anemia in chronic kidney disease", "code": "D63.1", "type": "context", "note": "需先編碼 CKD stage (N18.-)" },
+            { "id": "D64.9", "organ": "Other", "keywords": ["D64.9", "ANEMIA", "貧血"], "standard": "Anemia, unspecified", "code": "D64.9", "type": "broad", "note": "若已知缺鐵、B12/葉酸缺乏、CKD 等病因，請使用更特定代碼" },
+            { "id": "D51.9", "organ": "Other", "keywords": ["D51.9", "VITAMIN B12 DEFICIENCY ANEMIA", "B12 DEFICIENCY ANEMIA", "維生素B12缺乏性貧血"], "standard": "Vitamin B12 deficiency anemia, unspecified", "code": "D51.9", "type": "exact", "note": "" },
+            { "id": "D52.9", "organ": "Other", "keywords": ["D52.9", "FOLATE DEFICIENCY ANEMIA", "FOLIC ACID DEFICIENCY ANEMIA", "葉酸缺乏性貧血"], "standard": "Folate deficiency anemia, unspecified", "code": "D52.9", "type": "exact", "note": "" },
+            { "id": "S72.001A", "organ": "Surgical", "keywords": ["S72.001A", "RIGHT FEMORAL NECK FRACTURE", "RIGHT NECK OF FEMUR FRACTURE", "右股骨頸骨折", "右側股骨頸骨折"], "standard": "Fracture of unspecified part of neck of right femur, initial encounter for closed fracture", "code": "S72.001A", "type": "exact", "note": "初次就醫閉鎖性骨折；開放性或後續照護需使用不同第 7 字元" },
+            { "id": "S72.002A", "organ": "Surgical", "keywords": ["S72.002A", "LEFT FEMORAL NECK FRACTURE", "LEFT NECK OF FEMUR FRACTURE", "左股骨頸骨折", "左側股骨頸骨折"], "standard": "Fracture of unspecified part of neck of left femur, initial encounter for closed fracture", "code": "S72.002A", "type": "exact", "note": "初次就醫閉鎖性骨折；開放性或後續照護需使用不同第 7 字元" },
+            { "id": "S72.009A", "organ": "Surgical", "keywords": ["S72.009A", "FEMORAL NECK FRACTURE", "NECK OF FEMUR FRACTURE", "HIP FRACTURE", "股骨頸骨折", "髖部骨折"], "standard": "Fracture of unspecified part of neck of unspecified femur, initial encounter for closed fracture", "code": "S72.009A", "type": "broad", "note": "若已知左右側，請使用 S72.001A 或 S72.002A" },
+            { "id": "S72.141A", "organ": "Surgical", "keywords": ["S72.141A", "RIGHT INTERTROCHANTERIC FRACTURE", "RIGHT IT FRACTURE", "右股骨轉子間骨折"], "standard": "Displaced intertrochanteric fracture of right femur, initial encounter for closed fracture", "code": "S72.141A", "type": "exact", "note": "" },
+            { "id": "S72.142A", "organ": "Surgical", "keywords": ["S72.142A", "LEFT INTERTROCHANTERIC FRACTURE", "LEFT IT FRACTURE", "左股骨轉子間骨折"], "standard": "Displaced intertrochanteric fracture of left femur, initial encounter for closed fracture", "code": "S72.142A", "type": "exact", "note": "" },
+            { "id": "S72.143A", "organ": "Surgical", "keywords": ["S72.143A", "INTERTROCHANTERIC FRACTURE", "IT FRACTURE", "股骨轉子間骨折"], "standard": "Displaced intertrochanteric fracture of unspecified femur, initial encounter for closed fracture", "code": "S72.143A", "type": "broad", "note": "若已知左右側，請使用 S72.141A 或 S72.142A" },
+            { "id": "M16.0", "organ": "Surgical", "keywords": ["M16.0", "BILATERAL HIP OA", "BILATERAL HIP OSTEOARTHRITIS", "雙側髖關節退化", "雙側髖關節骨關節炎"], "standard": "Bilateral primary osteoarthritis of hip", "code": "M16.0", "type": "exact", "note": "" },
+            { "id": "M16.11", "organ": "Surgical", "keywords": ["M16.11", "RIGHT HIP OA", "RIGHT HIP OSTEOARTHRITIS", "右髖關節退化", "右髖關節骨關節炎"], "standard": "Unilateral primary osteoarthritis, right hip", "code": "M16.11", "type": "exact", "note": "" },
+            { "id": "M16.12", "organ": "Surgical", "keywords": ["M16.12", "LEFT HIP OA", "LEFT HIP OSTEOARTHRITIS", "左髖關節退化", "左髖關節骨關節炎"], "standard": "Unilateral primary osteoarthritis, left hip", "code": "M16.12", "type": "exact", "note": "" },
+            { "id": "M16.9", "organ": "Surgical", "keywords": ["M16.9", "HIP OA", "HIP OSTEOARTHRITIS", "OSTEOARTHRITIS OF HIP", "髖關節退化", "髖關節骨關節炎", "髖關節炎"], "standard": "Osteoarthritis of hip, unspecified", "code": "M16.9", "type": "broad", "note": "若已知左右側或雙側，請使用 M16.11/M16.12/M16.0" },
+            { "id": "M17.0", "organ": "Surgical", "keywords": ["M17.0", "BILATERAL KNEE OA", "BILATERAL KNEE OSTEOARTHRITIS", "雙側膝關節退化", "雙側膝骨關節炎"], "standard": "Bilateral primary osteoarthritis of knee", "code": "M17.0", "type": "exact", "note": "" },
+            { "id": "M17.11", "organ": "Surgical", "keywords": ["M17.11", "RIGHT KNEE OA", "RIGHT KNEE OSTEOARTHRITIS", "右膝退化", "右膝骨關節炎"], "standard": "Unilateral primary osteoarthritis, right knee", "code": "M17.11", "type": "exact", "note": "" },
+            { "id": "M17.12", "organ": "Surgical", "keywords": ["M17.12", "LEFT KNEE OA", "LEFT KNEE OSTEOARTHRITIS", "左膝退化", "左膝骨關節炎"], "standard": "Unilateral primary osteoarthritis, left knee", "code": "M17.12", "type": "exact", "note": "" },
+            { "id": "M17.9", "organ": "Surgical", "keywords": ["M17.9", "KNEE OA", "KNEE OSTEOARTHRITIS", "OSTEOARTHRITIS OF KNEE", "膝關節退化", "膝骨關節炎", "退化性膝關節炎"], "standard": "Osteoarthritis of knee, unspecified", "code": "M17.9", "type": "broad", "note": "若已知左右側或雙側，請使用 M17.11/M17.12/M17.0" },
+            { "id": "M81.0", "organ": "Surgical", "keywords": ["M81.0", "OSTEOPOROSIS", "SENILE OSTEOPOROSIS", "骨質疏鬆", "骨質疏鬆症"], "standard": "Age-related osteoporosis without current pathological fracture", "code": "M81.0", "type": "exact", "note": "若有當下病理性骨折，請使用 M80.- 類別" },
+            { "id": "M80.00XA", "organ": "Surgical", "keywords": ["M80.00XA", "OSTEOPOROSIS WITH FRACTURE", "PATHOLOGICAL FRACTURE DUE TO OSTEOPOROSIS", "骨質疏鬆合併骨折", "骨鬆病理性骨折"], "standard": "Age-related osteoporosis with current pathological fracture, unspecified site, initial encounter for fracture", "code": "M80.00XA", "type": "broad", "note": "若已知骨折部位，請使用更特定 M80.- 代碼" },
+            { "id": "Z96.641", "organ": "Surgical", "keywords": ["Z96.641", "S/P RIGHT THR", "S/P RIGHT THA", "RIGHT TOTAL HIP REPLACEMENT", "RIGHT TOTAL HIP ARTHROPLASTY", "右人工髖關節", "右全髖關節置換術後"], "standard": "Presence of right artificial hip joint", "code": "Z96.641", "type": "exact", "note": "ICD-10-CM 狀態碼；不是手術處置碼" },
+            { "id": "Z96.642", "organ": "Surgical", "keywords": ["Z96.642", "S/P LEFT THR", "S/P LEFT THA", "LEFT TOTAL HIP REPLACEMENT", "LEFT TOTAL HIP ARTHROPLASTY", "左人工髖關節", "左全髖關節置換術後"], "standard": "Presence of left artificial hip joint", "code": "Z96.642", "type": "exact", "note": "ICD-10-CM 狀態碼；不是手術處置碼" },
+            { "id": "Z96.649", "organ": "Surgical", "keywords": ["Z96.649", "S/P THR", "S/P THA", "THR", "THA", "TOTAL HIP REPLACEMENT", "TOTAL HIP ARTHROPLASTY", "人工髖關節", "全髖關節置換術後"], "standard": "Presence of unspecified artificial hip joint", "code": "Z96.649", "type": "broad", "note": "若已知左右側，請使用 Z96.641 或 Z96.642" },
+            { "id": "Z96.651", "organ": "Surgical", "keywords": ["Z96.651", "S/P RIGHT TKR", "S/P RIGHT TKA", "RIGHT TOTAL KNEE REPLACEMENT", "RIGHT TOTAL KNEE ARTHROPLASTY", "右人工膝關節", "右全膝關節置換術後"], "standard": "Presence of right artificial knee joint", "code": "Z96.651", "type": "exact", "note": "ICD-10-CM 狀態碼；不是手術處置碼" },
+            { "id": "Z96.652", "organ": "Surgical", "keywords": ["Z96.652", "S/P LEFT TKR", "S/P LEFT TKA", "LEFT TOTAL KNEE REPLACEMENT", "LEFT TOTAL KNEE ARTHROPLASTY", "左人工膝關節", "左全膝關節置換術後"], "standard": "Presence of left artificial knee joint", "code": "Z96.652", "type": "exact", "note": "ICD-10-CM 狀態碼；不是手術處置碼" },
+            { "id": "Z96.659", "organ": "Surgical", "keywords": ["Z96.659", "S/P TKR", "S/P TKA", "TKR", "TKA", "TOTAL KNEE REPLACEMENT", "TOTAL KNEE ARTHROPLASTY", "人工膝關節", "全膝關節置換術後", "膝關節置換術後"], "standard": "Presence of unspecified artificial knee joint", "code": "Z96.659", "type": "broad", "note": "若已知左右側，請使用 Z96.651 或 Z96.652" },
+            { "id": "Z47.1", "organ": "Surgical", "keywords": ["Z47.1", "AFTERCARE FOLLOWING JOINT REPLACEMENT", "POST JOINT REPLACEMENT AFTERCARE", "JOINT REPLACEMENT AFTERCARE", "關節置換術後照護"], "standard": "Aftercare following joint replacement surgery", "code": "Z47.1", "type": "context", "note": "通常搭配人工關節存在狀態碼 Z96.6-" },
+            { "id": "Z47.89", "organ": "Surgical", "keywords": ["Z47.89", "ORTHOPEDIC AFTERCARE", "S/P ORIF", "POST ORIF", "ORIF AFTERCARE", "骨科術後照護", "骨折固定術後"], "standard": "Encounter for other orthopedic aftercare", "code": "Z47.89", "type": "context", "note": "若為骨折後續照護，也可依骨折代碼第 7 字元選擇後續照護碼" },
+            { "id": "Z48.89", "organ": "Surgical", "keywords": ["Z48.89", "SURGICAL AFTERCARE", "POST OP FOLLOW UP", "POSTOPERATIVE FOLLOW UP", "術後照護", "外科術後追蹤"], "standard": "Encounter for other specified surgical aftercare", "code": "Z48.89", "type": "context", "note": "泛用術後照護碼；若有更特定 aftercare/status code 請優先使用" },
+            { "id": "Z98.890", "organ": "Surgical", "keywords": ["Z98.890", "POSTPROCEDURAL STATE", "S/P OPERATION", "S/P SURGERY", "HISTORY OF SURGERY", "術後狀態", "手術後狀態"], "standard": "Other specified postprocedural states", "code": "Z98.890", "type": "broad", "note": "狀態碼；若可指定人工關節、造口、器官切除等，請用更特定 Z code" },
+            { "id": "Z90.49", "organ": "Surgical", "keywords": ["Z90.49", "S/P APPENDECTOMY", "S/P CHOLECYSTECTOMY", "APPENDECTOMY STATUS", "CHOLECYSTECTOMY STATUS", "闌尾切除術後", "膽囊切除術後"], "standard": "Acquired absence of other specified parts of digestive tract", "code": "Z90.49", "type": "exact", "note": "" },
+            { "id": "K35.80", "organ": "Surgical", "keywords": ["K35.80", "ACUTE APPENDICITIS", "APPENDICITIS", "急性闌尾炎", "盲腸炎"], "standard": "Unspecified acute appendicitis", "code": "K35.80", "type": "broad", "note": "若有穿孔、膿瘍或腹膜炎，請使用更特定 K35.- 代碼" },
+            { "id": "K40.90", "organ": "Surgical", "keywords": ["K40.90", "INGUINAL HERNIA", "腹股溝疝氣", "鼠蹊部疝氣"], "standard": "Unilateral inguinal hernia, without obstruction or gangrene, not specified as recurrent", "code": "K40.90", "type": "broad", "note": "若有阻塞、壞疽、復發或雙側，請使用更特定 K40.- 代碼" },
+            { "id": "K42.9", "organ": "Surgical", "keywords": ["K42.9", "UMBILICAL HERNIA", "臍疝氣"], "standard": "Umbilical hernia without obstruction or gangrene", "code": "K42.9", "type": "exact", "note": "" },
+            { "id": "K80.00", "organ": "Surgical", "keywords": ["K80.00", "GALLSTONE WITH ACUTE CHOLECYSTITIS", "CHOLELITHIASIS WITH ACUTE CHOLECYSTITIS", "膽結石合併急性膽囊炎"], "standard": "Calculus of gallbladder with acute cholecystitis without obstruction", "code": "K80.00", "type": "exact", "note": "若有 obstruction 請使用更特定 K80.- 代碼" },
+            { "id": "K56.609", "organ": "Surgical", "keywords": ["K56.609", "INTESTINAL OBSTRUCTION", "BOWEL OBSTRUCTION", "ILEUS", "腸阻塞", "腸梗阻"], "standard": "Unspecified intestinal obstruction, unspecified as to partial versus complete obstruction", "code": "K56.609", "type": "broad", "note": "若已知小腸/大腸、部分/完全阻塞，請使用更特定代碼" },
+            { "id": "K57.32", "organ": "Surgical", "keywords": ["K57.32", "DIVERTICULITIS OF COLON", "COLON DIVERTICULITIS", "大腸憩室炎", "結腸憩室炎"], "standard": "Diverticulitis of large intestine without perforation or abscess without bleeding", "code": "K57.32", "type": "exact", "note": "" },
+            { "id": "K57.92", "organ": "Surgical", "keywords": ["K57.92", "DIVERTICULITIS", "憩室炎"], "standard": "Diverticulitis of intestine, part unspecified, without perforation or abscess without bleeding", "code": "K57.92", "type": "broad", "note": "若已知大腸且無併發症可用 K57.32" },
+            { "id": "L02.91", "organ": "Surgical", "keywords": ["L02.91", "ABSCESS", "SKIN ABSCESS", "CUTANEOUS ABSCESS", "皮膚膿瘍", "膿瘍"], "standard": "Cutaneous abscess, unspecified", "code": "L02.91", "type": "broad", "note": "若已知部位，請使用更特定 L02.- 代碼" },
+            { "id": "L03.119", "organ": "Surgical", "keywords": ["L03.119", "LIMB CELLULITIS", "ARM CELLULITIS", "LEG CELLULITIS", "肢體蜂窩性組織炎", "上下肢蜂窩性組織炎"], "standard": "Cellulitis of unspecified part of limb", "code": "L03.119", "type": "broad", "note": "若已知左右側與部位，請使用更特定 L03.- 代碼" },
+            { "id": "M75.101", "organ": "Surgical", "keywords": ["M75.101", "RIGHT ROTATOR CUFF TEAR", "RIGHT RCT", "右肩旋轉肌袖破裂"], "standard": "Unspecified rotator cuff tear or rupture of right shoulder, not specified as traumatic", "code": "M75.101", "type": "exact", "note": "創傷性 rotator cuff tear 請查 S46.-" },
+            { "id": "M75.102", "organ": "Surgical", "keywords": ["M75.102", "LEFT ROTATOR CUFF TEAR", "LEFT RCT", "左肩旋轉肌袖破裂"], "standard": "Unspecified rotator cuff tear or rupture of left shoulder, not specified as traumatic", "code": "M75.102", "type": "exact", "note": "創傷性 rotator cuff tear 請查 S46.-" },
+            { "id": "M75.100", "organ": "Surgical", "keywords": ["M75.100", "ROTATOR CUFF TEAR", "RCT", "ROTATOR CUFF RUPTURE", "旋轉肌袖破裂", "肩旋轉肌破裂"], "standard": "Unspecified rotator cuff tear or rupture of unspecified shoulder, not specified as traumatic", "code": "M75.100", "type": "broad", "note": "若已知左右側，請使用 M75.101 或 M75.102" },
+            { "id": "M51.26", "organ": "Surgical", "keywords": ["M51.26", "LUMBAR HIVD", "LUMBAR DISC HERNIATION", "HERNIATED LUMBAR DISC", "腰椎椎間盤突出", "腰椎間盤突出"], "standard": "Other intervertebral disc displacement, lumbar region", "code": "M51.26", "type": "broad", "note": "" },
+            { "id": "M48.061", "organ": "Surgical", "keywords": ["M48.061", "LUMBAR SPINAL STENOSIS", "LUMBAR STENOSIS", "腰椎狹窄", "腰椎管狹窄"], "standard": "Spinal stenosis, lumbar region without neurogenic claudication", "code": "M48.061", "type": "exact", "note": "若有 neurogenic claudication 請用 M48.062" },
+            { "id": "S52.501A", "organ": "Surgical", "keywords": ["S52.501A", "RIGHT DISTAL RADIUS FRACTURE", "RIGHT COLLES FRACTURE", "右遠端橈骨骨折", "右柯雷氏骨折"], "standard": "Unspecified fracture of the lower end of right radius, initial encounter for closed fracture", "code": "S52.501A", "type": "exact", "note": "初次就醫閉鎖性骨折；需依開放性/後續照護調整第 7 字元" },
+            { "id": "S52.502A", "organ": "Surgical", "keywords": ["S52.502A", "LEFT DISTAL RADIUS FRACTURE", "LEFT COLLES FRACTURE", "左遠端橈骨骨折", "左柯雷氏骨折"], "standard": "Unspecified fracture of the lower end of left radius, initial encounter for closed fracture", "code": "S52.502A", "type": "exact", "note": "初次就醫閉鎖性骨折；需依開放性/後續照護調整第 7 字元" },
+            { "id": "S82.891A", "organ": "Surgical", "keywords": ["S82.891A", "RIGHT ANKLE FRACTURE", "RIGHT LOWER LEG FRACTURE", "右踝骨折", "右小腿骨折"], "standard": "Other fracture of right lower leg, initial encounter for closed fracture", "code": "S82.891A", "type": "broad", "note": "若已知 malleolus/tibia/fibula 位置，請使用更特定 S82.- 代碼" },
+            { "id": "S82.892A", "organ": "Surgical", "keywords": ["S82.892A", "LEFT ANKLE FRACTURE", "LEFT LOWER LEG FRACTURE", "左踝骨折", "左小腿骨折"], "standard": "Other fracture of left lower leg, initial encounter for closed fracture", "code": "S82.892A", "type": "broad", "note": "若已知 malleolus/tibia/fibula 位置，請使用更特定 S82.- 代碼" },
+            { "id": "T84.84XA", "organ": "Surgical", "keywords": ["T84.84XA", "PAINFUL PROSTHESIS", "PAIN DUE TO ORTHOPEDIC IMPLANT", "人工關節疼痛", "骨科植入物疼痛"], "standard": "Pain due to internal orthopedic prosthetic devices, implants and grafts, initial encounter", "code": "T84.84XA", "type": "broad", "note": "需依初診/後續/後遺症調整第 7 字元" },
+            { "id": "T84.53XA", "organ": "Surgical", "keywords": ["T84.53XA", "RIGHT KNEE PROSTHESIS INFECTION", "RIGHT PJI", "右人工膝關節感染", "右膝人工關節感染"], "standard": "Infection and inflammatory reaction due to internal right knee prosthesis, initial encounter", "code": "T84.53XA", "type": "exact", "note": "需依初診/後續/後遺症調整第 7 字元，並可加病原碼" },
+            { "id": "T84.54XA", "organ": "Surgical", "keywords": ["T84.54XA", "LEFT KNEE PROSTHESIS INFECTION", "LEFT PJI", "左人工膝關節感染", "左膝人工關節感染"], "standard": "Infection and inflammatory reaction due to internal left knee prosthesis, initial encounter", "code": "T84.54XA", "type": "exact", "note": "需依初診/後續/後遺症調整第 7 字元，並可加病原碼" },
+            {"id":"I61.9","organ":"Neurological","keywords":["I61.9","ACUTE ICH","ACUTE INTRACEREBRAL HEMORRHAGE","INTRACEREBRAL HEMORRHAGE","BRAIN HEMORRHAGE","腦出血","急性腦出血","腦內出血"],"standard":"Nontraumatic intracerebral hemorrhage, unspecified","code":"I61.9","type":"broad","note":"若已知出血位置，請優先使用 I61.0-I61.6"},
+            {"id":"I61.0","organ":"Neurological","keywords":["I61.0","SUBCORTICAL ICH","BASAL GANGLIA HEMORRHAGE","THALAMIC HEMORRHAGE","基底核出血","丘腦出血","皮質下腦出血"],"standard":"Nontraumatic intracerebral hemorrhage in hemisphere, subcortical","code":"I61.0","type":"exact","note":""},
+            {"id":"I61.1","organ":"Neurological","keywords":["I61.1","CORTICAL ICH","LOBAR HEMORRHAGE","CORTICAL HEMORRHAGE","腦葉出血","皮質腦出血"],"standard":"Nontraumatic intracerebral hemorrhage in hemisphere, cortical","code":"I61.1","type":"exact","note":""},
+            {"id":"I61.3","organ":"Neurological","keywords":["I61.3","BRAINSTEM HEMORRHAGE","PONTINE HEMORRHAGE","MIDBRAIN HEMORRHAGE","腦幹出血","橋腦出血"],"standard":"Nontraumatic intracerebral hemorrhage in brain stem","code":"I61.3","type":"exact","note":""},
+            {"id":"I61.4","organ":"Neurological","keywords":["I61.4","CEREBELLAR HEMORRHAGE","CEREBELLAR ICH","小腦出血"],"standard":"Nontraumatic intracerebral hemorrhage in cerebellum","code":"I61.4","type":"exact","note":""},
+            {"id":"I61.5","organ":"Neurological","keywords":["I61.5","IVH","INTRAVENTRICULAR HEMORRHAGE","腦室出血"],"standard":"Nontraumatic intracerebral hemorrhage, intraventricular","code":"I61.5","type":"exact","note":""},
+            {"id":"I62.01","organ":"Neurological","keywords":["I62.01","ACUTE SDH","ACUTE SUBDURAL HEMORRHAGE","NONTRAUMATIC ACUTE SDH","急性硬腦膜下出血","急性硬膜下出血"],"standard":"Nontraumatic acute subdural hemorrhage","code":"I62.01","type":"exact","note":"若為外傷性 SDH，請使用 S06.5X-A 系列"},
+            {"id":"I62.00","organ":"Neurological","keywords":["I62.00","NONTRAUMATIC SDH","SUBDURAL HEMORRHAGE UNSPECIFIED","非外傷性硬腦膜下出血"],"standard":"Nontraumatic subdural hemorrhage, unspecified","code":"I62.00","type":"broad","note":"若為急性非外傷性 SDH，請用 I62.01"},
+            {"id":"I60.9","organ":"Neurological","keywords":["I60.9","SAH","SUBARACHNOID HEMORRHAGE","ANEURYSMAL SAH","蜘蛛膜下腔出血"],"standard":"Nontraumatic subarachnoid hemorrhage, unspecified","code":"I60.9","type":"broad","note":"若已知動脈瘤或血管位置，請使用更特定 I60.- 代碼"},
+            {"id":"S06.5X0A","organ":"Surgical","keywords":["S06.5X0A","TRAUMATIC SDH WITHOUT LOC","TRAUMATIC SUBDURAL HEMORRHAGE","ACUTE TRAUMATIC SDH","外傷性硬腦膜下出血","外傷性硬膜下出血"],"standard":"Traumatic subdural hemorrhage without loss of consciousness, initial encounter","code":"S06.5X0A","type":"exact","note":"初次就醫，無 loss of consciousness；若 LOC 不明可用 S06.5X9A/S06.5XAA"},
+            {"id":"S06.5X9A","organ":"Surgical","keywords":["S06.5X9A","TRAUMATIC SDH WITH LOC UNSPECIFIED","TRAUMATIC SUBDURAL BLEED","外傷性硬腦膜下出血意識喪失時間不明"],"standard":"Traumatic subdural hemorrhage with loss of consciousness of unspecified duration, initial encounter","code":"S06.5X9A","type":"broad","note":"初次就醫，LOC duration unspecified"},
+            {"id":"S06.6X0A","organ":"Surgical","keywords":["S06.6X0A","TRAUMATIC SAH","TRAUMATIC SUBARACHNOID HEMORRHAGE","外傷性蜘蛛膜下腔出血"],"standard":"Traumatic subarachnoid hemorrhage without loss of consciousness, initial encounter","code":"S06.6X0A","type":"exact","note":"初次就醫，無 loss of consciousness"},
+            {"id":"S06.4X0A","organ":"Surgical","keywords":["S06.4X0A","ACUTE EDH","TRAUMATIC EDH","EPIDURAL HEMORRHAGE","硬腦膜外出血","硬膜外出血"],"standard":"Epidural hemorrhage without loss of consciousness, initial encounter","code":"S06.4X0A","type":"exact","note":"初次就醫，無 loss of consciousness"},
+            {"id":"S06.0X0A","organ":"Surgical","keywords":["S06.0X0A","CONCUSSION","MILD TBI","HEAD CONCUSSION","腦震盪"],"standard":"Concussion without loss of consciousness, initial encounter","code":"S06.0X0A","type":"exact","note":"初次就醫，無 loss of consciousness"},
+            {"id":"S09.90XA","organ":"Surgical","keywords":["S09.90XA","HEAD INJURY","HEAD TRAUMA","頭部外傷","頭部受傷"],"standard":"Unspecified injury of head, initial encounter","code":"S09.90XA","type":"broad","note":"若有明確顱內出血、傷口或骨折，請使用更特定代碼"},
+            {"id":"G93.6","organ":"Neurological","keywords":["G93.6","CEREBRAL EDEMA","BRAIN EDEMA","腦水腫"],"standard":"Cerebral edema","code":"G93.6","type":"exact","note":""},
+            {"id":"G93.5","organ":"Neurological","keywords":["G93.5","BRAIN COMPRESSION","BRAIN HERNIATION","UNCAL HERNIATION","腦壓迫","腦疝脫"],"standard":"Compression of brain","code":"G93.5","type":"exact","note":""},
+            {"id":"R29.810","organ":"Neurological","keywords":["R29.810","FACIAL WEAKNESS","FACIAL DROOP","臉歪","顏面無力","臉部無力"],"standard":"Facial weakness","code":"R29.810","type":"exact","note":""},
+            {"id":"R47.01","organ":"Neurological","keywords":["R47.01","APHASIA","失語症","語言障礙"],"standard":"Aphasia","code":"R47.01","type":"exact","note":""},
+            {"id":"R47.1","organ":"Neurological","keywords":["R47.1","DYSARTHRIA","ANARTHRIA","構音障礙"],"standard":"Dysarthria and anarthria","code":"R47.1","type":"exact","note":""},
+            {"id":"T60.0X1A","organ":"Other","keywords":["T60.0X1A","ORGANOPHOSPHATE POISONING","CARBAMATE POISONING","PESTICIDE POISONING","農藥中毒","有機磷中毒","氨基甲酸鹽中毒"],"standard":"Toxic effect of organophosphate and carbamate insecticides, accidental (unintentional), initial encounter","code":"T60.0X1A","type":"exact","note":"意外暴露初次就醫；蓄意自傷請用 T60.0X2A"},
+            {"id":"T60.0X2A","organ":"Other","keywords":["T60.0X2A","ORGANOPHOSPHATE SELF HARM","PESTICIDE SUICIDE","有機磷自殺","農藥自殺","蓄意農藥中毒"],"standard":"Toxic effect of organophosphate and carbamate insecticides, intentional self-harm, initial encounter","code":"T60.0X2A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T60.3X1A","organ":"Other","keywords":["T60.3X1A","HERBICIDE POISONING","FUNGICIDE POISONING","PARAQUAT POISONING","除草劑中毒","殺菌劑中毒","巴拉刈中毒"],"standard":"Toxic effect of herbicides and fungicides, accidental (unintentional), initial encounter","code":"T60.3X1A","type":"exact","note":"意外暴露初次就醫；蓄意自傷需改用 T60.3X2A"},
+            {"id":"T60.4X1A","organ":"Other","keywords":["T60.4X1A","RODENTICIDE POISONING","RAT POISON","老鼠藥中毒","滅鼠劑中毒"],"standard":"Toxic effect of rodenticides, accidental (unintentional), initial encounter","code":"T60.4X1A","type":"exact","note":"意外暴露初次就醫；蓄意自傷需改用 T60.4X2A"},
+            {"id":"T60.91XA","organ":"Other","keywords":["T60.91XA","UNSPECIFIED PESTICIDE POISONING","UNKNOWN PESTICIDE","不明農藥中毒","農藥中毒未明"],"standard":"Toxic effect of unspecified pesticide, accidental (unintentional), initial encounter","code":"T60.91XA","type":"broad","note":"意外暴露初次就醫；若明確種類請使用 T60.0/T60.3/T60.4 等"},
+            {"id":"T60.92XA","organ":"Other","keywords":["T60.92XA","UNSPECIFIED PESTICIDE SELF HARM","農藥自殺未明","蓄意不明農藥中毒"],"standard":"Toxic effect of unspecified pesticide, intentional self-harm, initial encounter","code":"T60.92XA","type":"broad","note":"Intentional self-harm, initial encounter"},
+            {"id":"T39.1X1A","organ":"Other","keywords":["T39.1X1A","ACETAMINOPHEN POISONING","ACETAMINOPHEN OVERDOSE","PARACETAMOL OVERDOSE","TYLENOL OVERDOSE","普拿疼中毒","乙醯胺酚中毒"],"standard":"Poisoning by 4-Aminophenol derivatives, accidental (unintentional), initial encounter","code":"T39.1X1A","type":"exact","note":"意外過量初次就醫；自殺/蓄意請用 T39.1X2A"},
+            {"id":"T39.1X2A","organ":"Other","keywords":["T39.1X2A","ACETAMINOPHEN SELF HARM","PARACETAMOL SUICIDE","普拿疼自殺","乙醯胺酚蓄意過量"],"standard":"Poisoning by 4-Aminophenol derivatives, intentional self-harm, initial encounter","code":"T39.1X2A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T39.091A","organ":"Other","keywords":["T39.091A","SALICYLATE POISONING","ASPIRIN OVERDOSE","水楊酸中毒","阿斯匹靈中毒"],"standard":"Poisoning by salicylates, accidental (unintentional), initial encounter","code":"T39.091A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T40.2X1A","organ":"Other","keywords":["T40.2X1A","OPIOID OVERDOSE","OPIOID POISONING","MORPHINE OVERDOSE","鴉片類藥物中毒","嗎啡中毒"],"standard":"Poisoning by other opioids, accidental (unintentional), initial encounter","code":"T40.2X1A","type":"exact","note":"意外過量初次就醫；蓄意自傷請用 T40.2X2A"},
+            {"id":"T40.2X2A","organ":"Other","keywords":["T40.2X2A","OPIOID SELF HARM","OPIOID SUICIDE","鴉片類藥物蓄意過量"],"standard":"Poisoning by other opioids, intentional self-harm, initial encounter","code":"T40.2X2A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T40.1X1A","organ":"Other","keywords":["T40.1X1A","HEROIN OVERDOSE","HEROIN POISONING","海洛因中毒","海洛因過量"],"standard":"Poisoning by heroin, accidental (unintentional), initial encounter","code":"T40.1X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T40.411A","organ":"Other","keywords":["T40.411A","FENTANYL OVERDOSE","FENTANYL POISONING","吩坦尼中毒","芬太尼過量"],"standard":"Poisoning by fentanyl or fentanyl analogs, accidental (unintentional), initial encounter","code":"T40.411A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T40.5X1A","organ":"Other","keywords":["T40.5X1A","COCAINE POISONING","COCAINE OVERDOSE","古柯鹼中毒"],"standard":"Poisoning by cocaine, accidental (unintentional), initial encounter","code":"T40.5X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T40.901A","organ":"Other","keywords":["T40.901A","HALLUCINOGEN POISONING","UNKNOWN HALLUCINOGEN","迷幻藥中毒","不明迷幻藥中毒"],"standard":"Poisoning by unspecified psychodysleptics [hallucinogens], accidental (unintentional), initial encounter","code":"T40.901A","type":"broad","note":"意外過量初次就醫"},
+            {"id":"T42.4X1A","organ":"Other","keywords":["T42.4X1A","BENZODIAZEPINE OVERDOSE","BZD OVERDOSE","BENZO POISONING","鎮靜安眠藥中毒","苯二氮平中毒"],"standard":"Poisoning by benzodiazepines, accidental (unintentional), initial encounter","code":"T42.4X1A","type":"exact","note":"意外過量初次就醫；蓄意自傷請用 T42.4X2A"},
+            {"id":"T42.4X2A","organ":"Other","keywords":["T42.4X2A","BENZODIAZEPINE SELF HARM","BZD SUICIDE","安眠藥自殺","苯二氮平蓄意過量"],"standard":"Poisoning by benzodiazepines, intentional self-harm, initial encounter","code":"T42.4X2A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T42.6X1A","organ":"Other","keywords":["T42.6X1A","ANTIEPILEPTIC OVERDOSE","SEDATIVE HYPNOTIC OVERDOSE","ZOLPIDEM OVERDOSE","抗癲癇藥中毒","鎮靜催眠藥中毒"],"standard":"Poisoning by other antiepileptic and sedative-hypnotic drugs, accidental (unintentional), initial encounter","code":"T42.6X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T43.221A","organ":"Other","keywords":["T43.221A","SSRI OVERDOSE","SSRI POISONING","抗憂鬱藥中毒","SSRI中毒"],"standard":"Poisoning by selective serotonin reuptake inhibitors, accidental (unintentional), initial encounter","code":"T43.221A","type":"exact","note":"意外過量初次就醫；蓄意自傷請用 T43.222A"},
+            {"id":"T43.222A","organ":"Other","keywords":["T43.222A","SSRI SELF HARM","SSRI SUICIDE","SSRI蓄意過量","抗憂鬱藥自殺"],"standard":"Poisoning by selective serotonin reuptake inhibitors, intentional self-harm, initial encounter","code":"T43.222A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T43.591A","organ":"Other","keywords":["T43.591A","ANTIPSYCHOTIC OVERDOSE","NEUROLEPTIC POISONING","抗精神病藥中毒","神經安定劑中毒"],"standard":"Poisoning by other antipsychotics and neuroleptics, accidental (unintentional), initial encounter","code":"T43.591A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T43.621A","organ":"Other","keywords":["T43.621A","AMPHETAMINE POISONING","AMPHETAMINE OVERDOSE","METHAMPHETAMINE INTOXICATION","安非他命中毒","甲基安非他命中毒"],"standard":"Poisoning by amphetamines, accidental (unintentional), initial encounter","code":"T43.621A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T46.0X1A","organ":"Other","keywords":["T46.0X1A","DIGOXIN TOXICITY","DIGOXIN POISONING","毛地黃中毒","強心配醣體中毒"],"standard":"Poisoning by cardiac-stimulant glycosides and drugs of similar action, accidental (unintentional), initial encounter","code":"T46.0X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T46.1X1A","organ":"Other","keywords":["T46.1X1A","CALCIUM CHANNEL BLOCKER OVERDOSE","CCB OVERDOSE","鈣離子阻斷劑中毒"],"standard":"Poisoning by calcium-channel blockers, accidental (unintentional), initial encounter","code":"T46.1X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T46.2X1A","organ":"Other","keywords":["T46.2X1A","ANTIARRHYTHMIC OVERDOSE","AMIODARONE OVERDOSE","抗心律不整藥中毒"],"standard":"Poisoning by other antidysrhythmic drugs, accidental (unintentional), initial encounter","code":"T46.2X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T46.4X1A","organ":"Other","keywords":["T46.4X1A","ACE INHIBITOR OVERDOSE","ACEI OVERDOSE","ACEI中毒","血管張力素轉換酶抑制劑中毒"],"standard":"Poisoning by angiotensin-converting-enzyme inhibitors, accidental (unintentional), initial encounter","code":"T46.4X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T46.5X1A","organ":"Other","keywords":["T46.5X1A","ANTIHYPERTENSIVE OVERDOSE","BLOOD PRESSURE MEDICATION OVERDOSE","降血壓藥中毒"],"standard":"Poisoning by other antihypertensive drugs, accidental (unintentional), initial encounter","code":"T46.5X1A","type":"exact","note":"意外過量初次就醫"},
+            {"id":"T50.901A","organ":"Other","keywords":["T50.901A","UNKNOWN DRUG OVERDOSE","UNSPECIFIED DRUG POISONING","DRUG OVERDOSE","不明藥物中毒","藥物過量"],"standard":"Poisoning by unspecified drugs, medicaments and biological substances, accidental (unintentional), initial encounter","code":"T50.901A","type":"broad","note":"意外過量初次就醫；若知道藥物種類請使用更特定 T code"},
+            {"id":"T50.902A","organ":"Other","keywords":["T50.902A","UNKNOWN DRUG SELF HARM","DRUG OVERDOSE SUICIDE","蓄意藥物過量","藥物自殺"],"standard":"Poisoning by unspecified drugs, medicaments and biological substances, intentional self-harm, initial encounter","code":"T50.902A","type":"broad","note":"Intentional self-harm, initial encounter"},
+            {"id":"T51.0X1A","organ":"Other","keywords":["T51.0X1A","ETHANOL INTOXICATION","ETHANOL POISONING","ALCOHOL POISONING","酒精中毒","乙醇中毒"],"standard":"Toxic effect of ethanol, accidental (unintentional), initial encounter","code":"T51.0X1A","type":"exact","note":"意外暴露初次就醫；蓄意自傷請用 T51.0X2A"},
+            {"id":"T51.0X2A","organ":"Other","keywords":["T51.0X2A","ETHANOL SELF HARM","ALCOHOL SUICIDE","酒精蓄意中毒"],"standard":"Toxic effect of ethanol, intentional self-harm, initial encounter","code":"T51.0X2A","type":"exact","note":"Intentional self-harm, initial encounter"},
+            {"id":"T51.91XA","organ":"Other","keywords":["T51.91XA","UNSPECIFIED ALCOHOL POISONING","UNKNOWN ALCOHOL INTOXICATION","不明酒精中毒"],"standard":"Toxic effect of unspecified alcohol, accidental (unintentional), initial encounter","code":"T51.91XA","type":"broad","note":"意外暴露初次就醫"},
+            {"id":"T58.91XA","organ":"Other","keywords":["T58.91XA","CARBON MONOXIDE POISONING","CO POISONING","一氧化碳中毒"],"standard":"Toxic effect of carbon monoxide from unspecified source, accidental (unintentional), initial encounter","code":"T58.91XA","type":"exact","note":"意外暴露初次就醫"},
+            {"id":"T59.811A","organ":"Other","keywords":["T59.811A","SMOKE INHALATION","SMOKE TOXICITY","吸入濃煙","煙霧吸入"],"standard":"Toxic effect of smoke, accidental (unintentional), initial encounter","code":"T59.811A","type":"exact","note":"意外暴露初次就醫"},
+            {"id":"T59.891A","organ":"Other","keywords":["T59.891A","GAS INHALATION","FUME INHALATION","CHEMICAL GAS EXPOSURE","有毒氣體吸入","化學氣體暴露"],"standard":"Toxic effect of other specified gases, fumes and vapors, accidental (unintentional), initial encounter","code":"T59.891A","type":"broad","note":"意外暴露初次就醫"},
+            {"id":"T67.01XA","organ":"Other","keywords":["T67.01XA","HEAT STROKE","SUNSTROKE","熱中暑","熱射病"],"standard":"Heatstroke and sunstroke, initial encounter","code":"T67.01XA","type":"exact","note":"初次就醫"},
+            {"id":"T68.XXXA","organ":"Other","keywords":["T68.XXXA","HYPOTHERMIA","低體溫","失溫"],"standard":"Hypothermia, initial encounter","code":"T68.XXXA","type":"exact","note":"初次就醫"},
+            {"id":"T78.2XXA","organ":"Other","keywords":["T78.2XXA","ANAPHYLAXIS","ANAPHYLACTIC SHOCK","過敏性休克","全身性過敏反應"],"standard":"Anaphylactic shock, unspecified, initial encounter","code":"T78.2XXA","type":"exact","note":"若明確為藥物正確使用導致，可考慮 T88.6XXA"},
+            {"id":"T78.40XA","organ":"Other","keywords":["T78.40XA","ALLERGIC REACTION","ALLERGY UNSPECIFIED","過敏反應","過敏"],"standard":"Allergy, unspecified, initial encounter","code":"T78.40XA","type":"broad","note":"若為 anaphylaxis 請用 T78.2XXA 或更特定代碼"},
+            {"id":"A41.51","organ":"Infectious","keywords":["A41.51","E COLI SEPSIS","ESCHERICHIA COLI SEPSIS","大腸桿菌敗血症"],"standard":"Sepsis due to Escherichia coli [E. coli]","code":"A41.51","type":"exact","note":""},
+            {"id":"A41.52","organ":"Infectious","keywords":["A41.52","PSEUDOMONAS SEPSIS","綠膿桿菌敗血症"],"standard":"Sepsis due to Pseudomonas","code":"A41.52","type":"exact","note":""},
+            {"id":"A41.59","organ":"Infectious","keywords":["A41.59","GRAM NEGATIVE SEPSIS","GNB SEPSIS","革蘭氏陰性菌敗血症"],"standard":"Other Gram-negative sepsis","code":"A41.59","type":"broad","note":"若病原已知，請使用更特定敗血症代碼"},
+            {"id":"A41.89","organ":"Infectious","keywords":["A41.89","OTHER SPECIFIED SEPSIS","SPECIFIED SEPSIS","其他明確敗血症"],"standard":"Other specified sepsis","code":"A41.89","type":"broad","note":""},
+            {"id":"G00.9","organ":"Infectious","keywords":["G00.9","BACTERIAL MENINGITIS","細菌性腦膜炎"],"standard":"Bacterial meningitis, unspecified","code":"G00.9","type":"broad","note":"若病原已知請使用更特定 G00.- 代碼"},
+            {"id":"G03.9","organ":"Infectious","keywords":["G03.9","MENINGITIS","腦膜炎"],"standard":"Meningitis, unspecified","code":"G03.9","type":"broad","note":"若確定細菌性請用 G00.-；病毒性請查 A87.-"},
+            {"id":"G04.90","organ":"Infectious","keywords":["G04.90","ENCEPHALITIS","ENCEPHALOMYELITIS","腦炎","腦脊髓炎"],"standard":"Encephalitis and encephalomyelitis, unspecified","code":"G04.90","type":"broad","note":"若病原已知請使用更特定代碼"},
+            {"id":"I20.0","organ":"Cardiovascular","keywords":["I20.0","UNSTABLE ANGINA","UA","不穩定心絞痛"],"standard":"Unstable angina","code":"I20.0","type":"exact","note":""},
+            {"id":"I21.3","organ":"Cardiovascular","keywords":["I21.3","STEMI","ST ELEVATION MI","ST ELEVATION MYOCARDIAL INFARCTION","ST段上升心肌梗塞"],"standard":"ST elevation (STEMI) myocardial infarction of unspecified site","code":"I21.3","type":"broad","note":"若可指定壁面/冠狀動脈，請使用更特定 I21.0-I21.2"},
+            {"id":"I24.9","organ":"Cardiovascular","keywords":["I24.9","ACUTE ISCHEMIC HEART DISEASE","ACUTE CORONARY SYNDROME","ACS UNSPECIFIED","急性缺血性心臟病"],"standard":"Acute ischemic heart disease, unspecified","code":"I24.9","type":"broad","note":"若符合 AMI/NSTEMI/STEMI，請使用 I21.-"},
+            {"id":"I49.01","organ":"Cardiovascular","keywords":["I49.01","VF","VENTRICULAR FIBRILLATION","心室顫動"],"standard":"Ventricular fibrillation","code":"I49.01","type":"exact","note":""},
+            {"id":"I47.20","organ":"Cardiovascular","keywords":["I47.20","VT","VENTRICULAR TACHYCARDIA","心室頻脈"],"standard":"Ventricular tachycardia, unspecified","code":"I47.20","type":"broad","note":"若已知 torsades de pointes 等，請使用更特定代碼"},
+            {"id":"I44.2","organ":"Cardiovascular","keywords":["I44.2","COMPLETE AV BLOCK","THIRD DEGREE AV BLOCK","完全房室傳導阻滯","三度房室傳導阻滯"],"standard":"Atrioventricular block, complete","code":"I44.2","type":"exact","note":""},
+            {"id":"J93.9","organ":"Respiratory","keywords":["J93.9","PNEUMOTHORAX UNSPECIFIED","氣胸未明"],"standard":"Pneumothorax, unspecified","code":"J93.9","type":"broad","note":"張力性自發氣胸可用 J93.0；外傷性氣胸請查 S27.-"},
+            {"id":"K65.9","organ":"Surgical","keywords":["K65.9","PERITONITIS","腹膜炎"],"standard":"Peritonitis, unspecified","code":"K65.9","type":"broad","note":"若病因明確請加編或使用更特定代碼"},
+            {"id":"K56.7","organ":"Surgical","keywords":["K56.7","ILEUS","PARALYTIC ILEUS","腸麻痺","麻痺性腸阻塞"],"standard":"Ileus, unspecified","code":"K56.7","type":"broad","note":"若為機械性腸阻塞請使用 K56.609 或更特定代碼"},
+            {"id":"N13.2","organ":"Renal","keywords":["N13.2","OBSTRUCTIVE UROPATHY WITH STONE","HYDRONEPHROSIS WITH STONE","STONE HYDRONEPHROSIS","結石合併腎水腫","尿路結石阻塞"],"standard":"Hydronephrosis with renal and ureteral calculous obstruction","code":"N13.2","type":"exact","note":""},
+            {"id":"N23","organ":"Renal","keywords":["N23","RENAL COLIC","URETERAL COLIC","腎絞痛","輸尿管絞痛"],"standard":"Unspecified renal colic","code":"N23","type":"exact","note":""},
+            {"id":"R10.0","organ":"Digestive","keywords":["R10.0","ACUTE ABDOMEN","急腹症"],"standard":"Acute abdomen","code":"R10.0","type":"broad","note":"若診斷為 appendicitis/cholecystitis/pancreatitis/peritonitis 等，請使用更特定代碼"},
+            {"id":"S01.81XA","organ":"Surgical","keywords":["S01.81XA","FACE LACERATION","FACIAL LACERATION","臉部撕裂傷","顏面撕裂傷"],"standard":"Laceration without foreign body of other part of head, initial encounter","code":"S01.81XA","type":"broad","note":"初次就醫；若有異物或特定位置請用更特定代碼"},
+            {"id":"S01.01XA","organ":"Surgical","keywords":["S01.01XA","SCALP LACERATION","頭皮撕裂傷"],"standard":"Laceration without foreign body of scalp, initial encounter","code":"S01.01XA","type":"exact","note":"初次就醫，無 foreign body"},
+            {"id":"S00.83XA","organ":"Surgical","keywords":["S00.83XA","FACE CONTUSION","FACIAL CONTUSION","HEAD CONTUSION","臉部挫傷","頭部挫傷"],"standard":"Contusion of other part of head, initial encounter","code":"S00.83XA","type":"broad","note":"初次就醫"},
+            {"id":"S20.219A","organ":"Surgical","keywords":["S20.219A","CHEST WALL CONTUSION","THORAX CONTUSION","胸壁挫傷","胸部挫傷"],"standard":"Contusion of unspecified front wall of thorax, initial encounter","code":"S20.219A","type":"broad","note":"初次就醫"},
+            {"id":"S30.11XA","organ":"Surgical","keywords":["S30.11XA","ABDOMINAL WALL CONTUSION","ABDOMINAL CONTUSION","腹壁挫傷","腹部挫傷"],"standard":"Contusion of abdominal wall, initial encounter","code":"S30.11XA","type":"exact","note":"初次就醫"},
+            {"id":"S22.39XA","organ":"Surgical","keywords":["S22.39XA","RIB FRACTURE","SINGLE RIB FRACTURE","肋骨骨折","單根肋骨骨折"],"standard":"Fracture of one rib, unspecified side, initial encounter for closed fracture","code":"S22.39XA","type":"broad","note":"初次就醫閉鎖性骨折；若已知左右側請用更特定代碼"},
+            {"id":"S22.49XA","organ":"Surgical","keywords":["S22.49XA","MULTIPLE RIB FRACTURES","MULTIPLE FRACTURES OF RIBS","多根肋骨骨折"],"standard":"Multiple fractures of ribs, unspecified side, initial encounter for closed fracture","code":"S22.49XA","type":"broad","note":"初次就醫閉鎖性骨折；若已知左右側請用更特定代碼"},
+            {"id":"S42.009A","organ":"Surgical","keywords":["S42.009A","CLAVICLE FRACTURE","COLLAR BONE FRACTURE","鎖骨骨折"],"standard":"Fracture of unspecified part of unspecified clavicle, initial encounter for closed fracture","code":"S42.009A","type":"broad","note":"初次就醫閉鎖性骨折；若已知位置/左右側請用更特定代碼"},
+            {"id":"S42.309A","organ":"Surgical","keywords":["S42.309A","HUMERUS SHAFT FRACTURE","HUMERAL SHAFT FRACTURE","肱骨幹骨折"],"standard":"Unspecified fracture of shaft of humerus, unspecified arm, initial encounter for closed fracture","code":"S42.309A","type":"broad","note":"初次就醫閉鎖性骨折；若已知左右側請用更特定代碼"},
+            {"id":"S52.509A","organ":"Surgical","keywords":["S52.509A","DISTAL RADIUS FRACTURE","COLLES FRACTURE","遠端橈骨骨折","柯雷氏骨折"],"standard":"Unspecified fracture of the lower end of unspecified radius, initial encounter for closed fracture","code":"S52.509A","type":"broad","note":"初次就醫閉鎖性骨折；若已知左右側請用 S52.501A/S52.502A"},
+            {"id":"S62.609A","organ":"Surgical","keywords":["S62.609A","FINGER FRACTURE","PHALANX FRACTURE","手指骨折","指骨骨折"],"standard":"Fracture of unspecified phalanx of unspecified finger, initial encounter for closed fracture","code":"S62.609A","type":"broad","note":"初次就醫閉鎖性骨折；若已知手指/側別請用更特定代碼"},
+            {"id":"S82.899A","organ":"Surgical","keywords":["S82.899A","ANKLE FRACTURE","LOWER LEG FRACTURE","踝部骨折","小腿骨折"],"standard":"Other fracture of unspecified lower leg, initial encounter for closed fracture","code":"S82.899A","type":"broad","note":"初次就醫閉鎖性骨折；若已知左右側請用 S82.891A/S82.892A 或更特定代碼"},
+            {"id":"S92.909A","organ":"Surgical","keywords":["S92.909A","FOOT FRACTURE","腳骨折","足部骨折"],"standard":"Unspecified fracture of unspecified foot, initial encounter for closed fracture","code":"S92.909A","type":"broad","note":"初次就醫閉鎖性骨折；若已知位置/側別請用更特定代碼"},
+            {"id":"S83.90XA","organ":"Surgical","keywords":["S83.90XA","KNEE SPRAIN","膝扭傷","膝關節扭傷"],"standard":"Sprain of unspecified site of unspecified knee, initial encounter","code":"S83.90XA","type":"broad","note":"初次就醫；若已知韌帶/側別請用更特定代碼"},
+            {"id":"S93.401A","organ":"Surgical","keywords":["S93.401A","RIGHT ANKLE SPRAIN","右踝扭傷","右腳踝扭傷"],"standard":"Sprain of unspecified ligament of right ankle, initial encounter","code":"S93.401A","type":"exact","note":"初次就醫"},
+            {"id":"S93.402A","organ":"Surgical","keywords":["S93.402A","LEFT ANKLE SPRAIN","左踝扭傷","左腳踝扭傷"],"standard":"Sprain of unspecified ligament of left ankle, initial encounter","code":"S93.402A","type":"exact","note":"初次就醫"},
+            {"id":"S93.409A","organ":"Surgical","keywords":["S93.409A","ANKLE SPRAIN","SPRAINED ANKLE","踝扭傷","腳踝扭傷"],"standard":"Sprain of unspecified ligament of unspecified ankle, initial encounter","code":"S93.409A","type":"broad","note":"初次就醫；若已知左右側請用 S93.401A/S93.402A"},
+            {"id":"S43.006A","organ":"Surgical","keywords":["S43.006A","SHOULDER DISLOCATION","肩關節脫臼","肩脫臼"],"standard":"Unspecified dislocation of unspecified shoulder joint, initial encounter","code":"S43.006A","type":"broad","note":"初次就醫；若已知左右側請用更特定代碼"},
+            {"id":"S53.106A","organ":"Surgical","keywords":["S53.106A","ELBOW DISLOCATION","肘關節脫臼","手肘脫臼"],"standard":"Unspecified dislocation of unspecified ulnohumeral joint, initial encounter","code":"S53.106A","type":"broad","note":"初次就醫；若已知左右側請用更特定代碼"},
+            {"id":"S63.006A","organ":"Surgical","keywords":["S63.006A","WRIST DISLOCATION","HAND DISLOCATION","腕關節脫臼","手腕脫臼"],"standard":"Unspecified dislocation of unspecified wrist and hand, initial encounter","code":"S63.006A","type":"broad","note":"初次就醫；若已知左右側請用更特定代碼"},
+            {"id":"S73.006A","organ":"Surgical","keywords":["S73.006A","HIP DISLOCATION","髖關節脫臼","髖脫臼"],"standard":"Unspecified dislocation of unspecified hip, initial encounter","code":"S73.006A","type":"broad","note":"初次就醫；若已知左右側請用更特定代碼"},
+            {"id":"T20.00XA","organ":"Surgical","keywords":["T20.00XA","BURN HEAD FACE NECK","FACE BURN","頭臉頸燒傷","臉部燒傷"],"standard":"Burn of unspecified degree of head, face, and neck, unspecified site, initial encounter","code":"T20.00XA","type":"broad","note":"初次就醫；若已知深度/位置請用更特定代碼"},
+            {"id":"T21.00XA","organ":"Surgical","keywords":["T21.00XA","TRUNK BURN","CHEST ABDOMEN BURN","軀幹燒傷","胸腹部燒傷"],"standard":"Burn of unspecified degree of trunk, unspecified site, initial encounter","code":"T21.00XA","type":"broad","note":"初次就醫；若已知深度/位置請用更特定代碼"},
+            {"id":"T22.00XA","organ":"Surgical","keywords":["T22.00XA","UPPER LIMB BURN","ARM BURN","上肢燒傷","手臂燒傷"],"standard":"Burn of unspecified degree of shoulder and upper limb, except wrist and hand, unspecified site, initial encounter","code":"T22.00XA","type":"broad","note":"初次就醫；若已知深度/位置請用更特定代碼"},
+            {"id":"T23.009A","organ":"Surgical","keywords":["T23.009A","HAND BURN","手部燒傷"],"standard":"Burn of unspecified degree of unspecified hand, unspecified site, initial encounter","code":"T23.009A","type":"broad","note":"初次就醫；若已知深度/側別請用更特定代碼"},
+            {"id":"T24.009A","organ":"Surgical","keywords":["T24.009A","LOWER LIMB BURN","LEG BURN","下肢燒傷","腿部燒傷"],"standard":"Burn of unspecified degree of unspecified site of unspecified lower limb, except ankle and foot, initial encounter","code":"T24.009A","type":"broad","note":"初次就醫；若已知深度/側別請用更特定代碼"},
+            {"id":"T25.029A","organ":"Surgical","keywords":["T25.029A","FOOT BURN","足部燒傷","腳燒傷"],"standard":"Burn of unspecified degree of unspecified foot, initial encounter","code":"T25.029A","type":"broad","note":"初次就醫；若已知深度/側別請用更特定代碼"},
+            {"id":"T14.90XA","organ":"Surgical","keywords":["T14.90XA","INJURY UNSPECIFIED","TRAUMA UNSPECIFIED","外傷未明","受傷未明"],"standard":"Injury, unspecified, initial encounter","code":"T14.90XA","type":"broad","note":"若可指定部位/型態，請使用更特定代碼"},
+            {"id":"R45.851","organ":"Other","keywords":["R45.851","SUICIDAL IDEATION","SUICIDAL THOUGHTS","自殺意念","想自殺"],"standard":"Suicidal ideations","code":"R45.851","type":"exact","note":""},
+            {"id":"R45.1","organ":"Other","keywords":["R45.1","AGITATION","RESTLESSNESS","躁動","焦躁不安"],"standard":"Restlessness and agitation","code":"R45.1","type":"exact","note":""},
+            {"id":"R44.3","organ":"Neurological","keywords":["R44.3","HALLUCINATION","HALLUCINATIONS","幻覺"],"standard":"Hallucinations, unspecified","code":"R44.3","type":"broad","note":"若已知精神科診斷，請使用更特定代碼"},
+            {"id":"F41.0","organ":"Neurological","keywords":["F41.0","PANIC ATTACK","PANIC DISORDER","恐慌發作","恐慌症"],"standard":"Panic disorder [episodic paroxysmal anxiety]","code":"F41.0","type":"exact","note":""},
+            {"id":"F32.A","organ":"Neurological","keywords":["F32.A","DEPRESSION","DEPRESSIVE MOOD","憂鬱症","憂鬱"],"standard":"Depression, unspecified","code":"F32.A","type":"broad","note":"若可指定 major depressive disorder episode/severity，請使用更特定 F32/F33 代碼"}
         ];
 
         // 模擬的藥物/無關詞彙過濾清單
@@ -444,6 +736,12 @@
             'ADMISSION', 'DISCHARGE', 'MBD', 'OBSERVATION', 'VITALS', 'BP', 'HR', 'RR', 'BT',
             'CURRENT MEDICATIONS', 'ALLERGIES', 'PLAN', 'SOAP'
         ];
+
+        const DEPRECATED_BUILT_IN_IDS = new Set([
+            'G20', 'F03.91', 'Z22.51', 'E87.2', 'I27.2', 'I47.1', 'I82.40', 'I71.4',
+            'I31.3', 'H10.3', 'M48.0', 'C34.1', 'I48.2', 'I50.2', 'I50.3', 'K21.0',
+            'T88.6', 'T88.7', 'K80'
+        ]);
 
         const App = () => {
             // 隱藏的文件上傳 ref
@@ -457,16 +755,18 @@
                 setToastMessage(msg);
             };
 
-            // 核心狀態：Lazy Initialization (確保優先讀取 LocalStorage)
-            // 修正：增加自動去重複化 (Deduplication) 邏輯，避免 key 重複錯誤
+            // 核心狀態：Lazy Initialization
+            // 合併 localStorage 與最新內建資料，避免舊瀏覽器快取漏掉新 ICD-10 條目。
             const [database, setDatabase] = useState(() => {
-                let initialData = INITIAL_DATABASE;
+                let initialData = [...INITIAL_DATABASE];
                 try {
                 const savedDb = localStorage.getItem('icd10_custom_db');
                 if (savedDb) {
                     const parsed = JSON.parse(savedDb);
-                    // 如果 localStorage 有資料，先載入
-                    initialData = parsed;
+                    if (Array.isArray(parsed)) {
+                        const savedCustomAndCurrent = parsed.filter(item => item.isCustom || !DEPRECATED_BUILT_IN_IDS.has(item.id));
+                        initialData = [...savedCustomAndCurrent, ...INITIAL_DATABASE];
+                    }
                 }
                 } catch (e) {
                 console.error("Failed to load initial DB", e);
@@ -488,6 +788,8 @@
 
             const [inputText, setInputText] = useState('');
             const [results, setResults] = useState([]);
+            const [cursorPosition, setCursorPosition] = useState(0);
+            const [isSuggestionOpen, setIsSuggestionOpen] = useState(false);
             
             // UI 狀態
             const [activeTab, setActiveTab] = useState('coding'); 
@@ -526,7 +828,7 @@
                 confirmColor: 'bg-red-600 hover:bg-red-700',
                 onConfirm: () => {
                     const initialIds = new Set(INITIAL_DATABASE.map(item => item.id));
-                    const customRules = database.filter(item => !initialIds.has(item.id));
+                    const customRules = database.filter(item => !initialIds.has(item.id) && (item.isCustom || !DEPRECATED_BUILT_IN_IDS.has(item.id)));
                     
                     // 合併時也要注意去重複
                     const mergedDb = [...customRules, ...INITIAL_DATABASE];
@@ -650,6 +952,101 @@
                 return sortableItems;
             }, [database, sortConfig]);
 
+            const getActiveSearchTerm = () => {
+                const textBeforeCursor = inputText.slice(0, cursorPosition);
+                const activeSegment = textBeforeCursor.split(/[\n,;，、/:()?]+/).pop().trim();
+
+                if (activeSegment.length < 2 || !/[A-Za-z]/.test(activeSegment)) {
+                    return '';
+                }
+
+                return activeSegment;
+            };
+
+            const liveSearchTerm = getActiveSearchTerm();
+
+            const liveSuggestions = useMemo(() => {
+                if (!liveSearchTerm) return [];
+
+                const query = liveSearchTerm.toUpperCase();
+                const isShortEnglishQuery = /^[A-Z0-9]{2,3}$/.test(query);
+                const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const shortEnglishRegex = new RegExp(`\\b${escapedQuery}`);
+
+                return database
+                    .map(entry => {
+                        const searchableTerms = [
+                            entry.code,
+                            entry.standard,
+                            ...(entry.keywords || [])
+                        ].filter(Boolean);
+
+                        let bestScore = 0;
+                        let matchedText = '';
+
+                        searchableTerms.forEach(term => {
+                            const normalized = String(term).toUpperCase();
+                            let score = 0;
+
+                            if (normalized === query) {
+                                score = 120;
+                            } else if (normalized.startsWith(query)) {
+                                score = 90;
+                            } else if (isShortEnglishQuery && shortEnglishRegex.test(normalized)) {
+                                score = 75;
+                            } else if (!isShortEnglishQuery && normalized.includes(query)) {
+                                score = 55;
+                            }
+
+                            if (entry.code.toUpperCase().startsWith(query)) {
+                                score += 20;
+                            }
+
+                            if (score > bestScore) {
+                                bestScore = score;
+                                matchedText = term;
+                            }
+                        });
+
+                        return bestScore > 0 ? { ...entry, bestScore, matchedText } : null;
+                    })
+                    .filter(Boolean)
+                    .sort((a, b) => b.bestScore - a.bestScore || a.code.localeCompare(b.code))
+                    .slice(0, 8);
+            }, [database, liveSearchTerm]);
+
+            const handleInputChange = (event) => {
+                setInputText(event.target.value);
+                setCursorPosition(event.target.selectionStart);
+                setIsSuggestionOpen(true);
+            };
+
+            const handleInputCursorChange = (event) => {
+                setCursorPosition(event.target.selectionStart);
+                setIsSuggestionOpen(true);
+            };
+
+            const insertSuggestion = (suggestion) => {
+                const textBeforeCursor = inputText.slice(0, cursorPosition);
+                const textAfterCursor = inputText.slice(cursorPosition);
+                const segmentStart = Math.max(
+                    textBeforeCursor.lastIndexOf('\n'),
+                    textBeforeCursor.lastIndexOf(','),
+                    textBeforeCursor.lastIndexOf(';'),
+                    textBeforeCursor.lastIndexOf('，'),
+                    textBeforeCursor.lastIndexOf('、'),
+                    textBeforeCursor.lastIndexOf('/'),
+                    textBeforeCursor.lastIndexOf(':')
+                ) + 1;
+                const prefix = inputText.slice(0, segmentStart);
+                const insertion = `${suggestion.code} ${suggestion.standard}`;
+                const nextText = `${prefix}${insertion}${textAfterCursor}`;
+
+                setInputText(nextText);
+                setCursorPosition(prefix.length + insertion.length);
+                setIsSuggestionOpen(false);
+            };
+
             const handleAnalyze = () => {
                 if (!inputText.trim()) return;
                 
@@ -672,7 +1069,11 @@
 
             const performCoding = () => {
                 // 增加切割符號：斜線(/), 冒號(:), 括號()
-                const segments = inputText.split(/[\n,;，、。/:().?]+/).map(s => s.trim()).filter(s => s.length > 0);
+                const protectedInputText = inputText.replace(/\b([A-Z]\d{2})\.(\d[A-Z0-9]*)\b/gi, '$1§$2');
+                const segments = protectedInputText
+                    .split(/[\n,;，、。/:().?]+/)
+                    .map(s => s.replace(/§/g, '.').trim())
+                    .filter(s => s.length > 0);
                 const newResults = [];
                 const usedCodes = new Set();
 
@@ -693,11 +1094,16 @@
 
                 if (isIgnored) return;
 
-                let match = null;
-                let highestRelevance = 0;
+                const matchesByCode = new Map();
 
                 database.forEach(entry => {
-                    entry.keywords.forEach(keyword => {
+                    const searchableTerms = [
+                        entry.code,
+                        entry.standard,
+                        ...(entry.keywords || [])
+                    ].filter(Boolean);
+
+                    searchableTerms.forEach(keyword => {
                     const k = keyword.toUpperCase();
                     let isMatch = false;
 
@@ -718,20 +1124,27 @@
                             currentScore += 100;
                         }
 
-                        if (currentScore > highestRelevance) {
-                        highestRelevance = currentScore;
-                        match = { ...entry, original: rawSegment };
+                        const existing = matchesByCode.get(entry.code);
+                        if (!existing || currentScore > existing.relevance) {
+                        matchesByCode.set(entry.code, {
+                            ...entry,
+                            original: rawSegment,
+                            relevance: currentScore
+                        });
                         }
                     }
                     });
                 });
 
-                if (match) {
+                Array.from(matchesByCode.values())
+                    .sort((a, b) => b.relevance - a.relevance || a.code.localeCompare(b.code))
+                    .forEach(match => {
                     if (!usedCodes.has(match.code)) {
-                    newResults.push(match);
-                    usedCodes.add(match.code);
+                        const { relevance, ...result } = match;
+                        newResults.push(result);
+                        usedCodes.add(match.code);
                     }
-                }
+                    });
                 };
 
                 segments.forEach(seg => {
@@ -918,8 +1331,9 @@
                             <div className="text-xs text-slate-400">支援中文、英文及常用縮寫</div>
                             </div>
                             
+                            <div className="relative flex-1 min-h-0">
                             <textarea
-                            className="flex-1 w-full p-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none font-mono text-sm leading-relaxed"
+                            className="h-full w-full p-4 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none font-mono text-sm leading-relaxed"
                             placeholder="請在此貼上臨床筆記...
 例如：
 Pt with h/o DM and HTN.
@@ -927,8 +1341,55 @@ Impression:
 1. Urosepsis/Septic shock
 2. Klebsiella Pneumonia"
                             value={inputText}
-                            onChange={(e) => setInputText(e.target.value)}
+                            onChange={handleInputChange}
+                            onClick={handleInputCursorChange}
+                            onKeyUp={handleInputCursorChange}
+                            onFocus={() => setIsSuggestionOpen(true)}
+                            onBlur={() => setTimeout(() => setIsSuggestionOpen(false), 120)}
                             />
+
+                            {isSuggestionOpen && liveSuggestions.length > 0 && (
+                                <div className="absolute left-3 right-3 top-3 z-30 overflow-hidden rounded-lg border border-blue-100 bg-white shadow-xl shadow-blue-900/10">
+                                <div className="flex items-center justify-between border-b border-slate-100 bg-blue-50 px-3 py-2">
+                                    <div className="flex items-center text-xs font-bold text-blue-800">
+                                    <Search className="mr-1.5 h-3.5 w-3.5" />
+                                    即時搜尋：{liveSearchTerm}
+                                    </div>
+                                    <span className="text-[11px] text-blue-500">點選可插入診斷</span>
+                                </div>
+                                <div className="max-h-72 overflow-y-auto">
+                                    {liveSuggestions.map(item => (
+                                    <button
+                                        key={`${item.id}-${item.code}`}
+                                        type="button"
+                                        onMouseDown={(event) => {
+                                        event.preventDefault();
+                                        insertSuggestion(item);
+                                        }}
+                                        className="flex w-full items-start gap-3 border-b border-slate-100 px-3 py-2.5 text-left transition-colors last:border-b-0 hover:bg-blue-50"
+                                    >
+                                        <span className="mt-0.5 shrink-0 rounded bg-blue-600 px-2 py-1 font-mono text-xs font-bold text-white">
+                                        {item.code}
+                                        </span>
+                                        <span className="min-w-0 flex-1">
+                                        <span className="block truncate text-sm font-semibold text-slate-800">{item.standard}</span>
+                                        <span className="mt-0.5 flex flex-wrap items-center gap-1.5 text-[11px] text-slate-500">
+                                            {item.organ && item.organ !== 'Other' && (
+                                            <span className={`rounded-full px-2 py-0.5 ${getOrganColor(item.organ)}`}>
+                                                {getOrganLabel(item.organ)}
+                                            </span>
+                                            )}
+                                            {item.matchedText && (
+                                            <span className="truncate">符合：{item.matchedText}</span>
+                                            )}
+                                        </span>
+                                        </span>
+                                    </button>
+                                    ))}
+                                </div>
+                                </div>
+                            )}
+                            </div>
                             
                             <div className="mt-4 flex space-x-3">
                             <button 
