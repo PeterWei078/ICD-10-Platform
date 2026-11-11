@@ -33,11 +33,13 @@ Vercel is expected to redeploy automatically if it is connected to GitHub `main`
 - Coding analysis searches across `keywords`, `code`, and `standard`.
 - Analysis supports multiple matches within the same text segment.
 - ICD codes with decimal points, such as `E03.9`, are protected from being split incorrectly.
-- localStorage initialization merges old browser data with the latest built-in `INITIAL_DATABASE`, so newly added built-in codes appear even for returning users.
+- Built-in data lives in `data/icd10-data.js` (`window.ICD10_DATA = { version, deprecatedIds, entries, commonCodes, bundles }`); `index.html` exposes `entries` as `INITIAL_DATABASE`.
+- localStorage initialization keeps only custom/edited or non-built-in entries and takes all other built-ins fresh from `entries`, so built-in updates reach returning users.
+- Negation/uncertainty/history detection, 常用快選 / 常見組合 panel, and link/QR device sync (`#rules=`). See CLAUDE.md for details.
 
 ## Data Model
 
-Entries in `INITIAL_DATABASE` use:
+Entries in `data/icd10-data.js` → `entries` use:
 
 ```js
 {
@@ -55,10 +57,10 @@ Keep `id` unique. Usually `id` should equal `code`, unless there is a special no
 
 ## Validation
 
-After editing `index.html`, run a quick parse check:
+After editing data, run a quick parse check (expect `duplicateIds: []`, `bad: 0`, `missingRefs: []`):
 
 ```bash
-node -e "const fs=require('fs'); const s=fs.readFileSync('index.html','utf8'); const arr=Function('return '+s.match(/const INITIAL_DATABASE = (\\[[\\s\\S]*?\\n\\s*\\]);/)[1])(); const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); console.log(JSON.stringify({total:arr.length, duplicateIds:dup, bad:bad.length}, null, 2));"
+node -e "const fs=require('fs'); const w={}; Function('window', fs.readFileSync('data/icd10-data.js','utf8'))(w); const d=w.ICD10_DATA; const arr=d.entries; const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); const codes=new Set(arr.map(x=>x.code)); const refs=[...d.commonCodes.flatMap(g=>g.items.map(i=>i.code)), ...d.bundles.flatMap(b=>b.codes)]; console.log(JSON.stringify({version:d.version, total:arr.length, duplicateIds:dup, bad:bad.length, missingRefs:refs.filter(c=>!codes.has(c))}, null, 2));"
 ```
 
 Expected:

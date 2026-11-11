@@ -10,7 +10,7 @@ GitHub repo: `https://github.com/PeterWei078/ICD-10-Platform.git`
 
 ## Running the App
 
-This is a **zero-build, single-file** web application. Open `index.html` directly in any modern browser — no npm install, no server, no build step required.
+This is a **zero-build** web application (`index.html` + `data/icd10-data.js`, loaded via a plain `<script>` so `file://` still works). Open `index.html` directly in any modern browser — no npm install, no server, no build step required.
 
 For browser automation or when `file://` access is restricted:
 
@@ -27,10 +27,14 @@ Vercel is connected to the GitHub `main` branch and redeploys automatically on p
 
 ## Architecture
 
-The entire application lives in one file: `index.html` (~1744 lines). It uses CDN-loaded libraries:
-- **React 18.3.1** (UMD build via unpkg; all CDN versions are pinned — do not use `@latest`) + **Babel standalone** (for in-browser JSX transpilation)
-- **Tailwind CSS** (CDN, with custom `fadeInUp` animation config)
-- **Lucide icons** (via `lucide.icons` / `lucide.createElement()` — the library's `.toSvg()` method was removed in newer versions, so a custom `IconWrapper` component wraps the DOM API)
+- `index.html` — all app code and UI (React components, coding engine, sync)
+- `data/icd10-data.js` — sets `window.ICD10_DATA = { version, deprecatedIds, entries, commonCodes, bundles }`. Bump `version` when changing data. If it fails to load, the app shows a red banner and runs on locally saved rules only
+
+CDN-loaded libraries (all versions pinned — never use `@latest`):
+- **React 18.3.1** (UMD via unpkg) + **Babel standalone 7.29.11** (in-browser JSX transpilation)
+- **Tailwind CSS 3.4.17** (CDN, with custom `fadeInUp` animation config)
+- **qrcode-generator 1.4.4** (jsdelivr; `qrcode()` → `createSvgTag`) for the sync QR
+- **Lucide icons 1.60.0** (via `lucide.icons` / `lucide.createElement()` — the library's `.toSvg()` method was removed in newer versions, so a custom `IconWrapper` component wraps the DOM API)
 
 ### Key Data Structures
 
@@ -53,28 +57,35 @@ Every database entry has this shape:
 - `broad` — unspecified code; note usually suggests a more precise alternative
 - `context` — requires additional codes (e.g., underlying disease must be coded first)
 
-### Core Constants (inline in `<script type="text/babel">`)
+### Core Constants
 
-| Constant | Line | Purpose |
-|---|---|---|
-| `ORGAN_CATEGORIES` | ~176 | System categories with Tailwind color classes |
-| `INITIAL_DATABASE` | ~190 | ~250+ built-in ICD-10 entries |
-| `DEPRECATED_BUILT_IN_IDS` | ~740 | Set of old entry IDs removed from INITIAL_DATABASE; excluded during localStorage merge to prevent stale entries from persisting |
-| `IGNORE_LIST` | ~733 | Medications/non-diagnosis terms filtered before matching |
-| `App` component | ~746 | Entire app state and UI |
-| `liveSuggestions` | ~968 | useMemo for live search dropdown |
-| `performCoding` | ~1070 | Main coding analysis function |
+In `data/icd10-data.js`:
+
+| Field | Purpose |
+|---|---|
+| `entries` | Built-in ICD-10 entries (exposed in app as `INITIAL_DATABASE`) |
+| `deprecatedIds` | Old built-in ids removed from `entries` (app: `DEPRECATED_BUILT_IN_IDS`); excluded during localStorage merge |
+| `commonCodes` | 常用快選 groups `{ group: <organ value>, items: [{ code, label }] }` (app: `COMMON_CODE_GROUPS`) |
+| `bundles` | 常見組合 `{ id, name, codes: [...], note }` (app: `CODE_BUNDLES`) |
+
+Every code referenced by `commonCodes` / `bundles` must exist in `entries` (the validation command checks this).
+
+In `index.html` (`<script type="text/babel">`): `ORGAN_CATEGORIES`, `IGNORE_LIST`, `QUALIFIER_TRIGGERS` / `detectQualifier`, sync helpers (`encodeRulesPayload`, `decodeRulesPayload`, `makeQrSvg`), and the `App` component (`liveSuggestions`, `performCoding`, `addCodesToResults`, `startLinkImport`). Search by name — line numbers drift.
 
 ### State & Persistence
 
 - `database` state initializes by **merging**: saved localStorage entries that are either `isCustom` (user-added or user-edited) or not a current built-in id and not in `DEPRECATED_BUILT_IN_IDS`, prepended to the full `INITIAL_DATABASE`. Unedited built-ins are always taken fresh from `INITIAL_DATABASE`. Deduplication by `id` (first-seen wins) ensures built-in updates reach returning users while preserving custom rules.
-- A `useEffect` auto-saves `database` to `localStorage` on every change (key: `icd10_custom_db`)
+- A `useEffect` auto-saves `database` to `localStorage` on every change (key: `icd10_custom_db`). Quick-pick panel open state: `icd10_quickpick_open`
+
+### Device Sync (同步)
+
+User rules (`isCustom` or id not built-in) are JSON-encoded, compressed with `CompressionStream('deflate-raw')`, base64url'd and put in the URL hash: `#rules=z.<data>` (`j.` = uncompressed fallback). The hash never reaches the server. Opening such a URL (or pasting it into the sync panel's 「貼上同步連結」 field) asks to **merge** — imported ids replace existing ones, nothing else is deleted. QR is only rendered for links ≤1200 chars. iOS home-screen apps have storage separate from Safari, hence the paste field.
 
 ### Live Search
 
 `liveSuggestions` (`useMemo`) computes suggestions from the segment under the cursor (`getActiveSearchInfo`). Short (2–3 char) English queries use `\b`-anchored prefix matching to avoid false positives (e.g., "DM" won't match "ADM"). Chinese queries are supported; inside a run-on Chinese sentence (e.g. 「病人有糖尿病」) a contained keyword matches and only that part is replaced. A leading qualifier (`r/o`, `s/p`, `No`, `疑似`, `否認`…) is excluded from the query and kept on insertion. Clicking a suggestion inserts `ICD code + standard name`.
 
-### Coding Algorithm (`performCoding`, ~line 1070)
+### Coding Algorithm (`performCoding`)
 
 1. Protect ICD decimal codes (`E03.9` → `§`) and slash abbreviations (`R/O`, `S/P`, `H/O`, `W/O` → `¤`) before splitting, then restore
 2. Split input text on `[\n,;，、。/:().?]+`
@@ -89,8 +100,8 @@ Every database entry has this shape:
 
 ### UI Tabs
 
-- **`coding` tab** — paste clinical text, live suggestions while typing, click Analyze, view results with copy/code display
-- **`database` tab** — search (code/name/keyword/note) + organ filter, sort all rules, add/edit/delete entries, import/export JSON, smart reset
+- **`coding` tab** — paste clinical text, live suggestions while typing, click Analyze, view results (copy / remove single result); 常用快選 + 常見組合 panel below the input adds codes directly to results
+- **`database` tab** — search (code/name/keyword/note) + organ filter, sort all rules, add/edit/delete entries, 同步 (link/QR), import/export JSON, smart reset
 
 ### Smart Reset
 
@@ -98,23 +109,23 @@ Preserves user-added rules (`isCustom: true` or `id` not in `INITIAL_DATABASE`) 
 
 ## Adding New ICD-10 Entries
 
-Add entries directly to the `INITIAL_DATABASE` array in `index.html`. Rules:
+Add entries to the `entries` array in `data/icd10-data.js` (and bump `version`). Rules:
 - `id` must be unique and conventionally equals `code`
 - English `keywords` in UPPERCASE; Chinese keywords in natural case
 - `organ` must match one of the `ORGAN_CATEGORIES` `value` fields
 - Verify codes against the local 2026 ICD-10-CM source (see Validation below)
 
-If an old entry's `id` has been replaced (e.g., code updated), add the old `id` to `DEPRECATED_BUILT_IN_IDS` to prevent it from re-appearing for returning users.
+If an old entry's `id` has been replaced (e.g., code updated), add the old `id` to `deprecatedIds` to prevent it from re-appearing for returning users.
 
 ## Validation
 
-After editing `index.html`, run this parse check to catch duplicate IDs and malformed entries:
+After editing data, run this parse check to catch duplicate IDs, malformed entries and dangling quick-pick/bundle codes:
 
 ```bash
-node -e "const fs=require('fs'); const s=fs.readFileSync('index.html','utf8'); const arr=Function('return '+s.match(/const INITIAL_DATABASE = (\[[\s\S]*?\n\s*\]);/)[1])(); const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); console.log(JSON.stringify({total:arr.length, duplicateIds:dup, bad:bad.length}, null, 2));"
+node -e "const fs=require('fs'); const w={}; Function('window', fs.readFileSync('data/icd10-data.js','utf8'))(w); const d=w.ICD10_DATA; const arr=d.entries; const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); const codes=new Set(arr.map(x=>x.code)); const refs=[...d.commonCodes.flatMap(g=>g.items.map(i=>i.code)), ...d.bundles.flatMap(b=>b.codes)]; console.log(JSON.stringify({version:d.version, total:arr.length, duplicateIds:dup, bad:bad.length, missingRefs:refs.filter(c=>!codes.has(c))}, null, 2));"
 ```
 
-Expected: `duplicateIds: []`, `bad: 0`.
+Expected: `duplicateIds: []`, `bad: 0`, `missingRefs: []`.
 
 ### ICD-10-CM Source Checking
 
