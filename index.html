@@ -350,8 +350,8 @@
             { "id": "R78.81", "keywords": ["BACTERIEMIA", "BACTEREMIA", "菌血症"], "standard": "Bacteremia", "code": "R78.81", "type": "exact", "organ": "Infectious", "note": "若已進展為 Sepsis 應優先考慮 A41.9" },
             { "id": "R50.81", "keywords": ["R50.81", "FEVER WITH OTHER CONDITION", "PYREXIA WITH OTHER CONDITION", "伴隨其他疾病之發燒"], "standard": "Fever presenting with conditions classified elsewhere", "code": "R50.81", "type": "context", "organ": "Infectious", "note": "單純未明示發燒請優先使用 R50.9" },
             { "id": "Z93.0", "keywords": ["TRACHEOSTOMY", "ON TRACHEOSTOMY TUBE", "TRACHEOSTOMY STATUS", "氣切"], "standard": "Tracheostomy status", "code": "Z93.0", "type": "exact", "organ": "Respiratory", "note": "" },
-            { "id": "E11.21", "keywords": ["TYPE 2 DM WITH CKD", "DM NEPHROPATHY", "DIABETIC NEPHROPATHY", "糖尿病腎病變"], "standard": "Type 2 diabetes mellitus with diabetic nephropathy", "code": "E11.21", "type": "exact", "organ": "Endocrine", "note": "" },
-            { "id": "E11.69", "keywords": ["DM WITH DKA", "DKA", "DIABETIC KETOACIDOSIS"], "standard": "Type 2 diabetes mellitus with other specified complication", "code": "E11.69", "type": "broad", "organ": "Endocrine", "note": "注意：DKA 標準碼通常為 E11.10 (w/o coma) 或 E11.11 (w/ coma)，E11.69 為其他併發症。" },
+            { "id": "E11.21", "keywords": ["E11.21", "DM NEPHROPATHY", "DIABETIC NEPHROPATHY", "糖尿病腎病變"], "standard": "Type 2 diabetes mellitus with diabetic nephropathy", "code": "E11.21", "type": "exact", "organ": "Endocrine", "note": "" },
+            { "id": "E11.69", "keywords": ["E11.69", "DM WITH OTHER COMPLICATION"], "standard": "Type 2 diabetes mellitus with other specified complication", "code": "E11.69", "type": "broad", "organ": "Endocrine", "note": "DKA 請改用 E11.10（第一型 DM 用 E10.10）" },
             { "id": "E11.42", "keywords": ["DM POLYNEUROPATHY", "DIABETIC POLYNEUROPATHY", "糖尿病多發性神經病變"], "standard": "Type 2 diabetes mellitus with diabetic polyneuropathy", "code": "E11.42", "type": "exact", "organ": "Endocrine", "note": "" },
             { "id": "E11.621", "keywords": ["DM FOOT", "DIABETIC FOOT", "FOOT ULCER", "糖尿病足"], "standard": "Type 2 diabetes mellitus with foot ulcer", "code": "E11.621", "type": "exact", "organ": "Endocrine", "note": "建議加註潰瘍部位 (L97.-)" },
             { "id": "E13.9", "keywords": ["OTHER DM", "OTHER DIABETES", "其他糖尿病"], "standard": "Other specified diabetes mellitus without complications", "code": "E13.9", "type": "broad", "organ": "Endocrine", "note": "" },
@@ -737,7 +737,23 @@
             {"id":"R45.1","organ":"Other","keywords":["R45.1","AGITATION","RESTLESSNESS","躁動","焦躁不安"],"standard":"Restlessness and agitation","code":"R45.1","type":"exact","note":""},
             {"id":"R44.3","organ":"Neurological","keywords":["R44.3","HALLUCINATION","HALLUCINATIONS","幻覺"],"standard":"Hallucinations, unspecified","code":"R44.3","type":"broad","note":"若已知精神科診斷，請使用更特定代碼"},
             {"id":"F41.0","organ":"Neurological","keywords":["F41.0","PANIC ATTACK","PANIC DISORDER","恐慌發作","恐慌症"],"standard":"Panic disorder [episodic paroxysmal anxiety]","code":"F41.0","type":"exact","note":""},
-            {"id":"F32.A","organ":"Neurological","keywords":["F32.A","DEPRESSION","DEPRESSIVE MOOD","憂鬱症","憂鬱"],"standard":"Depression, unspecified","code":"F32.A","type":"broad","note":"若可指定 major depressive disorder episode/severity，請使用更特定 F32/F33 代碼"}
+            {"id":"F32.A","organ":"Neurological","keywords":["F32.A","DEPRESSION","DEPRESSIVE MOOD","憂鬱症","憂鬱"],"standard":"Depression, unspecified","code":"F32.A","type":"broad","note":"若可指定 major depressive disorder episode/severity，請使用更特定 F32/F33 代碼"},
+            {"id":"E11.22","organ":"Endocrine","keywords":["E11.22","DM WITH CKD","TYPE 2 DM WITH CKD","T2DM WITH CKD","DKD","DIABETIC KIDNEY DISEASE","糖尿病腎臟病"],"standard":"Type 2 diabetes mellitus with diabetic chronic kidney disease","code":"E11.22","type":"context","note":"需另加 N18.x 標示 CKD 分期；長期使用胰島素加 Z79.4"},
+            {"id":"E11.10","organ":"Endocrine","keywords":["E11.10","DKA","DIABETIC KETOACIDOSIS","DM WITH DKA","糖尿病酮酸中毒"],"standard":"Type 2 diabetes mellitus with ketoacidosis without coma","code":"E11.10","type":"exact","note":"合併昏迷用 E11.11；第一型 DM 用 E10.10"},
+            {"id":"E10.10","organ":"Endocrine","keywords":["E10.10","T1DM WITH DKA","TYPE 1 DM WITH DKA","第一型糖尿病酮酸中毒"],"standard":"Type 1 diabetes mellitus with ketoacidosis without coma","code":"E10.10","type":"exact","note":"合併昏迷用 E10.11"},
+            {"id":"Z79.4","organ":"Endocrine","keywords":["Z79.4","INSULIN USE","LONG-TERM INSULIN","ON INSULIN","長期使用胰島素"],"standard":"Long term (current) use of insulin","code":"Z79.4","type":"context","note":"第二型 DM 長期使用胰島素時加碼；第一型 DM 不需加"},
+            {"id":"Z79.01","organ":"Cardiovascular","keywords":["Z79.01","ANTICOAGULANT USE","LONG-TERM ANTICOAGULANT","ON WARFARIN","ON NOAC","ON DOAC","長期使用抗凝血劑"],"standard":"Long term (current) use of anticoagulants","code":"Z79.01","type":"context","note":"搭配主診斷（如 AF、DVT）使用"},
+            {"id":"Z95.5","organ":"Cardiovascular","keywords":["Z95.5","CORONARY STENT","S/P PCI","STATUS POST PCI","PCI WITH STENT","冠狀動脈支架","心導管支架"],"standard":"Presence of coronary angioplasty implant and graft","code":"Z95.5","type":"exact","note":"CABG 術後狀態用 Z95.1"},
+            {"id":"G47.33","organ":"Respiratory","keywords":["G47.33","OSA","OBSTRUCTIVE SLEEP APNEA","阻塞型睡眠呼吸中止症","睡眠呼吸中止"],"standard":"Obstructive sleep apnea (adult) (pediatric)","code":"G47.33","type":"exact","note":""},
+            {"id":"J45.909","organ":"Respiratory","keywords":["J45.909","ASTHMA","BRONCHIAL ASTHMA","氣喘","哮喘"],"standard":"Unspecified asthma, uncomplicated","code":"J45.909","type":"broad","note":"急性發作用 J45.901；重積狀態用 J45.902；可依嚴重度細分 J45.2-J45.5"},
+            {"id":"J96.21","organ":"Respiratory","keywords":["J96.21","ACUTE ON CHRONIC RESPIRATORY FAILURE","ACUTE ON CHRONIC HYPOXIC RESPIRATORY FAILURE","慢性呼吸衰竭急性惡化"],"standard":"Acute and chronic respiratory failure with hypoxia","code":"J96.21","type":"exact","note":"高碳酸型用 J96.22"},
+            {"id":"D62","organ":"Other","keywords":["D62","ACUTE BLOOD LOSS ANEMIA","ABLA","ACUTE POSTHEMORRHAGIC ANEMIA","急性失血性貧血"],"standard":"Acute posthemorrhagic anemia","code":"D62","type":"exact","note":""},
+            {"id":"J15.9","organ":"Respiratory","keywords":["J15.9","BACTERIAL PNEUMONIA","細菌性肺炎"],"standard":"Unspecified bacterial pneumonia","code":"J15.9","type":"broad","note":"已知菌種請用 J15.0-J15.8；菌種不明的肺炎用 J18.9"},
+            {"id":"K57.30","organ":"Digestive","keywords":["K57.30","DIVERTICULOSIS","COLON DIVERTICULOSIS","大腸憩室症","憩室症"],"standard":"Diverticulosis of large intestine without perforation or abscess without bleeding","code":"K57.30","type":"exact","note":"合併出血用 K57.31；發炎（憩室炎）用 K57.32"},
+            {"id":"K72.90","organ":"Digestive","keywords":["K72.90","LIVER FAILURE","HEPATIC FAILURE","肝衰竭"],"standard":"Hepatic failure, unspecified without coma","code":"K72.90","type":"broad","note":"合併肝昏迷用 K72.91；急性 K72.00；慢性 K72.10"},
+            {"id":"C78.7","organ":"Other","keywords":["C78.7","LIVER METASTASIS","LIVER METS","HEPATIC METASTASIS","肝轉移"],"standard":"Secondary malignant neoplasm of liver and intrahepatic bile duct","code":"C78.7","type":"context","note":"需同時編原發癌症部位"},
+            {"id":"Z51.11","organ":"Other","keywords":["Z51.11","CHEMOTHERAPY","FOR CHEMOTHERAPY","化療","化學治療"],"standard":"Encounter for antineoplastic chemotherapy","code":"Z51.11","type":"context","note":"以化療為入院主因時列首位，再加癌症碼；化療病史用 Z92.21"},
+            {"id":"G93.41","organ":"Neurological","keywords":["G93.41","METABOLIC ENCEPHALOPATHY","代謝性腦病變"],"standard":"Metabolic encephalopathy","code":"G93.41","type":"exact","note":""},
         ];
 
         // 模擬的藥物/無關詞彙過濾清單
@@ -753,6 +769,65 @@
             'I31.3', 'H10.3', 'M48.0', 'C34.1', 'I48.2', 'I50.2', 'I50.3', 'K21.0',
             'T88.6', 'T88.7', 'K80'
         ]);
+
+        // --- 語意修飾詞偵測 (NegEx-lite) ---
+        // scope 'after'：修飾其後方的診斷 (No DM)；scope 'before'：修飾其前方的診斷 (糖尿病病史)
+        // 修飾詞若落在匹配的關鍵字本身之內 (如 "SUSPECTED FLU")，不會套用。
+        const QUALIFIER_TRIGGERS = [
+            { re: /\b(NO|NOT|DENIES|DENIED|DENY|NEGATIVE FOR|FREE OF|ABSENCE OF|RULED OUT)\b/g, type: 'negated', scope: 'after' },
+            { re: /^\s*(WITHOUT|W\/O)\b/g, type: 'negated', scope: 'after' },
+            { re: /(否認|沒有|未見|無明顯|已排除)/g, type: 'negated', scope: 'after' },
+            { re: /^\s*無(?=\s|[A-Z])/g, type: 'negated', scope: 'after' },
+            { re: /\b(R\/O|RULE OUT|SUSPECTED|SUSPECT|SUSPICIOUS FOR|POSSIBLE|PROBABLE|LIKELY|QUESTIONABLE)\b/g, type: 'uncertain', scope: 'after' },
+            { re: /(疑似|懷疑|待排除|(?<!已)排除|可能)/g, type: 'uncertain', scope: 'after' },
+            { re: /\b(HX OF|H\/O|HISTORY OF|S\/P|STATUS POST|PREVIOUS|PRIOR)\b/g, type: 'history', scope: 'after' },
+            { re: /(曾有|曾經|過去有)/g, type: 'history', scope: 'after' },
+            { re: /(病史|術後)/g, type: 'history', scope: 'before' }
+        ];
+        // 轉折詞：中斷修飾詞的作用範圍 (No fever but DM → DM 不被否定)
+        const QUALIFIER_TERMINATORS = /\b(BUT|HOWEVER|EXCEPT)\b|但是|但|卻/g;
+        // 狀態/病史類 Z 碼本身就代表病史，不再標記為「病史」
+        const STATUS_CODE_REGEX = /^Z(79|8\d|9\d)/;
+        const QUALIFIER_RANK = { none: 0, history: 1, uncertain: 1, negated: 2 };
+
+        const findAllMatches = (re, text) => {
+            const out = [];
+            re.lastIndex = 0;
+            let m;
+            while ((m = re.exec(text)) !== null) {
+                out.push({ start: m.index, end: m.index + m[0].length });
+                if (m[0].length === 0) re.lastIndex++;
+            }
+            return out;
+        };
+
+        const detectQualifier = (segment, matchStart, matchEnd) => {
+            const terminators = findAllMatches(QUALIFIER_TERMINATORS, segment);
+            const blocked = (from, to) => terminators.some(t => t.start >= from && t.end <= to);
+            let best = null; // { type, distance }
+
+            QUALIFIER_TRIGGERS.forEach(({ re, type, scope }) => {
+                findAllMatches(re, segment).forEach(t => {
+                    let distance = null;
+                    if (scope === 'after' && t.end <= matchStart && !blocked(t.end, matchStart)) {
+                        distance = matchStart - t.end;
+                    } else if (scope === 'before' && t.start >= matchEnd && !blocked(matchEnd, t.start)) {
+                        distance = t.start - matchEnd;
+                    }
+                    if (distance !== null && (!best || distance < best.distance)) {
+                        best = { type, distance };
+                    }
+                });
+            });
+
+            return best ? best.type : null;
+        };
+
+        const QUALIFIER_LABELS = {
+            uncertain: { text: '疑似 / R/O', className: 'bg-amber-100 text-amber-800' },
+            history: { text: '病史 / 術後', className: 'bg-indigo-100 text-indigo-800' },
+            negated: { text: '否定', className: 'bg-slate-200 text-slate-600' }
+        };
 
         const App = () => {
             // 隱藏的文件上傳 ref
@@ -971,18 +1046,58 @@
                 return sortableItems;
             }, [database, sortConfig]);
 
-            const getActiveSearchTerm = () => {
-                const textBeforeCursor = inputText.slice(0, cursorPosition);
-                const activeSegment = textBeforeCursor.split(/[\n,;，、/:()?]+/).pop().trim();
+            // 規則庫搜尋與系統篩選
+            const [dbQuery, setDbQuery] = useState('');
+            const [dbOrgan, setDbOrgan] = useState('all');
 
-                if (activeSegment.length < 2 || !/[A-Za-z]/.test(activeSegment)) {
-                    return '';
+            const filteredDatabase = useMemo(() => {
+                const q = dbQuery.trim().toUpperCase();
+                return sortedDatabase.filter(item => {
+                    if (dbOrgan !== 'all' && (item.organ || 'Other') !== dbOrgan) return false;
+                    if (!q) return true;
+                    return [item.code, item.standard, item.note, ...(item.keywords || [])]
+                        .some(t => t && String(t).toUpperCase().includes(q));
+                });
+            }, [sortedDatabase, dbQuery, dbOrgan]);
+
+            // 取得游標所在片段：回傳 { query, segmentStart, queryStart }
+            // 斜線縮寫 (R/O、S/P) 以等長字元保護，片段開頭的修飾詞不列入搜尋字串
+            const LIVE_SEPARATOR_REGEX = /[\n,;，、/:()?]/;
+            const LIVE_PREFIX_REGEX = /^(R\/O|S\/P|H\/O|HX OF|HISTORY OF|NO|DENIES|DENIED|SUSPECTED|POSSIBLE|RULE OUT|疑似|懷疑|否認|沒有|待排除|排除|曾有)\s*/i;
+
+            const getActiveSearchInfo = () => {
+                const empty = { query: '', segmentStart: 0, queryStart: 0 };
+                const textBeforeCursor = inputText
+                    .slice(0, cursorPosition)
+                    .replace(/\b([RSHW])\/([OP])\b/gi, '$1¤$2');
+
+                let segmentStart = 0;
+                for (let i = textBeforeCursor.length - 1; i >= 0; i--) {
+                    if (LIVE_SEPARATOR_REGEX.test(textBeforeCursor[i])) {
+                        segmentStart = i + 1;
+                        break;
+                    }
                 }
 
-                return activeSegment;
+                const rawSegment = textBeforeCursor.slice(segmentStart).replace(/¤/g, '/');
+                const leading = rawSegment.length - rawSegment.trimStart().length;
+                let segment = rawSegment.trim();
+                let prefixLength = 0;
+                const prefixMatch = segment.match(LIVE_PREFIX_REGEX);
+                if (prefixMatch && prefixMatch[0].length < segment.length) {
+                    prefixLength = prefixMatch[0].length;
+                    segment = segment.slice(prefixLength);
+                }
+
+                if (segment.length < 2 || !/[A-Za-z一-鿿]/.test(segment)) {
+                    return empty;
+                }
+
+                return { query: segment, segmentStart, queryStart: segmentStart + leading + prefixLength, hasPrefix: prefixLength > 0 };
             };
 
-            const liveSearchTerm = getActiveSearchTerm();
+            const liveSearchInfo = getActiveSearchInfo();
+            const liveSearchTerm = liveSearchInfo.query;
 
             const liveSuggestions = useMemo(() => {
                 if (!liveSearchTerm) return [];
@@ -991,6 +1106,7 @@
                 const isShortEnglishQuery = /^[A-Z0-9]{2,3}$/.test(query);
                 const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                 const shortEnglishRegex = new RegExp(`\\b${escapedQuery}`);
+                const isCJKQuery = /[\u4e00-\u9fff]/.test(query);
 
                 return database
                     .map(entry => {
@@ -1002,10 +1118,12 @@
 
                         let bestScore = 0;
                         let matchedText = '';
+                        let matchOffset = 0;
 
                         searchableTerms.forEach(term => {
                             const normalized = String(term).toUpperCase();
                             let score = 0;
+                            let offset = 0;
 
                             if (normalized === query) {
                                 score = 120;
@@ -1015,6 +1133,10 @@
                                 score = 75;
                             } else if (!isShortEnglishQuery && normalized.includes(query)) {
                                 score = 55;
+                            } else if (isCJKQuery && normalized.length >= 2 && /[\u4e00-\u9fff]/.test(normalized) && query.includes(normalized)) {
+                                // 中文連續句 (如「病人有糖尿病」)：句中包含關鍵字，只替換關鍵字部分
+                                score = 40 + normalized.length;
+                                offset = query.lastIndexOf(normalized);
                             }
 
                             if (entry.code.toUpperCase().startsWith(query)) {
@@ -1024,13 +1146,18 @@
                             if (score > bestScore) {
                                 bestScore = score;
                                 matchedText = term;
+                                matchOffset = offset;
                             }
                         });
 
-                        return bestScore > 0 ? { ...entry, bestScore, matchedText } : null;
+                        return bestScore > 0 ? { ...entry, bestScore, matchedText, matchOffset } : null;
                     })
                     .filter(Boolean)
-                    .sort((a, b) => b.bestScore - a.bestScore || a.code.localeCompare(b.code))
+                    .sort((a, b) =>
+                        b.bestScore - a.bestScore ||
+                        String(a.matchedText).length - String(b.matchedText).length ||
+                        a.code.localeCompare(b.code)
+                    )
                     .slice(0, 8);
             }, [database, liveSearchTerm]);
 
@@ -1046,18 +1173,13 @@
             };
 
             const insertSuggestion = (suggestion) => {
-                const textBeforeCursor = inputText.slice(0, cursorPosition);
                 const textAfterCursor = inputText.slice(cursorPosition);
-                const segmentStart = Math.max(
-                    textBeforeCursor.lastIndexOf('\n'),
-                    textBeforeCursor.lastIndexOf(','),
-                    textBeforeCursor.lastIndexOf(';'),
-                    textBeforeCursor.lastIndexOf('，'),
-                    textBeforeCursor.lastIndexOf('、'),
-                    textBeforeCursor.lastIndexOf('/'),
-                    textBeforeCursor.lastIndexOf(':')
-                ) + 1;
-                const prefix = inputText.slice(0, segmentStart);
+                const { segmentStart, queryStart, hasPrefix } = liveSearchInfo;
+                // 一般情況沿用舊行為 (從片段起點替換)；有前置修飾詞或中文句中匹配時，只替換匹配部分
+                const replaceStart = (hasPrefix || suggestion.matchOffset)
+                    ? queryStart + (suggestion.matchOffset || 0)
+                    : segmentStart;
+                const prefix = inputText.slice(0, replaceStart);
                 const insertion = `${suggestion.code} ${suggestion.standard}`;
                 const nextText = `${prefix}${insertion}${textAfterCursor}`;
 
@@ -1087,31 +1209,32 @@
             };
 
             const performCoding = () => {
-                // 增加切割符號：斜線(/), 冒號(:), 括號()
-                const protectedInputText = inputText.replace(/\b([A-Z]\d{2})\.(\d[A-Z0-9]*)\b/gi, '$1§$2');
+                // 保護 ICD 小數點 (E03.9) 與常見斜線縮寫 (R/O, S/P, H/O, W/O)，避免被切割符號拆開
+                const protectedInputText = inputText
+                    .replace(/\b([A-Z]\d{2})\.(\d[A-Z0-9]*)\b/gi, '$1§$2')
+                    .replace(/\b([RSHW])\/([OP])\b/gi, '$1¤$2');
                 const segments = protectedInputText
                     .split(/[\n,;，、。/:().?]+/)
-                    .map(s => s.replace(/§/g, '.').trim())
+                    .map(s => s.replace(/§/g, '.').replace(/¤/g, '/').trim())
                     .filter(s => s.length > 0);
-                const newResults = [];
-                const usedCodes = new Set();
+
+                // 預先編譯忽略清單 (藥物、頻次等)：只遮蔽該詞本身，不再整段丟棄
+                const ignoreRegexes = IGNORE_LIST.map(ignore => {
+                    const escaped = ignore.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    return { re: new RegExp(`\\b${escaped}\\b`, 'g'), wordRe: new RegExp(`\\b${escaped}\\b`) };
+                });
+
+                const collected = [];
 
                 const processSegment = (rawSegment) => {
                 const cleanSegment = rawSegment.toUpperCase();
                 if (cleanSegment.length < 2) return;
-                
-                const isIgnored = IGNORE_LIST.some(ignore => {
-                    // 如果是短縮寫 (如 PO, IV, BP)，必須全字匹配
-                    if (ignore.length <= 4) {
-                        const escapedIgnore = ignore.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                        const regex = new RegExp(`\\b${escapedIgnore}\\b`);
-                        return regex.test(cleanSegment);
-                    }
-                    // 長單字則維持寬鬆匹配
-                    return cleanSegment.includes(ignore);
-                });
 
-                if (isIgnored) return;
+                // 將忽略詞替換為等長的 #，保留字元位置以便判斷修飾詞距離
+                let maskedSegment = cleanSegment;
+                ignoreRegexes.forEach(({ re }) => {
+                    maskedSegment = maskedSegment.replace(re, m => '#'.repeat(m.length));
+                });
 
                 const matchesByCode = new Map();
 
@@ -1123,20 +1246,22 @@
                     ].filter(Boolean);
 
                     searchableTerms.forEach(keyword => {
-                    const k = keyword.toUpperCase();
-                    let isMatch = false;
+                    const k = String(keyword).toUpperCase();
+                    // 關鍵字本身含忽略詞 (如 "INSULIN USE") 時，比對原文；否則比對遮蔽後文字
+                    const target = ignoreRegexes.some(({ wordRe }) => wordRe.test(k)) ? cleanSegment : maskedSegment;
+                    let matchStart = -1;
 
                     const isEnglishKeyword = /^[A-Z0-9\s\-\.]+$/.test(k);
 
                     if (isEnglishKeyword) {
                         const escapedK = k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                        const regex = new RegExp(`\\b${escapedK}\\b`);
-                        isMatch = regex.test(cleanSegment);
+                        const m = new RegExp(`\\b${escapedK}\\b`).exec(target);
+                        if (m) matchStart = m.index;
                     } else {
-                        isMatch = cleanSegment.includes(k);
+                        matchStart = target.indexOf(k);
                     }
 
-                    if (isMatch) {
+                    if (matchStart >= 0) {
                         let currentScore = k.length;
                         
                         if (cleanSegment === k) {
@@ -1148,7 +1273,9 @@
                         matchesByCode.set(entry.code, {
                             ...entry,
                             original: rawSegment,
-                            relevance: currentScore
+                            relevance: currentScore,
+                            matchStart,
+                            matchEnd: matchStart + k.length
                         });
                         }
                     }
@@ -1158,16 +1285,33 @@
                 Array.from(matchesByCode.values())
                     .sort((a, b) => b.relevance - a.relevance || a.code.localeCompare(b.code))
                     .forEach(match => {
-                    if (!usedCodes.has(match.code)) {
-                        const { relevance, ...result } = match;
-                        newResults.push(result);
-                        usedCodes.add(match.code);
+                    const { relevance, matchStart, matchEnd, ...result } = match;
+                    let qualifier = detectQualifier(cleanSegment, matchStart, matchEnd);
+                    if (qualifier === 'history' && STATUS_CODE_REGEX.test(result.code)) {
+                        qualifier = null;
                     }
+                    collected.push({ ...result, qualifier });
                     });
                 };
 
                 segments.forEach(seg => {
                 processSegment(seg);
+                });
+
+                // 同一代碼只保留一次：確定 > 疑似/病史 > 否定
+                const newResults = [];
+                const indexByCode = new Map();
+                collected.forEach(item => {
+                    const rank = QUALIFIER_RANK[item.qualifier || 'none'];
+                    if (!indexByCode.has(item.code)) {
+                        indexByCode.set(item.code, newResults.length);
+                        newResults.push(item);
+                    } else {
+                        const idx = indexByCode.get(item.code);
+                        if (rank < QUALIFIER_RANK[newResults[idx].qualifier || 'none']) {
+                            newResults[idx] = item;
+                        }
+                    }
                 });
 
                 setResults(newResults);
@@ -1252,10 +1396,19 @@
                 setProgressStep(0);
             };
 
+            const confirmedResults = results.filter(r => !r.qualifier);
+            const flaggedResults = results.filter(r => r.qualifier === 'uncertain' || r.qualifier === 'history');
+            const negatedResults = results.filter(r => r.qualifier === 'negated');
+
+            // 將「需確認 / 否定」的結果改為確定診斷
+            const confirmResult = (code) => {
+                setResults(prev => prev.map(r => r.code === code ? { ...r, qualifier: null } : r));
+            };
+
             const copyToClipboard = () => {
-                const text = results.map(r => `${r.code} - ${r.standard}`).join('\n');
+                const text = confirmedResults.map(r => `${r.code} - ${r.standard}`).join('\n');
                 navigator.clipboard.writeText(text);
-                showToast('編碼結果已複製到剪貼簿');
+                showToast(`已複製 ${confirmedResults.length} 筆確定診斷`);
             };
 
             const getOrganColor = (organValue) => {
@@ -1266,6 +1419,52 @@
             const getOrganLabel = (organValue) => {
                 const category = ORGAN_CATEGORIES.find(c => c.value === organValue);
                 return category ? category.label.split(' ')[0] : organValue; 
+            };
+
+            const renderResultCard = (item) => {
+                const qualifierLabel = item.qualifier ? QUALIFIER_LABELS[item.qualifier] : null;
+                return (
+                    <div key={item.code} className={`relative p-4 rounded-lg border-l-4 shadow-sm bg-white ${
+                    qualifierLabel ? 'border-l-slate-300 border border-dashed border-slate-300 opacity-90' :
+                    item.type === 'unknown' ? 'border-l-red-400 border border-red-100' :
+                    item.type === 'broad' ? 'border-l-amber-400 border border-amber-100' : 
+                    'border-l-green-500 border border-slate-100'
+                    }`}>
+                    <div className="flex justify-between items-start mb-2">
+                        <div className="flex flex-col">
+                        <span className="text-xs font-mono bg-slate-100 text-slate-500 px-2 py-0.5 rounded w-fit mb-1">原始: {item.original}</span>
+                        <div className="flex flex-wrap gap-1">
+                            {qualifierLabel && (
+                            <span className={`text-[10px] w-fit px-2 py-0.5 rounded-full font-bold ${qualifierLabel.className}`}>
+                                {qualifierLabel.text}
+                            </span>
+                            )}
+                            {item.organ && item.organ !== 'Other' && (
+                            <span className={`text-[10px] w-fit px-2 py-0.5 rounded-full ${getOrganColor(item.organ)}`}>
+                                {getOrganLabel(item.organ)}
+                            </span>
+                            )}
+                        </div>
+                        </div>
+                        <span className={`text-xl font-bold font-mono ${item.type === 'unknown' ? 'text-red-600' : 'text-blue-700'}`}>{item.code}</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-slate-800 mb-1">{item.standard}</h3>
+                    {item.note && (
+                        <div className="mt-2 text-xs flex items-start bg-amber-50 text-amber-800 p-2 rounded">
+                        <AlertTriangle className="w-3 h-3 mr-1.5 mt-0.5 flex-shrink-0" />
+                        {item.note}
+                        </div>
+                    )}
+                    {item.qualifier === 'history' && (
+                        <div className="mt-2 text-xs text-indigo-700">提示：過去病史通常改用 Z86/Z87 病史碼，而非現存疾病碼。</div>
+                    )}
+                    {qualifierLabel && (
+                        <button onClick={() => confirmResult(item.code)} className="mt-3 flex items-center text-xs text-blue-600 hover:text-blue-800 font-medium">
+                        <CheckCircle className="w-3 h-3 mr-1" /> 改為確定診斷
+                        </button>
+                    )}
+                    </div>
+                );
             };
 
             const SortIcon = ({ colKey }) => {
@@ -1458,7 +1657,7 @@ Impression:
                                 <List className="w-4 h-4 mr-2 text-green-600" />
                                 編碼結果
                             </h2>
-                            {results.length > 0 && (
+                            {confirmedResults.length > 0 && (
                                 <button onClick={copyToClipboard} className="flex items-center text-xs bg-white border border-slate-300 px-3 py-1.5 rounded hover:bg-slate-50 text-slate-600">
                                 <Copy className="w-3 h-3 mr-1" /> 複製
                                 </button>
@@ -1473,32 +1672,39 @@ Impression:
                                 </div>
                             )}
 
-                            {results.map((item, index) => (
-                                <div key={index} className={`relative p-4 rounded-lg border-l-4 shadow-sm bg-white ${
-                                item.type === 'unknown' ? 'border-l-red-400 border border-red-100' :
-                                item.type === 'broad' ? 'border-l-amber-400 border border-amber-100' : 
-                                'border-l-green-500 border border-slate-100'
-                                }`}>
-                                <div className="flex justify-between items-start mb-2">
-                                    <div className="flex flex-col">
-                                    <span className="text-xs font-mono bg-slate-100 text-slate-500 px-2 py-0.5 rounded w-fit mb-1">原始: {item.original}</span>
-                                    {item.organ && item.organ !== 'Other' && (
-                                        <span className={`text-[10px] w-fit px-2 py-0.5 rounded-full ${getOrganColor(item.organ)}`}>
-                                        {getOrganLabel(item.organ)}
-                                        </span>
-                                    )}
-                                    </div>
-                                    <span className={`text-xl font-bold font-mono ${item.type === 'unknown' ? 'text-red-600' : 'text-blue-700'}`}>{item.code}</span>
+                            {confirmedResults.map(item => renderResultCard(item))}
+
+                            {flaggedResults.length > 0 && (
+                                <div className="pt-2 space-y-3">
+                                <div className="flex items-center text-xs font-bold text-amber-700">
+                                    <AlertTriangle className="w-3 h-3 mr-1.5" />
+                                    需確認（疑似 / 病史）{flaggedResults.length} 筆 — 不會被複製
                                 </div>
-                                <h3 className="text-lg font-semibold text-slate-800 mb-1">{item.standard}</h3>
-                                {item.note && (
-                                    <div className="mt-2 text-xs flex items-start bg-amber-50 text-amber-800 p-2 rounded">
-                                    <AlertTriangle className="w-3 h-3 mr-1.5 mt-0.5 flex-shrink-0" />
-                                    {item.note}
-                                    </div>
-                                )}
+                                {flaggedResults.map(item => renderResultCard(item))}
                                 </div>
-                            ))}
+                            )}
+
+                            {negatedResults.length > 0 && (
+                                <details className="pt-2 text-xs text-slate-500">
+                                <summary className="cursor-pointer font-bold select-none">
+                                    已略過：否定語意 {negatedResults.length} 筆
+                                </summary>
+                                <div className="mt-2 space-y-1.5">
+                                    {negatedResults.map(item => (
+                                    <div key={item.code} className="flex items-center justify-between bg-white border border-slate-200 rounded px-3 py-2">
+                                        <div className="min-w-0">
+                                        <span className="font-mono font-bold text-slate-600 mr-2">{item.code}</span>
+                                        <span className="text-slate-600">{item.standard}</span>
+                                        <div className="text-[10px] text-slate-400 truncate">原始: {item.original}</div>
+                                        </div>
+                                        <button onClick={() => confirmResult(item.code)} className="ml-3 flex-shrink-0 text-blue-600 hover:underline">
+                                        改為確定
+                                        </button>
+                                    </div>
+                                    ))}
+                                </div>
+                                </details>
+                            )}
                             </div>
                         </div>
                         </div>
@@ -1634,7 +1840,7 @@ Impression:
                         {/* Header with Sort Controls */}
                         <div className="p-4 border-b border-slate-100 flex flex-col gap-3 bg-slate-50">
                             <div className="flex justify-between items-center">
-                            <h2 className="font-bold text-slate-700">目前規則庫 ({sortedDatabase.length})</h2>
+                            <h2 className="font-bold text-slate-700">目前規則庫 ({filteredDatabase.length === database.length ? database.length : `${filteredDatabase.length} / ${database.length}`})</h2>
                             
                             {/* Action Buttons */}
                             <div className="flex items-center space-x-2">
@@ -1654,6 +1860,35 @@ Impression:
                             </div>
                             </div>
                             
+                            {/* Search & Filter Bar */}
+                            <div className="flex flex-col sm:flex-row gap-2">
+                            <div className="relative flex-1">
+                                <Search className="w-4 h-4 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                <input
+                                type="text"
+                                value={dbQuery}
+                                onChange={(e) => setDbQuery(e.target.value)}
+                                placeholder="搜尋代碼、名稱、關鍵字或備註…"
+                                className="w-full pl-8 pr-8 py-1.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white"
+                                />
+                                {dbQuery && (
+                                <button onClick={() => setDbQuery('')} className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600" title="清除搜尋">
+                                    <X className="w-4 h-4" />
+                                </button>
+                                )}
+                            </div>
+                            <select
+                                value={dbOrgan}
+                                onChange={(e) => setDbOrgan(e.target.value)}
+                                className="text-sm border border-slate-300 rounded-lg px-2 py-1.5 bg-white focus:ring-2 focus:ring-blue-500 outline-none"
+                            >
+                                <option value="all">全部系統</option>
+                                {ORGAN_CATEGORIES.map(cat => (
+                                <option key={cat.value} value={cat.value}>{cat.label}</option>
+                                ))}
+                            </select>
+                            </div>
+
                             {/* Sort Control Bar */}
                             <div className="flex items-center gap-2 text-xs">
                             <span className="text-slate-500 font-bold">排序方式 (Sort by):</span>
@@ -1700,7 +1935,12 @@ Impression:
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
-                                {sortedDatabase.map((item) => (
+                                {filteredDatabase.length === 0 && (
+                                <tr>
+                                    <td colSpan="3" className="px-4 py-10 text-center text-slate-400">找不到符合的規則</td>
+                                </tr>
+                                )}
+                                {filteredDatabase.map((item) => (
                                 <tr key={item.id} className={`hover:bg-slate-50 ${editingId === item.id ? 'bg-amber-50' : ''}`}>
                                     <td className="px-4 py-3 font-mono align-top w-32">
                                     <div className="font-bold text-blue-700">{item.code}</div>

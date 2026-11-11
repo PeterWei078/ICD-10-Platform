@@ -72,23 +72,25 @@ Every database entry has this shape:
 
 ### Live Search
 
-`liveSuggestions` (`useMemo`, ~line 968) computes suggestions from the word under the cursor as the user types. Short (2–3 char) English queries use `\b`-anchored prefix matching to avoid false positives (e.g., "DM" won't match "ADM"). Clicking a suggestion inserts `ICD code + standard name` at the cursor.
+`liveSuggestions` (`useMemo`) computes suggestions from the segment under the cursor (`getActiveSearchInfo`). Short (2–3 char) English queries use `\b`-anchored prefix matching to avoid false positives (e.g., "DM" won't match "ADM"). Chinese queries are supported; inside a run-on Chinese sentence (e.g. 「病人有糖尿病」) a contained keyword matches and only that part is replaced. A leading qualifier (`r/o`, `s/p`, `No`, `疑似`, `否認`…) is excluded from the query and kept on insertion. Clicking a suggestion inserts `ICD code + standard name`.
 
 ### Coding Algorithm (`performCoding`, ~line 1070)
 
-1. Protect ICD decimal codes (e.g., `E03.9`) from being split by replacing `.` with `§` before splitting, then restoring
+1. Protect ICD decimal codes (`E03.9` → `§`) and slash abbreviations (`R/O`, `S/P`, `H/O`, `W/O` → `¤`) before splitting, then restore
 2. Split input text on `[\n,;，、。/:().?]+`
-3. Filter segments against `IGNORE_LIST` (short terms ≤4 chars use `\b` word-boundary; longer terms use `includes`)
+3. **Mask** `IGNORE_LIST` terms (word-boundary) with same-length `#` — the segment is no longer dropped, so "DM on insulin" still codes DM. Keywords that themselves contain an ignore term (e.g. `INSULIN USE`) match against the unmasked text
 4. For each segment, score each database entry's `code`, `standard`, and `keywords`:
    - English terms: `\b...\b` regex (case-insensitive via `.toUpperCase()`)
-   - Chinese terms: `String.includes()`
+   - Chinese terms: `String.indexOf()`
    - Score = keyword length; +100 bonus if segment exactly equals keyword
-5. Collect **all** matches per segment (not just highest); skip codes already used
+5. `detectQualifier` (NegEx-lite, `QUALIFIER_TRIGGERS`) tags each match `negated` / `uncertain` / `history` based on the nearest trigger before it (or after it for 病史/術後), stopped by `QUALIFIER_TERMINATORS` (but/但). Triggers inside the matched keyword itself are ignored. Status Z codes (`Z79`, `Z8x`, `Z9x`) are never tagged `history`
+6. Collect **all** matches per segment; dedupe by code with priority confirmed > uncertain/history > negated
+7. UI shows confirmed results (copied), a 「需確認」 section (uncertain/history, not copied) and a collapsed 「已略過：否定語意」 list; each flagged item has 「改為確定」
 
 ### UI Tabs
 
 - **`coding` tab** — paste clinical text, live suggestions while typing, click Analyze, view results with copy/code display
-- **`database` tab** — view/filter/sort all rules, add/edit/delete entries, import/export JSON, smart reset
+- **`database` tab** — search (code/name/keyword/note) + organ filter, sort all rules, add/edit/delete entries, import/export JSON, smart reset
 
 ### Smart Reset
 
