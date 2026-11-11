@@ -16,7 +16,8 @@
     <meta name="apple-mobile-web-app-title" content="ICD-10">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 版本皆鎖定，避免 CDN @latest 自動升級造成 API 失效 -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -36,14 +37,14 @@
     </script>
 
     <!-- React & ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    
+    <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+
     <!-- Babel for JSX -->
-    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.29.11/babel.min.js"></script>
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@1.60.0/dist/umd/lucide.min.js"></script>
 
     <style>
         /* 自定義捲軸樣式 */
@@ -298,7 +299,7 @@
             { "id": "R76.11", "keywords": ["LTBI", "LATENT TB", "結核潛伏", "PPD POSITIVE", "IGRA POSITIVE"], "standard": "Nonspecific reaction to tuberculin skin test", "code": "R76.11", "type": "exact", "organ": "Infectious", "note": "" },
             { "id": "M79.10", "keywords": ["MYALGIA", "MUSCLE PAIN", "肌肉痛"], "standard": "Myalgia, unspecified site", "code": "M79.10", "type": "exact", "organ": "Other", "note": "" },
             { "id": "M94.0", "keywords": ["COSTOCHONDRITIS", "TIETZE SYNDROME", "肋軟骨炎", "CHEST WALL PAIN"], "standard": "Chondrocostal junction syndrome [Tietze]", "code": "M94.0", "type": "exact", "organ": "Other", "note": "" },
-            { "id": "M54.30", "keywords": ["LBP", "SCIATICA", "坐骨神經痛", "LUMBAGO"], "standard": "Sciatica, unspecified side", "code": "M54.30", "type": "exact", "organ": "Neurological", "note": "M54.5 (LBP) 已停用，若為坐骨神經痛請用 M54.3-" },
+            { "id": "M54.30", "keywords": ["M54.30", "SCIATICA", "坐骨神經痛"], "standard": "Sciatica, unspecified side", "code": "M54.30", "type": "exact", "organ": "Neurological", "note": "單純下背痛 (LBP) 請用 M54.50；合併坐骨神經痛用 M54.4-" },
             { "id": "R51.9", "keywords": ["R51.9", "HEADACHE", "CEPHALALGIA", "HEAD PAIN", "頭痛", "頭部疼痛"], "standard": "Headache, unspecified", "code": "R51.9", "type": "exact", "organ": "Neurological", "note": "" },
             { "id": "J30.9", "keywords": ["ALLERGIC RHINITIS", "過敏性鼻炎", "HAY FEVER"], "standard": "Allergic rhinitis, unspecified", "code": "J30.9", "type": "exact", "organ": "Respiratory", "note": "" },
             { "id": "J01.90", "keywords": ["SINUSITIS", "ACUTE SINUSITIS", "鼻竇炎"], "standard": "Acute sinusitis, unspecified", "code": "J01.90", "type": "exact", "organ": "Respiratory", "note": "" },
@@ -774,8 +775,16 @@
                 if (savedDb) {
                     const parsed = JSON.parse(savedDb);
                     if (Array.isArray(parsed)) {
-                        const savedCustomAndCurrent = parsed.filter(item => item.isCustom || !DEPRECATED_BUILT_IN_IDS.has(item.id));
-                        initialData = [...savedCustomAndCurrent, ...INITIAL_DATABASE];
+                        // 只保留「使用者自訂/修改過」或「非內建」的條目；
+                        // 未修改的內建條目一律改用最新 INITIAL_DATABASE，確保內建更新能送達舊用戶。
+                        const builtInIds = new Set(INITIAL_DATABASE.map(item => item.id));
+                        const savedUserEntries = parsed.filter(item =>
+                            item && item.id && (
+                                item.isCustom ||
+                                (!builtInIds.has(item.id) && !DEPRECATED_BUILT_IN_IDS.has(item.id))
+                            )
+                        );
+                        initialData = [...savedUserEntries, ...INITIAL_DATABASE];
                     }
                 }
                 } catch (e) {

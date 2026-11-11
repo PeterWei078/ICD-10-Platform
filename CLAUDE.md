@@ -28,7 +28,7 @@ Vercel is connected to the GitHub `main` branch and redeploys automatically on p
 ## Architecture
 
 The entire application lives in one file: `index.html` (~1744 lines). It uses CDN-loaded libraries:
-- **React 18** (UMD build via unpkg) + **Babel standalone** (for in-browser JSX transpilation)
+- **React 18.3.1** (UMD build via unpkg; all CDN versions are pinned — do not use `@latest`) + **Babel standalone** (for in-browser JSX transpilation)
 - **Tailwind CSS** (CDN, with custom `fadeInUp` animation config)
 - **Lucide icons** (via `lucide.icons` / `lucide.createElement()` — the library's `.toSvg()` method was removed in newer versions, so a custom `IconWrapper` component wraps the DOM API)
 
@@ -67,7 +67,7 @@ Every database entry has this shape:
 
 ### State & Persistence
 
-- `database` state initializes by **merging**: saved localStorage entries that are either `isCustom` or not in `DEPRECATED_BUILT_IN_IDS`, prepended to the full `INITIAL_DATABASE`. Deduplication by `id` (first-seen wins) ensures built-in updates reach returning users while preserving custom rules.
+- `database` state initializes by **merging**: saved localStorage entries that are either `isCustom` (user-added or user-edited) or not a current built-in id and not in `DEPRECATED_BUILT_IN_IDS`, prepended to the full `INITIAL_DATABASE`. Unedited built-ins are always taken fresh from `INITIAL_DATABASE`. Deduplication by `id` (first-seen wins) ensures built-in updates reach returning users while preserving custom rules.
 - A `useEffect` auto-saves `database` to `localStorage` on every change (key: `icd10_custom_db`)
 
 ### Live Search
