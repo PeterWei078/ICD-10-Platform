@@ -6,10 +6,9 @@ This repository is the ICD-10-Platform app. Use this file as the compact project
 
 - Project path: `/Users/vivian/Documents/Codex/2026-05-03/https-github-com-peterwei078-icd-10`
 - GitHub repo: `https://github.com/PeterWei078/ICD-10-Platform.git`
-- Main file: `index.html`
-- App type: zero-build, single-file static React app.
-- Runtime: React 18 UMD, Babel standalone, Tailwind CDN, Lucide icons.
-- No npm install, no build command, no server required for normal use.
+- Entry: `index.html` → `src/main.jsx`; app code in `src/`
+- App type: React 18 + Vite 8 build, Tailwind 3 (PostCSS), lucide-react; offline PWA via `src/sw.js`.
+- `npm install`, then `npm run dev` / `npm run build` / `npm run preview`. Vercel builds `dist/` (see `vercel.json`).
 
 Do not mix this repo with `Clinic-Code-Search-Platform` unless the user explicitly asks.
 
@@ -18,7 +17,7 @@ Do not mix this repo with `Clinic-Code-Search-Platform` unless the user explicit
 Unless the user explicitly says "do not push", "暫不推送", or "只改本機":
 
 1. Edit the app.
-2. Run basic validation.
+2. Run `npm run validate` and `npm run build`.
 3. `git add`
 4. `git commit`
 5. `git push origin main`
@@ -33,13 +32,14 @@ Vercel is expected to redeploy automatically if it is connected to GitHub `main`
 - Coding analysis searches across `keywords`, `code`, and `standard`.
 - Analysis supports multiple matches within the same text segment.
 - ICD codes with decimal points, such as `E03.9`, are protected from being split incorrectly.
-- Built-in data lives in `data/icd10-data.js` (`window.ICD10_DATA = { version, deprecatedIds, entries, commonCodes, bundles }`); `index.html` exposes `entries` as `INITIAL_DATABASE`.
+- React + Vite project (`npm run dev` / `npm run build` / `npm run preview`); Vercel builds `dist/`. App code in `src/` (`App.jsx`, `coding.js`, `sync.js`), offline Service Worker template `src/sw.js`.
+- Built-in data lives in `src/data/icd10-data.js` (ES module default export `{ version, deprecatedIds, entries, commonCodes, bundles }`); `App.jsx` exposes `entries` as `INITIAL_DATABASE`.
 - localStorage initialization keeps only custom/edited or non-built-in entries and takes all other built-ins fresh from `entries`, so built-in updates reach returning users.
 - Negation/uncertainty/history detection, 常用快選 / 常見組合 panel, and link/QR device sync (`#rules=`). See CLAUDE.md for details.
 
 ## Data Model
 
-Entries in `data/icd10-data.js` → `entries` use:
+Entries in `src/data/icd10-data.js` → `entries` use:
 
 ```js
 {
@@ -57,11 +57,7 @@ Keep `id` unique. Usually `id` should equal `code`, unless there is a special no
 
 ## Validation
 
-After editing data, run a quick parse check (expect `duplicateIds: []`, `bad: 0`, `missingRefs: []`):
-
-```bash
-node -e "const fs=require('fs'); const w={}; Function('window', fs.readFileSync('data/icd10-data.js','utf8'))(w); const d=w.ICD10_DATA; const arr=d.entries; const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); const codes=new Set(arr.map(x=>x.code)); const refs=[...d.commonCodes.flatMap(g=>g.items.map(i=>i.code)), ...d.bundles.flatMap(b=>b.codes)]; console.log(JSON.stringify({version:d.version, total:arr.length, duplicateIds:dup, bad:bad.length, missingRefs:refs.filter(c=>!codes.has(c))}, null, 2));"
-```
+After editing data, run `npm run validate` (expects no duplicate ids, no malformed entries, no missing quick-pick/bundle refs), then `npm run build`.
 
 Expected:
 
@@ -84,19 +80,12 @@ node -e "const fs=require('fs'); const lines=fs.readFileSync('/private/tmp/icd10
 
 ## Testing
 
-The app can run directly as `file://.../index.html`. If browser automation cannot open `file://`, run:
-
 ```bash
-python3 -m http.server 4173
+npm run build && npm run preview   # http://localhost:4173 (Service Worker active)
+# or: npm run dev                  # http://localhost:5173 (no Service Worker)
 ```
 
-Then test:
-
-`http://127.0.0.1:4173/index.html`
-
 Stop the server after testing. Clean temporary browser test files such as `.playwright-mcp/` before committing.
-
-Expected console warnings from Tailwind CDN and Babel standalone are acceptable for this zero-build app. A favicon 404 is non-blocking.
 
 ## Important Recent Commits
 

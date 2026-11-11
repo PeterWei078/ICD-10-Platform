@@ -10,31 +10,43 @@ GitHub repo: `https://github.com/PeterWei078/ICD-10-Platform.git`
 
 ## Running the App
 
-This is a **zero-build** web application (`index.html` + `data/icd10-data.js`, loaded via a plain `<script>` so `file://` still works). Open `index.html` directly in any modern browser — no npm install, no server, no build step required.
-
-For browser automation or when `file://` access is restricted:
+React + Vite project (Node ≥ 20.19). `index.html` can **not** be opened via `file://` any more.
 
 ```bash
-python3 -m http.server 4173
-# then open http://127.0.0.1:4173/index.html
+npm install          # first time
+npm run dev          # dev server with HMR (no Service Worker in dev)
+npm run build        # production build → dist/ (also emits dist/sw.js)
+npm run preview      # serve dist/ at http://localhost:4173 (Service Worker active)
+npm run validate     # data checks (see Validation)
 ```
 
-Stop the server after testing. Remove `.playwright-mcp/` before committing.
+Stop servers after testing. Remove `.playwright-mcp/` before committing. `node_modules/` and `dist/` are git-ignored.
 
 ## Deployment
 
-Vercel is connected to the GitHub `main` branch and redeploys automatically on push. The default workflow after any edit is: edit → validate → `git add` → `git commit` → `git push origin main`. Only skip the push if the user says "do not push", "暫不推送", or "只改本機".
+Vercel is connected to the GitHub `main` branch and redeploys automatically on push. `vercel.json` pins the build: `npm ci` → `npm run build` → serve `dist/`, with `Cache-Control: no-cache` on `/sw.js` and immutable caching on `/assets/*`. The default workflow after any edit is: edit → `npm run validate` + `npm run build` → `git add` → `git commit` → `git push origin main`. Only skip the push if the user says "do not push", "暫不推送", or "只改本機".
 
 ## Architecture
 
-- `index.html` — all app code and UI (React components, coding engine, sync)
-- `data/icd10-data.js` — sets `window.ICD10_DATA = { version, deprecatedIds, entries, commonCodes, bundles }`. Bump `version` when changing data. If it fails to load, the app shows a red banner and runs on locally saved rules only
+```
+index.html              Vite entry (meta / manifest / icons, loads src/main.jsx)
+src/main.jsx            React root + Service Worker registration (production only)
+src/App.jsx             App component: state, UI, live search, sync panel, quick-pick
+src/coding.js           Coding engine: IGNORE_LIST, qualifier detection, analyzeText()
+src/sync.js             Rule sync encode/decode (#rules=) + QR SVG
+src/data/icd10-data.js  Built-in data (ES module, default export) — bump `version` on change
+src/sw.js               Service Worker template (filled in at build time)
+src/index.css           Tailwind directives + scrollbar styles
+public/                 manifest.json, icons/ (copied to dist as-is)
+scripts/validate-data.js  Data validation (npm run validate)
+vite.config.js          Vite + React plugin + `icd10-service-worker` plugin (emits dist/sw.js)
+```
 
-CDN-loaded libraries (all versions pinned — never use `@latest`):
-- **React 18.3.1** (UMD via unpkg) + **Babel standalone 7.29.11** (in-browser JSX transpilation)
-- **Tailwind CSS 3.4.17** (CDN, with custom `fadeInUp` animation config)
-- **qrcode-generator 1.4.4** (jsdelivr; `qrcode()` → `createSvgTag`) for the sync QR
-- **Lucide icons 1.60.0** (via `lucide.icons` / `lucide.createElement()` — the library's `.toSvg()` method was removed in newer versions, so a custom `IconWrapper` component wraps the DOM API)
+Dependencies are pinned exactly in `package.json` (never use `latest`): React 18.3.1, lucide-react 1.60.0, qrcode-generator 1.4.4, Vite 8.3.5, @vitejs/plugin-react 6.1.2, Tailwind CSS 3.4.17 (PostCSS build, purged — keep class names as full literal strings so the content scan finds them).
+
+### Offline / Service Worker
+
+`vite.config.js` → `serviceWorkerPlugin` runs at build time: it lists every emitted file plus everything in `public/`, injects that list and a new `BUILD_ID` into `src/sw.js`, and emits `dist/sw.js`. The SW precaches all of it on install (`skipWaiting` + `clients.claim`), deletes older `icd10-*` caches on activate, serves navigations **network-first** (3 s timeout → cached `/index.html`) and other same-origin GETs **cache-first**. Every deploy changes `BUILD_ID`, so clients pick up the new version on next launch while online. The header shows 「離線模式」 when `navigator.onLine` is false.
 
 ### Key Data Structures
 
@@ -59,7 +71,7 @@ Every database entry has this shape:
 
 ### Core Constants
 
-In `data/icd10-data.js`:
+In `src/data/icd10-data.js`:
 
 | Field | Purpose |
 |---|---|
@@ -70,7 +82,7 @@ In `data/icd10-data.js`:
 
 Every code referenced by `commonCodes` / `bundles` must exist in `entries` (the validation command checks this).
 
-In `index.html` (`<script type="text/babel">`): `ORGAN_CATEGORIES`, `IGNORE_LIST`, `QUALIFIER_TRIGGERS` / `detectQualifier`, sync helpers (`encodeRulesPayload`, `decodeRulesPayload`, `makeQrSvg`), and the `App` component (`liveSuggestions`, `performCoding`, `addCodesToResults`, `startLinkImport`). Search by name — line numbers drift.
+`src/App.jsx`: `ORGAN_CATEGORIES`, `App` (`liveSuggestions`, `performCoding` → `analyzeText`, `addCodesToResults`, `startLinkImport`). `src/coding.js`: `IGNORE_LIST`, `QUALIFIER_TRIGGERS` / `detectQualifier`, `analyzeText`. `src/sync.js`: `encodeRulesPayload`, `decodeRulesPayload`, `makeQrSvg`. Search by name — line numbers drift.
 
 ### State & Persistence
 
@@ -85,7 +97,7 @@ User rules (`isCustom` or id not built-in) are JSON-encoded, compressed with `Co
 
 `liveSuggestions` (`useMemo`) computes suggestions from the segment under the cursor (`getActiveSearchInfo`). Short (2–3 char) English queries use `\b`-anchored prefix matching to avoid false positives (e.g., "DM" won't match "ADM"). Chinese queries are supported; inside a run-on Chinese sentence (e.g. 「病人有糖尿病」) a contained keyword matches and only that part is replaced. A leading qualifier (`r/o`, `s/p`, `No`, `疑似`, `否認`…) is excluded from the query and kept on insertion. Clicking a suggestion inserts `ICD code + standard name`.
 
-### Coding Algorithm (`performCoding`)
+### Coding Algorithm (`analyzeText` in `src/coding.js`)
 
 1. Protect ICD decimal codes (`E03.9` → `§`) and slash abbreviations (`R/O`, `S/P`, `H/O`, `W/O` → `¤`) before splitting, then restore
 2. Split input text on `[\n,;，、。/:().?]+`
@@ -109,7 +121,7 @@ Preserves user-added rules (`isCustom: true` or `id` not in `INITIAL_DATABASE`) 
 
 ## Adding New ICD-10 Entries
 
-Add entries to the `entries` array in `data/icd10-data.js` (and bump `version`). Rules:
+Add entries to the `entries` array in `src/data/icd10-data.js` (and bump `version`). Rules:
 - `id` must be unique and conventionally equals `code`
 - English `keywords` in UPPERCASE; Chinese keywords in natural case
 - `organ` must match one of the `ORGAN_CATEGORIES` `value` fields
@@ -119,13 +131,15 @@ If an old entry's `id` has been replaced (e.g., code updated), add the old `id` 
 
 ## Validation
 
-After editing data, run this parse check to catch duplicate IDs, malformed entries and dangling quick-pick/bundle codes:
+After editing data, run (exits non-zero on duplicate ids, malformed entries, or quick-pick/bundle codes missing from `entries`):
 
 ```bash
-node -e "const fs=require('fs'); const w={}; Function('window', fs.readFileSync('data/icd10-data.js','utf8'))(w); const d=w.ICD10_DATA; const arr=d.entries; const ids=arr.map(x=>x.id); const dup=[...new Set(ids.filter((id,i)=>ids.indexOf(id)!==i))]; const bad=arr.filter(x=>!x.id||!x.code||!x.standard||!Array.isArray(x.keywords)||!x.organ); const codes=new Set(arr.map(x=>x.code)); const refs=[...d.commonCodes.flatMap(g=>g.items.map(i=>i.code)), ...d.bundles.flatMap(b=>b.codes)]; console.log(JSON.stringify({version:d.version, total:arr.length, duplicateIds:dup, bad:bad.length, missingRefs:refs.filter(c=>!codes.has(c))}, null, 2));"
+npm run validate
 ```
 
-Expected: `duplicateIds: []`, `bad: 0`, `missingRefs: []`.
+Then `npm run build` to make sure the app still compiles.
+
+Expected: `duplicateIds: []`, `bad: []`, `missingRefs: []`.
 
 ### ICD-10-CM Source Checking
 
@@ -141,4 +155,4 @@ node -e "const fs=require('fs'); const lines=fs.readFileSync('/private/tmp/icd10
 
 If the file is missing, download the current CMS/CDC ICD-10-CM code descriptions before adding many new codes.
 
-Expected console warnings (Tailwind CDN, Babel standalone, favicon 404) are acceptable and non-blocking.
+The ICD-10 Codes MCP tool (`validate_code` / `lookup_code`) is an alternative when the local file is missing.

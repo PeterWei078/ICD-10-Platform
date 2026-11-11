@@ -1,6 +1,6 @@
 // 內科醫學編碼互動式平台：內建 ICD-10-CM 資料
-// 由 index.html 以 <script> 載入（file:// 也可運作）。修改後請執行 CLAUDE.md 的驗證指令。
-window.ICD10_DATA = {
+// 由 src/App.jsx 匯入並打包。修改後請執行 npm run validate，並更新 version。
+const ICD10_DATA = {
     version: "2026.11.11",
 
     // 已從內建資料移除的舊 id：避免舊用戶 localStorage 中的過期條目重新出現
@@ -597,3 +597,5 @@ window.ICD10_DATA = {
         { id: "aki-on-ckd", name: "AKI on CKD", codes: ["N17.9", "N18.9"], note: "N18.9 請改成實際分期" },
     ]
 };
+
+export default ICD10_DATA;
